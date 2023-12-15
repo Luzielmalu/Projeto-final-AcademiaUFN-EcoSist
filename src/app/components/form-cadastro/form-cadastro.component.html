@@ -1,0 +1,55 @@
+<form>
+  <h2>Preencha seus dados para o <span>cadastro</span></h2>
+
+<div class="form-group">
+  <label for="nomeCompleto">Nome:</label>
+  <input type="text" id="nomeCompleto" placeholder="Digite seu nome completo" required/>
+</div>
+
+  <div class="form-group">
+    <label for="dataNascimento">Data de nascimento:</label>
+    <input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" required/>
+  </div>
+  <div class="form-group">
+    <label for="cpfCnpj">CPF ou CNPJ:</label>
+    <input type="text" id="cpfCnpj" placeholder="Digite seu CPF ou CNPJ" required/>
+  </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" placeholder="Digite seu telefone" required/>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="text" id="email" placeholder="Digite seu E-mail" required/>
+    </div>
+    <div class="form-group">
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" placeholder="Digite seu CEP" required/>
+    </div>
+    <div class="form-group">
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" placeholder="Digite seu endereço e número" required/>
+    </div>
+    <div class="form-group">
+      <label for="bairroCidadeUf">Bairro/cidade/UF:</label>
+      <input type="text" id="bairroCidadeUf" placeholder="Digite seu bairro, cidade/UF" required/>
+    </div>
+    <div class="form-group">
+      <label for="addressType">Tipo de Endereço:</label>
+      <select class="form-control" id="addressType" required>
+        <option value="" disabled selected>Escolha o tipo de endereço:</option>
+        <option value="residencial">Residencial</option>
+        <option value="comercial">Comercial</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pontoReferencia">Ponto de referência:</label>
+      <input type="text" id="pontoReferencia" placeholder="Digite um ponto de referência" required/>
+    </div>
+    <div class="form-group">
+      <label for="description">Observação:</label>
+      <textarea placeholder="Descreva sua observação" required></textarea>
+    </div>
+    <input type="submit" value="{{btnText}}"/>
+  </form>

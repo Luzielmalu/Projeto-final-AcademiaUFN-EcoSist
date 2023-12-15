@@ -1,0 +1,117 @@
+
+.centralizar-justificar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  max-width: 600px; /* Ajuste conforme necessário */
+  margin: auto; /* Para centralizar horizontalmente */
+  padding: 20px;
+}
+.imagemcircular{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 2000px;
+  height: 500px;
+  border-top: 1px solid rgb(25, 214, 25);
+  text-align: justify;
+  max-width: 600px; /* Ajuste conforme necessário */
+  margin: auto; /* Para centralizar horizontalmente */
+  padding: 20px;
+
+}
+.imagem-container {
+  border: 2px solid #b0a806; /* Adicione a borda desejada ao contêiner */
+  border-radius: 8px; /* Opcional: Adicione bordas arredondadas ao contêiner */
+  overflow: hidden; /* Garante que a borda não se estenda além do contêiner */
+}
+.centralizar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.blocos {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: auto;
+}
+
+.bloco1 {
+  flex: 1;
+  box-sizing: border-box; /* Garante que a largura do bloco inclua preenchimento e borda */
+  padding: 20px;
+  border: 2px solid #0ad228;
+  border-radius: 8px;
+  margin-right: 30px;
+  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  height: 300px;
+  margin-bottom: 30px;
+}
+.bloco1 .link {
+  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
+  color: blue; /* Adicione uma cor para indicar que é um link */
+}
+.bloco {
+  flex: 1;
+  box-sizing: border-box; /* Garante que a largura do bloco inclua preenchimento e borda */
+  padding: 20px;
+  border: 2px solid #0ad228;
+  border-radius: 8px;
+  margin-right: 30px;
+  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+/* A última criança não deve ter margem direita para evitar espaçamento extra */
+.bloco:last-child {
+  margin-right: 0;
+}
+.texto-contato {
+  position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
+  top: 55%; /* Posicionamento a partir do topo */
+  left: 50%; /* Posicionamento a partir da esquerda */
+  transform: translate(-50%, -50%); /* Centraliza o bloco */
+  z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
+
+  background-color: #a8f39b; /* Cor de fundo desejada */
+  padding: 20px; /* Adapte conforme necessário */
+  text-align: center; /* Centraliza o texto */
+  max-width: 400px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 100px;
+  height: 400px; /* Ajuste a altura conforme necessário */
+  border-radius: 10px;
+  border: 2px solid rgb(68, 243, 77);
+
+}
+.texto-contato {
+  line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
+}
+.botão-ok{
+  color: white;
+  background-color: #4d19f8; /* Cor de fundo desejada */
+  padding: 15px; /* Adapte conforme necessário */
+  text-align: center; /* Centraliza o texto */
+  max-width: 100px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 70px;
+  height: 40px; /* Ajuste a altura conforme necessário */
+  border-radius: 9px;
+  cursor: pointer;
+  border: 2px solid rgb(#4d19f8);
+  line-height: 1.5; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
+}

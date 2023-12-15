@@ -1,0 +1,53 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid #777;
+  background-color: rgb(77, 193, 77);
+  height: 60px;
+}
+.brand, .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.brand img{
+  width: 100px;
+  margin-right: 0.6em;
+  border: 2px solid #4c05f1; /* Adiciona uma borda sólida de 2px com cor preta */
+  border-radius: 50%; /* Opcional: adiciona bordas arredondadas */
+  max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
+  height: auto;
+}
+.brand h2{
+  transition: .4s;
+}
+.links a{
+  padding: 0.1em 0.3em;
+}
+.links li{
+  margin-right: 1em;
+  list-style: none;
+
+}
+#add a{
+  color:blanchedalmond
+}
+#add a:hover{
+  background-color: #777;
+
+}
+.custom-button {
+  background-color: #4d19f8;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid rgb(43, 33, 238);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #1e9cf7;
+}

@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+  color: rgb(28, 29, 28);
+}
+a{
+  text-decoration: none;
+  color: rgb(28, 29, 28);
+  transition: .4s;
+}
+a:hover{
+  color: rgb(28, 29, 28);
+}
+body{
+  background-image: url("/assets/th2.jpg");
+  background-attachment: fixed;
+  background-position: 5% 5%;
+}
+/*Form*/
+form{
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+}
+.form-group{
+display: flex;
+flex-direction: column;
+margin-bottom: 1em;
+}
+.form-group label{
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: .4em;
+}
+.form-group input,
+.form-group textarea{
+  padding: .6em;
+  color: #777;
+  font-size: 0.8em;
+}
+input[type="submit"]{
+  background-color: rgb(43, 33, 238);
+  color: white;
+  border-radius: 10px;
+  border: 2px solid rgb(43, 33, 238);
+  padding: 0.6em 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.4s;
+}
+

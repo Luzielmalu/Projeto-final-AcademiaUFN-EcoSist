@@ -1,0 +1,24 @@
+
+:host {
+  position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
+  top: 60%; /* Posicionamento a partir do topo */
+  left: 50%; /* Posicionamento a partir da esquerda */
+  transform: translate(-50%, -50%); /* Centraliza o bloco */
+  z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
+  display: block;
+  background-color: #a8f39b; /* Cor de fundo desejada */
+  padding: 20px; /* Ajuste de espaçamento interno */
+  max-width: 500px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  border-radius: 10px;
+  border: 2px solid rgb(68, 243, 77);
+}
+.link-agendar {
+  color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
+  text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+.link-agendar:hover {
+  color: #0056b3; /* Cor alterada ao passar o mouse sobre o link */
+
+}

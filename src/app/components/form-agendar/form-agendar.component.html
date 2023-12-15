@@ -1,0 +1,38 @@
+
+<form>
+  <h2>Agendamento para a <span>coleta</span></h2>
+
+  <span style="display: block; margin-bottom: 5px;">Para agendar, você precisa realizar o cadastro.<a routerLink="/registrar" class="link-agendar"> Clique aqui</a> e faça o seu!
+  </span>
+  <span style="display: block; margin-bottom: 5px;">**Agendamentos com no mínimo  dois dias de antecedência, a partir de 6l de óleo**</span>
+  <span style="display: block; margin-bottom: 5px;">Escolha o melhor dia e horário para a sua coleta.</span>
+  <span style="display: block; margin-bottom: 5px;">Nosso atendimento é de segunda a sexta em horário comercial.</span>
+<div class="col-1 col-s-2">
+  <fieldset>
+    <legend >Escolha uma data</legend>
+    <div class="row">
+      <div class="col-1 col-s-2">
+        <input type="date" id="txtData" name="data" min="15/12/2023">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend >Escolha um horário:</legend>
+    <div class="row">
+      <div class="col-1 col-s-2">
+        <input type="time" id="txtHorario" name="horario" class="caixa-texto">
+
+      </div>
+    </div>
+  </fieldset>
+</div>
+  <div class="form-group">
+    <label for="cpfCnpj">CPF ou CNPJ:</label>
+    <input type="text" id="cpfCnpj" placeholder="Digite seu CPF ou CNPJ" required/>
+  </div>
+    <div class="form-group">
+      <label for="endereco">Endereço para coleta:</label>
+      <input type="text" id="endereco" placeholder="Digite seu endereço completo" required/>
+    </div>
+    <input type="submit" value="{{btnText}}"/>
+</form>
