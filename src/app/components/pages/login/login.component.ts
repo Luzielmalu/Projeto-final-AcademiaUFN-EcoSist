@@ -1,23 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { LoginService } from './login.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls:[ './login.component.css']
+  styleUrl:'./login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
   @Input() btnText: any='Enviar'
+  /*public formLogin:FormGroup;
 
-  public formLogin:FormGroup;
-
-  constructor(private fb:FormBuilder, private loginService:LoginService, private route:Router, private toast:ToastrService) {
+  constructor(@Inject(LoginService)private http: HttpClient, private fb:FormBuilder, private loginService:LoginService, private route:Router, private toast:ToastrService) {
     this.formLogin = this.criarFormLogin();
   }
-
   ngOnInit(): void {
   }
   public criarFormLogin():FormGroup{
@@ -29,8 +23,6 @@ export class LoginComponent implements OnInit {
   public isFormControlInvalid(controlName:string):boolean{
     return !!(this.formLogin.get(controlName)?.invalid && this.formLogin.get(controlName)?.touched)
   }
-
-
   public submitForm(){
     const {login, password} = this.formLogin.value;
     this.formLogin.reset;
@@ -45,4 +37,5 @@ export class LoginComponent implements OnInit {
       }
     )
   }
+*/
 }

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
@@ -37,7 +38,7 @@ import { SobreComponent } from './components/pages/sobre/sobre.component';
     ContatoComponent,
     FormRegistrarComponent,
     FormAgendarComponent,
-    FormLoginComponent
+    FormLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,12 +50,14 @@ import { SobreComponent } from './components/pages/sobre/sobre.component';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
 
 
   ],
-  providers: [
+     providers: [HttpClientModule,
     provideClientHydration(),
+    FormsModule,
     { provide: MAT_DATE_LOCALE, useValue: 'en-BR' },
   ],
   bootstrap: [AppComponent]

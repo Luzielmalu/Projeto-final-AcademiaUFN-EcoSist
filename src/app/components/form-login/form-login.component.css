@@ -1,7 +1,7 @@
 :host {
   display: block;
-  background-color: #a8f39b; /* Cor de fundo desejada */
-  padding: 30px; /* Ajuste de espaçamento interno */
+  background-color: #a8f39b; /* Cor de fundo  */
+  padding: 30px; /*  espaçamento interno */
   max-width: 500px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
   border-radius: 10px;

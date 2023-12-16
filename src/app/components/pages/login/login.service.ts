@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-
 type EnvironmentType = {
   production: boolean;
   baseUrlBackend: string;
