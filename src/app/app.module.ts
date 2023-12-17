@@ -6,7 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
-import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,6 +18,7 @@ import { CadastroComponent } from './components/pages/cadastro/cadastro.componen
 import { ContatoComponent } from './components/pages/contato/contato.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { LayoutComponent } from './components/pages/layout/layout.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
@@ -39,6 +39,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
     FormRegistrarComponent,
     FormAgendarComponent,
     DashboardComponent,
+    LayoutComponent
 
   ],
   imports: [
@@ -51,7 +52,10 @@ import { TokenInterceptor } from './services/custome.interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+    AppRoutingModule,
+
+
+
 
 
 
@@ -67,6 +71,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 
 
 }

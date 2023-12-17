@@ -27,9 +27,9 @@ describe('TokenInterceptor', () => {
   });
 
   it('should add an Authorization header', () => {
-    httpClient.get('/api/data').subscribe();
+    httpClient.get('/auth/login').subscribe();
 
-    const req = httpTestingController.expectOne('/api/data');
+    const req = httpTestingController.expectOne('/auth/login');
 
     expect(req.request.headers.has('Authorization')).toEqual(true);
 

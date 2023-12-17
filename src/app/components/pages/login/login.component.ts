@@ -15,12 +15,11 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router){}
 
   onLogin() {
-    debugger;
     this.http.post('http://localhost:8089/auth/login', this.loginObj).subscribe((res:any)=>{
-      if(res.result) {
+      if(res.token) {
         alert('login Success');
-        localStorage.setItem('loginTOken', res.data.token);
-        this.router.navigateByUrl('/');
+        localStorage.setItem('loginToken', res.token);
+        this.router.navigateByUrl('/dashboard');
       } else {
         alert(res.message);
       }

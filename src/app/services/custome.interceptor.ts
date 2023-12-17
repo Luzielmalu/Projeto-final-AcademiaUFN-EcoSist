@@ -7,7 +7,6 @@ export class TokenInterceptor implements HttpInterceptor{
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    debugger;
     const token = localStorage.getItem('loginToken');
     const newCloneRequest = request.clone({
       setHeaders:{
@@ -16,6 +15,7 @@ export class TokenInterceptor implements HttpInterceptor{
     })
     return next.handle(newCloneRequest);
   }
+
 
 }
 

@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class FormCadastroComponent  {
   @Input()
   btnText: any;
+
+  onCadastro() {
+    // Lógica para enviar dados para o banco de dados
+    console.log('Cadastro realizado com sucesso!');
+  }
 }

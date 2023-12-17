@@ -13,12 +13,12 @@
   border-radius: 10px;
   border: 2px solid rgb(68, 243, 77);
 }
-.link-agendar {
+.link-cadastrar {
   color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
   text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
   cursor: pointer; /* Altera o cursor para indicar que é clicável */
 }
-.link-agendar:hover {
+.link-cadastrar:hover {
   color: #0056b3; /* Cor alterada ao passar o mouse sobre o link */
 
 }

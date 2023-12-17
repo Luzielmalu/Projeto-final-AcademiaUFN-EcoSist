@@ -1,6 +1,7 @@
-<form>
+<form  (ngSubmit)="onCadastro()">
   <h2>Preencha seus dados para o <span>cadastro</span></h2>
-
+  <span style="display: block; margin-bottom: 5px;">Já tem registro?<a routerLink="/registrar" class="link-registrar"> Clique aqui</a> e registre-se!
+  </span>
 <div class="form-group">
   <label for="nomeCompleto">Nome:</label>
   <input type="text" id="nomeCompleto" placeholder="Digite seu nome completo" required/>

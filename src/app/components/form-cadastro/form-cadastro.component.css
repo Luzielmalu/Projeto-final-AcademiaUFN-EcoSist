@@ -13,4 +13,12 @@
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
 
 }
+.link-registrar {
+  color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
+  text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+.link-registrar:hover {
+  color: #0056b3; /* Cor alterada ao passar o mouse sobre o link */
 
+}

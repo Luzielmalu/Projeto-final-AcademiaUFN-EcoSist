@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,16 +7,16 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  users: any[]=[];
+  /*users: any[]=[];
   constructor(private http: HttpClient){
     this.loadUsers();
   }
 
-  loadUsers() {
+  /*loadUsers() {
     debugger;
-    this.http.get('  http://localhost:8089/cadastro').subscribe((res:any)=>{
+    this.http.get('  http://localhost:8089/auth/login').subscribe((res:any)=>{
       this.users = res.data;
     })
-  }
+  }*/
 
 }
