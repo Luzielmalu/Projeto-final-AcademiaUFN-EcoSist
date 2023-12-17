@@ -15,8 +15,8 @@ nav{
 .brand img{
   width: 100px;
   margin-right: 0.6em;
-  border: 2px solid #4c05f1; /* Adiciona uma borda sólida de 2px com cor*/
-  border-radius: 50%; /* Opcional: adiciona bordas arredondadas */
+  border: 3px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
+   /* Opcional: adiciona bordas arredondadas */
   max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
   height: auto;
 }

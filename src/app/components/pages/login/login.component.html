@@ -1,4 +1,46 @@
-<app-form-login [btnText] ="btnText"></app-form-login>
+
+<div class="overlay">
+  <form>
+     <div class="con">
+     <header class="head-form">
+        <h2>Login</h2>
+        <p>Entre aqui com seu login e senha registrados!</p>
+     </header>
+     <br>
+     <div class="field-set">
+           <span class="input-item">
+             <i class="fa fa-user-circle"></i>
+           </span>
+           <input class="form-input" id="txt-input" type="text" name="login" [(ngModel)]="loginObj.login"  placeholder="Digite seu login" required>
+
+        <br>
+
+        <span class="input-item">
+          <i class="fa fa-key"></i>
+         </span>
+
+        <input class="form-input" type="password" [(ngModel)]="loginObj.password" placeholder="Digite sua senha" id="pwd"  name="password" required>
+
+
+        <br>
+
+        <button class="log-in" (click)="onLogin()">Entrar</button>
+     </div>
+
+     <div class="other">
+      <button class="btn submits frgt-pass">Não tem cadastro?</button>
+        <button class="btn submits sign-up"><a routerLink="/registrar">Registre-se</a>
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+        </button>
+
+     </div>
+
+  <!--   End Conrainer  -->
+    </div>
+
+    <!-- End Form -->
+  </form>
+  </div>
 
 <div class="centralizar-justificar">
   <h1>Bem-vindos a EcoSist!</h1>
@@ -7,7 +49,11 @@
     Trabalhamos com a coleta de óleo, seja em empresas, condomínios ou residências, e
      damos a destinação correta para a reciclagem. Faça seu cadastro e agende conosco.
       Vamos até você! </p>
+
     </div>
+
+
+
     <div class="imagemcircular">
       <div class="imagem-container">
       <img src="/assets/Sustentabilidade .png" alt="maoseco">
@@ -25,7 +71,7 @@
           <span style="display: block; margin-top: 5px;"></span>
           <span style="display: block; margin-top: 5px;">
             <a href="https://comoarmazenar.com/10896/como-armazenar-oleo-de-cozinha/" target="_blank" style="color: blue;" >Como armazenar óleo de cozinha.</a>
-            <img src="/assets/imagensEcoSist/óleo.png" alt="Logo" width="120" height="120" style="display: block; margin-bottom: 5px; margin-left: 30px;">
+            <img src="/assets/imagensEcoSist/óleoArmazenado.png" alt="Logo" width="120" height="120" style="display: block; margin-bottom: 5px; margin-left: 30px;">
 
           </span>
       </div>
@@ -45,6 +91,7 @@
               <span style="display: block; ">Paulista<br></span>
               <span style="display: block; ">Recife<br></span>
 
+<!-- Seu componente HTML -->
 
         </div>
         <div class="bloco">

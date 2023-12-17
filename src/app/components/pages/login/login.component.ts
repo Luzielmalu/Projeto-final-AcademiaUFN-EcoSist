@@ -1,41 +1,30 @@
-import { Component, Input } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl:'./login.component.css'
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
-  @Input() btnText: any='Enviar'
-  /*public formLogin:FormGroup;
+export class LoginComponent {
 
-  constructor(@Inject(LoginService)private http: HttpClient, private fb:FormBuilder, private loginService:LoginService, private route:Router, private toast:ToastrService) {
-    this.formLogin = this.criarFormLogin();
+  loginObj: any = {
+    "login": "",
+    "password": ""
   }
-  ngOnInit(): void {
-  }
-  public criarFormLogin():FormGroup{
-    return this.fb.group({
-      login:["", [Validators.required, Validators.minLength(6)]],
-      password:["", [Validators.required, Validators.minLength(6)]]
+  constructor(private http: HttpClient, private router: Router){}
+
+  onLogin() {
+    debugger;
+    this.http.post('http://localhost:8089/auth/login', this.loginObj).subscribe((res:any)=>{
+      if(res.result) {
+        alert('login Success');
+        localStorage.setItem('loginTOken', res.data.token);
+        this.router.navigateByUrl('/');
+      } else {
+        alert(res.message);
+      }
     })
   }
-  public isFormControlInvalid(controlName:string):boolean{
-    return !!(this.formLogin.get(controlName)?.invalid && this.formLogin.get(controlName)?.touched)
-  }
-  public submitForm(){
-    const {login, password} = this.formLogin.value;
-    this.formLogin.reset;
-
-    this.loginService.login(login, password).subscribe(
-      res => {
-        this.toast.success("Login efetuado com sucesso");
-        this.route.navigate(['']);
-      },
-      err =>{
-        this.toast.error(err);
-      }
-    )
-  }
-*/
 }
+
