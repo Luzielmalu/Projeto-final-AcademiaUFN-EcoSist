@@ -34,6 +34,7 @@ form {
   background-image: linear-gradient(-225deg, #a8f39b 50%, #a8f39b 50%);
 }
 
+
 form .con {
   display: -webkit-flex;
   display: flex;
@@ -45,6 +46,26 @@ form .con {
   flex-wrap: wrap;
 
     margin: 0 auto;
+}
+form .form-input {
+  width: 100%;
+  height: 50px;
+  margin-top: 2%;
+  padding: 15px;
+  font-size: 16px;
+  color: #5E6472;
+  outline: none;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  transition: 0.2s linear;
+}
+
+#txt-input {
+  width: calc(100% - 3px); /* Ajuste conforme necessário */
+}
+
+input[type="password"] {
+  width: calc(100% - 40px); /* Ajuste conforme necessário */
 }
 
 header {

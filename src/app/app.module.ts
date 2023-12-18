@@ -5,6 +5,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { TokenInterceptor } from './services/custome.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +55,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatSnackBarModule
 
 
 

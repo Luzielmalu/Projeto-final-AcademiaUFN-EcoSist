@@ -1,5 +1,5 @@
 export interface Cadastro {
-  id?: number;
+  id?: String;
   nomeCompleto: String;
   dataNascimento: String;
 	cpfCnpj: String;
@@ -10,6 +10,7 @@ export interface Cadastro {
 	bairroCidEst: String;
 	tipoEndereco: String;
 	pontoReferencia: String;
+  observacao?: String;
 }
 
 

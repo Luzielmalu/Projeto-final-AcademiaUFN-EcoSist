@@ -1,5 +1,5 @@
 
-<form>
+<form (ngSubmit)="onSubmit()">
   <h2>Agendamento para a <span>coleta</span></h2>
 
   <span style="display: block; margin-bottom: 5px;">Para agendar, você precisa realizar o cadastro.<a routerLink="/cadastrar" class="link-cadastrar"> Clique aqui</a> e faça o seu!
@@ -12,7 +12,7 @@
     <legend >Escolha uma data</legend>
     <div class="row">
       <div class="col-1 col-s-2">
-        <input type="date" id="txtData" name="data" min="15/12/2023">
+        <input type="date" id="txtData" [(ngModel)]="novoAgendamento.dia" name="data" min="15/12/2023">
       </div>
     </div>
   </fieldset>
@@ -20,7 +20,7 @@
     <legend >Escolha um horário:</legend>
     <div class="row">
       <div class="col-1 col-s-2">
-        <input type="time" id="txtHorario" name="horario" class="caixa-texto">
+        <input type="time" id="txtHorario" [(ngModel)]="novoAgendamento.horario" name="horario" class="caixa-texto">
 
       </div>
     </div>
@@ -28,11 +28,16 @@
 </div>
   <div class="form-group">
     <label for="cpfCnpj">CPF ou CNPJ:</label>
-    <input type="text" id="cpfCnpj" placeholder="Digite seu CPF ou CNPJ" required/>
+    <input type="text" id="cpfCnpj" [(ngModel)]="novoAgendamento.cpfCnpj" name="cpfCnpj" placeholder="Digite seu CPF ou CNPJ" required/>
   </div>
     <div class="form-group">
       <label for="endereco">Endereço para coleta:</label>
-      <input type="text" id="endereco" placeholder="Digite seu endereço completo" required/>
+      <input type="text" id="endereco" [(ngModel)]="novoAgendamento.enderecoColeta" name="enderecoColeta" placeholder="Digite seu endereço completo" required/>
     </div>
-    <input type="submit" value="{{btnText}}"/>
+    <div class="form-group">
+      <label for="quantidadeOleo">Quantidade de óleo:</label>
+      <input type="number" id="quantidade" [(ngModel)]="novoAgendamento.quantOleo" name="quantOleo" placeholder="Digite a quantidade de óleo. Ex.: 10" required/>
+    </div>
+
+    <input type="submit" value="{{btnText || 'Enviar'}}"/>
 </form>

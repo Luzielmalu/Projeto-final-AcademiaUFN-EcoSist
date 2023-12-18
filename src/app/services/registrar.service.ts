@@ -1,62 +1,60 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
-import { Cadastro } from '../models/cadastro';
-
-
+import { Registrar } from '../models/registrar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CadastroService {
+export class RegistrarService {
 
-  private url = 'http://localhost:8089/cadastro';
+  private url = 'http://localhost:8089/auth/register';
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'Application/json'})
   }
-  getCadastros(): Observable<Cadastro[]>{
-    return this.httpClient.get<Cadastro[]>(this.url)
+  getRegistros(): Observable<Registrar[]>{
+    return this.httpClient.get<Registrar[]>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError))
   }
-  getCadastroById(id: number): Observable<Cadastro> {
-    return this.httpClient.get<Cadastro>(`${this.url}/${id}`)
+  getRegistrarById(id: number): Observable<Registrar> {
+    return this.httpClient.get<Registrar>(`${this.url}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
-  createCadastro(cadastro: Cadastro): Observable<Cadastro> {
-    return this.httpClient.post<Cadastro>(this.url, cadastro);
+  createRegistrar(registrar: Registrar): Observable<Registrar> {
+    return this.httpClient.post<Registrar>(this.url, registrar);
   }
-  saveCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    return this.httpClient.post<Cadastro>(this.url, JSON.stringify(cadastro), this.httpOptions)
+  saveRegistrar(registrar: Registrar): Observable<Registrar>{
+    return this.httpClient.post<Registrar>(this.url, JSON.stringify(registrar), this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError))
 
   }
-  updateCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    return this.httpClient.put<Cadastro>(this.url +'/'+ cadastro.id, JSON.stringify(cadastro), this.httpOptions)
+  updateRegistrar(registrar: Registrar): Observable<Registrar>{
+    return this.httpClient.put<Registrar>(this.url +'/'+ registrar.id, JSON.stringify(registrar), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  deleteCadastro(cadastro: Cadastro){
-    return this.httpClient.delete<Cadastro>(this.url +'/'+ cadastro.id)
+  deleteRegistrar(registrar: Registrar){
+    return this.httpClient.delete<Registrar>(this.url +'/'+ registrar.id)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  adicionarCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    console.log(this.url, JSON.stringify(cadastro))
+  adicionarRegistrar(registrar: Registrar): Observable<Registrar>{
+    console.log(this.url, JSON.stringify(registrar))
     try {
       // Verifica se o localStorage está disponível
       if (localStorage) {
         // Se estiver disponível, continue com o código original
-        return this.httpClient.post<Cadastro>(this.url, JSON.stringify(cadastro), this.httpOptions)
+        return this.httpClient.post<Registrar>(this.url, JSON.stringify(registrar), this.httpOptions)
           .pipe(
             retry(1),
             catchError((error: HttpErrorResponse) => this.handleError(error)) // Adicionado tipo de parâmetro

@@ -28,6 +28,11 @@ export class CadastroComponent {
         this.cadastros = cadastro;
       });
     }
+    createCadastro(novoCadastro: Cadastro): void {
+      this.cadastroService.createCadastro(novoCadastro).subscribe(() => {
+        this.getCadastros(); // Atualiza a lista após a criação
+      });
+    }
     addCadastro(){
       this.cadastro.nomeCompleto = "Luzielma";
       this.cadastro.dataNascimento = "16/02/86";
@@ -39,6 +44,7 @@ export class CadastroComponent {
       this.cadastro.bairroCidEst = "Pau Amarelo, Paulista/PE";
       this.cadastro.tipoEndereco = "Residencial";
       this.cadastro.pontoReferencia = "não tem";
+      this.cadastro.observacao = "sem";
       this.cadastroService.saveCadastro(this.cadastro).subscribe(() => {
 
     });
@@ -96,7 +102,10 @@ export class CadastroComponent {
       this.cadastro.pontoReferencia = n;
       this.cadastroService.saveCadastro(this.cadastro);
     }
-
+    saveCadastroObservacao(n: string){
+      this.cadastro.observacao = n;
+      this.cadastroService.saveCadastro(this.cadastro);
+    }
     deleteCadastro(cadastro: Cadastro){
     this.cadastroService.deleteCadastro(cadastro).subscribe(() => {
       this.getCadastros();

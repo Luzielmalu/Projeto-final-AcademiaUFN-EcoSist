@@ -1,62 +1,60 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
-import { Cadastro } from '../models/cadastro';
-
-
+import { Agendar } from '../models/agendar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CadastroService {
+export class AgendarService {
 
-  private url = 'http://localhost:8089/cadastro';
+  private url = 'http://localhost:8089/agendamento';
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'Application/json'})
   }
-  getCadastros(): Observable<Cadastro[]>{
-    return this.httpClient.get<Cadastro[]>(this.url)
+  getAgendamentos(): Observable<Agendar[]>{
+    return this.httpClient.get<Agendar[]>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError))
   }
-  getCadastroById(id: number): Observable<Cadastro> {
-    return this.httpClient.get<Cadastro>(`${this.url}/${id}`)
+  getAgendarById(id: number): Observable<Agendar> {
+    return this.httpClient.get<Agendar>(`${this.url}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
-  createCadastro(cadastro: Cadastro): Observable<Cadastro> {
-    return this.httpClient.post<Cadastro>(this.url, cadastro);
+  createAgendar(agendar: Agendar): Observable<Agendar> {
+    return this.httpClient.post<Agendar>(this.url, agendar);
   }
-  saveCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    return this.httpClient.post<Cadastro>(this.url, JSON.stringify(cadastro), this.httpOptions)
+  saveAgendar(agendar: Agendar): Observable<Agendar>{
+    return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendar), this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError))
 
   }
-  updateCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    return this.httpClient.put<Cadastro>(this.url +'/'+ cadastro.id, JSON.stringify(cadastro), this.httpOptions)
+  updateAgendar(agendar: Agendar): Observable<Agendar>{
+    return this.httpClient.put<Agendar>(this.url +'/'+ agendar.id, JSON.stringify(agendar), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  deleteCadastro(cadastro: Cadastro){
-    return this.httpClient.delete<Cadastro>(this.url +'/'+ cadastro.id)
+  deleteAgendar(agendar: Agendar){
+    return this.httpClient.delete<Agendar>(this.url +'/'+ agendar.id)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  adicionarCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    console.log(this.url, JSON.stringify(cadastro))
+  adicionarAgendar(agendar: Agendar): Observable<Agendar>{
+    console.log(this.url, JSON.stringify(agendar))
     try {
       // Verifica se o localStorage está disponível
       if (localStorage) {
         // Se estiver disponível, continue com o código original
-        return this.httpClient.post<Cadastro>(this.url, JSON.stringify(cadastro), this.httpOptions)
+        return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendar), this.httpOptions)
           .pipe(
             retry(1),
             catchError((error: HttpErrorResponse) => this.handleError(error)) // Adicionado tipo de parâmetro
@@ -85,3 +83,5 @@ export class CadastroService {
     return throwError(errorMessage);
   }
 }
+
+
