@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AgendarComponent } from './components/pages/agendar/agendar.component';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
 import { ContatoComponent } from './components/pages/contato/contato.component';
@@ -9,6 +10,8 @@ import { LayoutComponent } from './components/pages/layout/layout.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
+import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 const routes: Routes = [
 
   {path: '', component: HomeComponent},
@@ -31,17 +34,13 @@ const routes: Routes = [
       }
     ]
   },
-  {path:'cadastrar', component:LayoutComponent,
-  children:  [
-    {
-      path:'dashboard',
-      component: DashboardComponent
-    }
-  ]
+  {path: 'perfilUsuario', component: PerfilUsuarioComponent},
+  {path:'perfilAdmin', component: PerfilAdminComponent},
+  {path: 'dashboard', component: DashboardComponent},
 
-},
   {path: 'registrar', component: RegistrarComponent},
   {path: 'agendar', component: AgendarComponent},
+  {path: 'adminDashboard', component: AdminDashboardComponent}
 
 ];
 

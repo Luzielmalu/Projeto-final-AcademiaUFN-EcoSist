@@ -16,11 +16,19 @@ export class CadastroService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'Application/json'})
   }
+  cadastroUsuario(cadastro: Cadastro): Observable<Cadastro> {
+    const url = `${this.url}`;
+    return this.httpClient.post<Cadastro>(url, cadastro);
+  }
   getCadastros(): Observable<Cadastro[]>{
     return this.httpClient.get<Cadastro[]>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError))
+  }
+  checkEmailExists(email: string): Observable<boolean> {
+    const url = `${this.url}/exists?email=${email}`;
+    return this.httpClient.get<boolean>(url);
   }
   getCadastroById(id: number): Observable<Cadastro> {
     return this.httpClient.get<Cadastro>(`${this.url}/${id}`)

@@ -18,7 +18,7 @@ export class LoginComponent {
     this.http.post('http://localhost:8089/auth/login', this.loginObj).subscribe((res:any)=>{
       if(res.token) {
         alert('login Success');
-        localStorage.setItem('loginToken', res.token);
+        localStorage.setItem('loginToken', res.token);/*salva o token no localstorage*/
         this.router.navigateByUrl('/dashboard');
       } else {
         alert(res.message);

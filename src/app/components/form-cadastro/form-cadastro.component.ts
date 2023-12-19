@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cadastro } from '../../models/cadastro';
+import { CadastroService } from '../../services/cadastro.service';
 
 @Component({
   selector: 'app-form-cadastro',
@@ -9,8 +10,16 @@ import { Cadastro } from '../../models/cadastro';
 export class FormCadastroComponent  {
   @Input()
   btnText: any;
-  constructor(){}
+  router: any;
+  constructor(private cadastroService: CadastroService) {}
 
+  checkEmailAvailability(email: string): void {
+    this.cadastroService.checkEmailExists(email).subscribe((exists) => {
+      if (exists) {
+        alert('E-mail já cadastrado. Por favor, escolha outro.');
+      }
+    });
+  }
  @Output() cadastrar = new EventEmitter<Cadastro>();
   novoCadastro: Cadastro = {
     id: '',
@@ -30,6 +39,19 @@ export class FormCadastroComponent  {
 
   onSubmit(): void {
     this.cadastrar.emit(this.novoCadastro);
+    this.cadastroService.cadastroUsuario(this.novoCadastro).subscribe(
+      (usuarioCadastrado) => {
+        // Exibe um alerta de sucesso
+        alert('Cadastro realizado com sucesso!');
+
+        // Redireciona para a página do perfil do usuário
+        this.router.navigate(['/perfilUsuario']);
+      },
+      (error) => {
+        // Lógica de tratamento de erro, se necessário
+        console.error('Erro durante o cadastro', error);
+      }
+    );
     this.novoCadastro = {
       id: '',
     nomeCompleto: '',
@@ -44,26 +66,8 @@ export class FormCadastroComponent  {
     pontoReferencia: '',
     observacao: '',
     }; // Limpa os campos do novo cadastro
-    console.log('Cadastro realizado com sucesso!');
+
   }
-
- /*ngOnInit(): void{
-  this.cadastro = new FormGroup({
-    id: new FormControl(''),
-    dataNascimento: new FormControl(''),
-    cpfCnpj: new FormControl(''),
-    telefone: new FormControl(''),
-    email: new FormControl(''),
-    cep: new FormControl(''),
-    enderecoCompleto: new FormControl(''),
-    bairroCidEst: new FormControl(''),
-    tipoEndereco: new FormControl(''),
-    pontoReferencia: new FormControl(''),
-    observacao: new FormControl(''),
-
-
-  });
- }*/
 
 
 

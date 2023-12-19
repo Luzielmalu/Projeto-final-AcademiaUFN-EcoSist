@@ -1,0 +1,9 @@
+/* user-dashboard.component.css */
+#wrapper {
+  display: flex;
+}
+
+#content {
+  flex-grow: 1;
+  padding: 16px;
+}

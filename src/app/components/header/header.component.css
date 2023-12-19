@@ -4,7 +4,7 @@ nav{
   padding: 1em;
   border-bottom: 1px solid #777;
   background-color: rgb(77, 193, 77);
-  height: 60px;
+  height: 70px;
 }
 .brand, .links{
   display: flex;

@@ -1,0 +1,15 @@
+
+
+<div id="sidebar">
+  <ul>
+    <p>Seja bem-vindo!     <span class="material-symbols-outlined">
+      account_circle
+      </span></p>
+      <li><a routerLink="/perfilUsuario">Meu cadastro</a></li>
+      <!-- Adicione outros links conforme necessário -->
+  </ul>
+  <div class="button-container">
+  <button (click)="logout()">Sair</button>
+  <div *ngIf="shouldShowSidebar()"></div>
+</div>
+</div>
