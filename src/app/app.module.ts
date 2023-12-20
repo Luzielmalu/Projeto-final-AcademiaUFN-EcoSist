@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormAgendarComponent } from './components/form-agendar/form-agendar.component';
 import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.component';
@@ -27,11 +28,9 @@ import { LayoutComponent } from './components/pages/layout/layout.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
-import { TokenInterceptor } from './services/custome.interceptor';
-import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { TokenInterceptor } from './services/custome.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,13 +46,12 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     FormCadastroComponent,
     ContatoComponent,
     FormRegistrarComponent,
-    FormAgendarComponent,
     DashboardComponent,
     LayoutComponent,
     PerfilUsuarioComponent,
     PerfilAdminComponent,
-    SidebarComponent,
     AdminDashboardComponent,
+    FormAgendarComponent,
 
   ],
   imports: [

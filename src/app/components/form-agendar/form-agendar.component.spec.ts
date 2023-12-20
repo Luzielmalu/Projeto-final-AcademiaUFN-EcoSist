@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAgendarComponent } from './form-agendar.component';
+import { FormAgendarComponent } from './FormAgendarComponent';
 
 describe('FormAgendarComponent', () => {
   let component: FormAgendarComponent;
@@ -11,7 +11,7 @@ describe('FormAgendarComponent', () => {
       declarations: [FormAgendarComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(FormAgendarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

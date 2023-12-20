@@ -42,7 +42,7 @@ export class FormCadastroComponent  {
     this.cadastroService.cadastroUsuario(this.novoCadastro).subscribe(
       (usuarioCadastrado) => {
         // Exibe um alerta de sucesso
-        alert('Cadastro realizado com sucesso!');
+        alert('Seus dados foram cadastrados com sucesso! Agora, efetue seu login para realizaro agendamento da sua coleta!');
 
         // Redireciona para a página do perfil do usuário
         this.router.navigate(['/perfilUsuario']);

@@ -39,5 +39,5 @@
       <input type="number" id="quantidade" [(ngModel)]="novoAgendamento.quantOleo" name="quantOleo" placeholder="Digite a quantidade de óleo. Ex.: 10" required/>
     </div>
 
-    <input type="submit" value="{{btnText || 'Enviar'}}"/>
+    <input type="submit" (click)="redirecionarParaDashboard()" value="{{btnText || 'Enviar'}}"/>
 </form>

@@ -6,9 +6,16 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
+  isAuthenticated!: boolean;
   constructor(private authService: AuthService) {}
 
+
+
   ngOnInit(): void {}
+  getAuthenticationStatus(): boolean {
+    return this.isAuthenticated;
+  }
+
 
   isLoggedIn(): boolean {
     return this.authService.getAuthenticationStatus();
@@ -21,4 +28,9 @@ export class HeaderComponent implements OnInit {
     // Lógica de login aqui
     console.log('Usuário está tentando fazer login');
   }
+  onLinkClick(): void {
+    console.log('Verificando autenticação:', this.authService.getAuthenticationStatus());
+    // Resto do código
+  }
 }
+

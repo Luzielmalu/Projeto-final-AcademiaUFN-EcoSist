@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,16 +8,15 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  /*users: any[]=[];
-  constructor(private http: HttpClient){
-    this.loadUsers();
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {}
+  logout(): void {
+    this.authService.logout();
   }
 
-  /*loadUsers() {
-    debugger;
-    this.http.get('  http://localhost:8089/auth/login').subscribe((res:any)=>{
-      this.users = res.data;
-    })
-  }*/
-
+shouldShowSidebar(): boolean {
+  // Verifica se o usuário está autenticado
+  return this.authService.getAuthenticationStatus();
+}
 }

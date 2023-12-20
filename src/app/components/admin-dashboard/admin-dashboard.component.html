@@ -1,10 +1,13 @@
-<div id="wrapper">
-  <app-sidebar></app-sidebar>
-  <div id="content">
-    <h2>Dashboard do Administrador</h2>
-    <!-- Conteúdo específico do administrador -->
-  </div>
-</div>
-<div id="wrapper">
-  <!-- Conteúdo específico do administrador -->
+
+<ul>
+  <p>Seja bem-vindo!     <span class="material-symbols-outlined">
+    account_circle
+    </span></p>
+    <li><a routerLink="/perfilAdmin">Cadastros</a></li>
+    <li><a routerLink="/perfilAdmin">Agendamentos</a></li>
+    <li><a routerLink="/coletas">Sobre nós</a></li>
+</ul>
+<div class="button-container">
+<button (click)="logout()">Sair</button>
+<div *ngIf="shouldShowSidebar()"></div>
 </div>

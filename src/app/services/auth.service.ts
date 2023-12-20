@@ -15,7 +15,7 @@ export class AuthService {
   getAuthenticationStatus(): boolean {
     return this.isAuthenticated;
   }
-  setAuthenticationStatus(status: boolean) {
+  setAuthenticationStatus(status: true) {
     this.isAuthenticated = status;
   }
   // Método para obter o status de autenticação
@@ -24,17 +24,17 @@ export class AuthService {
     private userService: UserService) { }
 
     login(login: string, password: string): Observable<any> {
-      // Simule uma chamada HTTP para verificar o login e senha (substitua isso pela lógica real)
+      // Simula uma chamada HTTP para verificar o login e senha
       const fakeApiUrl = 'http://localhost:8089/auth/login';
       const loginData = { login, password };
 
       return this.http.post(fakeApiUrl, loginData).pipe(
         map((response: any) => {
           // Se a autenticação for bem-sucedida, o servidor pode retornar informações adicionais, como o tipo de usuário
-          const userType = response.userType || 'user';
+          const userType = response.userType || 'USER';
 
-          if (userType === 'admin') {
-            this.router.navigate(['/admin_dashboard']);
+          if (userType === 'ADMIN') {
+            this.router.navigate(['/adminDashboard']);
           } else {
             this.router.navigate(['/dashboard']);
           }
@@ -54,9 +54,10 @@ export class AuthService {
     logout() {
       // Realize as operações de logout, se necessário
       // Por exemplo, limpar tokens de autenticação, redefinir o estado, etc.
-      this.setAuthenticationStatus(false);
+      this.setAuthenticationStatus(true);
       // Navegue para a página de login ou outra página adequada
       this.router.navigate(['/']);
     }
+
 
 }

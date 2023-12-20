@@ -52,6 +52,20 @@ export class CadastroService {
       retry(1),
       catchError(this.handleError))
   }
+  updateCampoCadastro(id: number, campo: string, novoValor: string): Observable<any> {
+    const url = `${this.url}/cadastro/${id}/${campo}`;
+
+    return this.httpClient.put(url, { valor: novoValor }, this.httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 404) {
+          console.error('Cadastro não encontrado', error);
+        } else {
+          console.error('Erro ao atualizar cadastro', error);
+        }
+        return throwError(error);
+      })
+    );
+  }
   deleteCadastro(cadastro: Cadastro){
     return this.httpClient.delete<Cadastro>(this.url +'/'+ cadastro.id)
     .pipe(

@@ -6,6 +6,7 @@ nav{
   background-color: rgb(77, 193, 77);
   height: 70px;
 }
+
 .brand, .links{
   display: flex;
   justify-content: center;
@@ -39,15 +40,16 @@ nav{
 
 }
 .custom-button {
-  background-color: #4d19f8;
-  color: white;
-  border-radius: 10px;
-  border: 2px solid rgb(43, 33, 238);
+  background-color: #1014e6; /* Cor de fundo verde, ajuste conforme necessário */
+  color: white; /* Cor do texto branco, ajuste conforme necessário */
   border: none;
-  padding: 8px 16px;
+  border-radius: 5px; /* Borda arredondada, ajuste conforme necessário */
+  padding: 10px 15px;
   cursor: pointer;
 }
-
+nav .mat-flat-button {
+  color: white !important;
+}
 .custom-button:hover {
   background-color: #1e9cf7;
 }

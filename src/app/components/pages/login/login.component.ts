@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,7 @@ export class LoginComponent {
   onLogin() {
     this.http.post('http://localhost:8089/auth/login', this.loginObj).subscribe((res:any)=>{
       if(res.token) {
-        alert('login Success');
+        alert('login feito com sucesso!');
         localStorage.setItem('loginToken', res.token);/*salva o token no localstorage*/
         this.router.navigateByUrl('/dashboard');
       } else {
@@ -25,5 +26,8 @@ export class LoginComponent {
       }
     })
   }
+  // Exemplo simplificado no componente de login
+
+
 }
 

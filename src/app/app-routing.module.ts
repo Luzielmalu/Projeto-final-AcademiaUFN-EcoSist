@@ -12,6 +12,7 @@ import { RegistrarComponent } from './components/pages/registrar/registrar.compo
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+
 const routes: Routes = [
 
   {path: '', component: HomeComponent},

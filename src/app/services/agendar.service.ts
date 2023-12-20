@@ -14,6 +14,10 @@ export class AgendarService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'Application/json'})
   }
+  agendamentoUsuario(agendamento: Agendar): Observable<Agendar> {
+    const url = `${this.url}`;
+    return this.httpClient.post<Agendar>(url, agendamento);
+  }
   getAgendamentos(): Observable<Agendar[]>{
     return this.httpClient.get<Agendar[]>(this.url)
     .pipe(

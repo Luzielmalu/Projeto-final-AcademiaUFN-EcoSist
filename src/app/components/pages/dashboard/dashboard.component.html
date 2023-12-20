@@ -1,16 +1,21 @@
 
-<app-sidebar></app-sidebar>
 
-<!-- user-dashboard.component.html -->
-<div id="wrapper">
-  <div id="content">
+<div class="dashUsuario">
+<ul>
+  <p>Seja bem-vindo!     <span class="material-symbols-outlined">
+    account_circle
+    </span></p>
+    <li><a routerLink="/cadastrar">Cadastrar seus dados</a></li>
+    <li><a routerLink="/agendar">Agendar coleta</a></li>
+    <li><a routerLink="/perfilUsuario">Seu cadastro</a></li>
+    <li><a routerLink="/perfilUsuario">Seus agendamentos</a></li>
 
-      <!-- Conteúdo do dashboard -->
-      <div>
-          <!-- ... conteúdo existente ... -->
-      </div>
-  </div>
+
+
+    <!-- Adicione outros links conforme necessário -->
+</ul>
+<div class="button-container">
+<button (click)="logout()">Sair</button>
+<div *ngIf="shouldShowSidebar()"></div>
 </div>
-<div id="wrapper">
-  <!-- Conteúdo específico do usuário -->
 </div>
