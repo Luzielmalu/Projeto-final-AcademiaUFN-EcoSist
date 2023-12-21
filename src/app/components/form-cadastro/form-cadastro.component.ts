@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cadastro } from '../../models/cadastro';
 import { CadastroService } from '../../services/cadastro.service';
@@ -11,7 +12,7 @@ export class FormCadastroComponent  {
   @Input()
   btnText: any;
   router: any;
-  constructor(private cadastroService: CadastroService) {}
+  constructor(private cadastroService: CadastroService, private location: Location) {}
 
   checkEmailAvailability(email: string): void {
     this.cadastroService.checkEmailExists(email).subscribe((exists) => {
@@ -42,10 +43,12 @@ export class FormCadastroComponent  {
     this.cadastroService.cadastroUsuario(this.novoCadastro).subscribe(
       (usuarioCadastrado) => {
         // Exibe um alerta de sucesso
-        alert('Seus dados foram cadastrados com sucesso! Agora, efetue seu login para realizaro agendamento da sua coleta!');
+        alert('Seus dados foram cadastrados com sucesso!');
 
         // Redireciona para a página do perfil do usuário
-        this.router.navigate(['/perfilUsuario']);
+        //this.router.navigate(['/perfilUsuario']);
+        this.location.back();//volta para página anterior
+
       },
       (error) => {
         // Lógica de tratamento de erro, se necessário

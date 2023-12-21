@@ -12,12 +12,15 @@ import { RegistrarComponent } from './components/pages/registrar/registrar.compo
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
+import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 
 const routes: Routes = [
 
   {path: '', component: HomeComponent},
   {path: 'sobre', component: SobreComponent},
   {path:'cadastrar', component: CadastroComponent},
+  {path: 'cadastro/cpfCnpj', component: ListaCadastroComponent},
   {path:'contato',component: ContatoComponent},
   {path: 'login', component: LoginComponent},
   {
@@ -41,7 +44,9 @@ const routes: Routes = [
 
   {path: 'registrar', component: RegistrarComponent},
   {path: 'agendar', component: AgendarComponent},
-  {path: 'adminDashboard', component: AdminDashboardComponent}
+  {path: 'adminDashboard', component: AdminDashboardComponent},
+  {path: 'perfilUsuario/cadastro', component: ListaCadastroComponent},
+  {path: 'perfilUsuario/agendamento', component: ListaAgendamentoComponent}
 
 ];
 

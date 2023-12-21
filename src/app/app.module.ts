@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,8 @@ import { RegistrarComponent } from './components/pages/registrar/registrar.compo
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
+import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
 
 @NgModule({
@@ -52,6 +55,8 @@ import { TokenInterceptor } from './services/custome.interceptor';
     PerfilAdminComponent,
     AdminDashboardComponent,
     FormAgendarComponent,
+    ListaCadastroComponent,
+    ListaAgendamentoComponent,
 
   ],
   imports: [
@@ -69,7 +74,8 @@ import { TokenInterceptor } from './services/custome.interceptor';
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
 
 
 

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators'; // Adicione esta linha para importar catchError diretamente
+import { catchError, map } from 'rxjs/operators';
 import { UserService } from './user.service';
 
 

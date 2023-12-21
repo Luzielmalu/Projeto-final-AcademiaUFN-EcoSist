@@ -1,7 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Agendar } from '../../models/agendar';
 import { AgendarService } from '../../services/agendar.service';
+
 @Component({
   selector: 'app-form-agendar',
   templateUrl: './form-agendar.component.html',
@@ -12,7 +14,7 @@ import { AgendarService } from '../../services/agendar.service';
 export class FormAgendarComponent {
   @Input() btnText: any;
 
-  constructor(private agendarService: AgendarService, private router: Router){
+  constructor(private agendarService: AgendarService, private router: Router, private location: Location){
 
   }
 
@@ -35,7 +37,8 @@ export class FormAgendarComponent {
         alert('Agendamento  realizado com sucesso! Enviaremos para seu e-mail todas as informações.Antes  da coleta, você receberá o contato do nosso funcionário responsável pela coleta,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário. Em caso de cancelamento, por gentileza, realizar com um dia de antecedência!');
 
         // Redireciona para a página do perfil do usuário
-        this.router.navigate(['/perfilUsuario']);
+        //this.router.navigate(['/perfilUsuario']);
+        this.location.back();
       },
       (error) => {
         // Lógica de tratamento de erro, se necessário
@@ -52,11 +55,6 @@ export class FormAgendarComponent {
     } // Limpa os campos do novo cadastro
 
   }
-  redirecionarParaDashboard() {
-    // Utilize o método navigateByUrl ou navigate para redirecionar para a home
-    this.router.navigateByUrl('');
-    // Ou
-    // this.router.navigate(['']);
-  }
+
 }
 

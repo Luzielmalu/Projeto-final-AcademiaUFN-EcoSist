@@ -7,10 +7,20 @@ import { Registrar } from '../models/registrar';
   providedIn: 'root'
 })
 export class RegistrarService {
+  //registrarUsuario(novoRegistro: Registrar) {
+   // throw new Error('Method not implemented.');
+  //}
 
   private url = 'http://localhost:8089/auth/register';
 
   constructor(private httpClient: HttpClient) { }
+
+  registrarUsuario(novoRegistro: Registrar): Observable<any> {
+    // Faça a chamada HTTP para registrar o usuário
+    // Substitua 'sua-url-de-registro' pela URL real do seu endpoint de registro
+    return this.httpClient.post<any>('http://localhost:8089/auth/register', novoRegistro);
+  }
+
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'Application/json'})
   }
