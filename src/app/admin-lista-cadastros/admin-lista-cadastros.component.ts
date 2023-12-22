@@ -62,7 +62,7 @@ buscarDados: any;
   }
   sair(): void {
     console.log('Botão Sair clicado');
-    this.router.navigate(['/adminDashboard']);
+    this.router.navigate(['/admin-dashboard']);
   }
 
 }

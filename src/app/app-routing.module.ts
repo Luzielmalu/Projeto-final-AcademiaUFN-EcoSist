@@ -9,7 +9,6 @@ import { CadastroComponent } from './components/pages/cadastro/cadastro.componen
 import { ContatoComponent } from './components/pages/contato/contato.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { LayoutComponent } from './components/pages/layout/layout.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
@@ -35,7 +34,7 @@ const routes: Routes = [
     redirectTo:'login',
     pathMatch:'full'
   },
-  {
+  /*{
     path:'',
     component:LayoutComponent,
     children:  [
@@ -44,22 +43,20 @@ const routes: Routes = [
         component: DashboardComponent
       }
     ]
-  },
+  },*/
   {path: 'perfilUsuario', component: PerfilUsuarioComponent},
-  {path:'perfilAdmin', component: PerfilAdminComponent},
+  {path: 'perfilAdmin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },
   {path: 'dashboard', component: DashboardComponent},
 
   {path: 'registrar', component: RegistrarComponent},
   {path: 'agendar', component: AgendarComponent},
-  {path: 'admin-dashboard', component: AdminDashboardComponent},
+  {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuardService]},
   {path: 'perfilUsuario/cadastro', component: ListaCadastroComponent},
   {path: 'perfilUsuario/agendamento', component: ListaAgendamentoComponent},
-  {path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },
-  {
-    path: 'perfilAdmin',
-    component: PerfilAdminComponent,
-    canActivate: [AuthGuardService],
-  },
+  /*{path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },*/
+  {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
+  {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
+
 ];
 
 @NgModule({

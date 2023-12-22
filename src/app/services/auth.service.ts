@@ -58,9 +58,7 @@ export class AuthService {
     }
 
     logout(): void {
-      // Lógica de logout
-      this.isAuthenticated = false;
-      this.userType = '';
+      this.router.navigate(['/login']);
     }
 
 }
