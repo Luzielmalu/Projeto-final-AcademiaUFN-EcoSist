@@ -1,8 +1,48 @@
-#wrapper {
-  display: flex;
+
+/* user-dashboard.component.css */
+.dashUsuario{
+  position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
+  top: 43%; /* Posicionamento a partir do topo */
+  left: 50%; /* Posicionamento a partir da esquerda */
+  transform: translate(-50%, -50%); /* Centraliza o bloco */
+  z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
+  background-color: #a8f39b; /* Cor de fundo desejada */
+  padding: 90px; /* Adapte conforme necessário */
+  text-align: center; /* Centraliza o texto */
+  max-width: 600px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 100px;
+  height: 400px; /* Ajuste a altura conforme necessário */
+  border-radius: 10px;
+  border: 2px solid rgb(68, 243, 77);
+  line-height: 1.5; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
+
+}
+/* SeuComponente.css (ou SeuComponente.scss se estiver usando Sass) */
+.dashUsuario p{
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 1px;
+}
+.dashUsuario a{
+  font-size: 18px;
+}
+.button-container {
+  margin-top: 50px; /* Espaçamento superior para separar do conteúdo acima, ajuste conforme necessário */
 }
 
-#content {
-  flex-grow: 1;
-  padding: 16px;
+button {
+  padding: 10px 15px;
+  background-color: #4604e0; /* Cor de fundo verde, ajuste conforme necessário */
+  color: #fff; /* Cor do texto branco, ajuste conforme necessário */
+  border: none;
+  border-radius: 5px; /* Borda arredondada, ajuste conforme necessário */
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: #332fff; /* Cor de fundo verde mais escura quando o mouse está sobre o botão */
+}
+
+

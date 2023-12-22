@@ -30,6 +30,9 @@ export class AgendarService {
         retry(2),
         catchError(this.handleError))
   }
+  getAgendarByCpfCnpj(cpfCnpj: string): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/cpfCnpj?cpfCnpj=${cpfCnpj}`);
+}
   createAgendar(agendar: Agendar): Observable<Agendar> {
     return this.httpClient.post<Agendar>(this.url, agendar);
   }

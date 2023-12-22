@@ -39,13 +39,7 @@ export class CadastroService {
   getCadastroByCpfCnpj(cpfCnpj: string): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/cpfCnpj?cpfCnpj=${cpfCnpj}`);
 }
-    //const params = new HttpParams().set('cpfCnpj', cpfCnpj);
-      //return this.httpClient.get<any>('cadastro/cpfCnpj', { params });
 
-  /*getCadastroByCpfCnpj(cpfCnpj: string): Observable<Cadastro[]> {
-    const url = `${this.url}/cpfCnpj/${cpfCnpj}`;
-    return this.httpClient.get<Cadastro[]>(url);
-  }*/
   createCadastro(cadastro: Cadastro): Observable<Cadastro> {
     return this.httpClient.post<Cadastro>(this.url, cadastro);
   }

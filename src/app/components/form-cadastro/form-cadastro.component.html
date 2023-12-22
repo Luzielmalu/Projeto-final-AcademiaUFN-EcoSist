@@ -1,9 +1,7 @@
 <div class="form-container">
 <form  (ngSubmit)="onSubmit()">
   <h2>Preencha seus dados para o <span>cadastro</span></h2>
-  <p>**você precisa estar logado para cadastrar**</p>
-  <span style="display: block; margin-bottom: 5px;">Já tem registro?<a routerLink="/registrar" class="link-registrar"> Clique aqui</a> e registre-se!
-  </span>
+
 <div class="form-group">
   <label for="nomeCompleto">Nome:</label>
   <input type="text" id="nomeCompleto" [(ngModel)]="novoCadastro.nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required/>

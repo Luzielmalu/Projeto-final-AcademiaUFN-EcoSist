@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
   background-color: #a8f39b; /* Cor de fundo desejada */
-  padding: 20px; /* Adapte conforme necessário */
+  padding: 90px; /* Adapte conforme necessário */
   text-align: center; /* Centraliza o texto */
   max-width: 600px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
@@ -18,9 +18,17 @@
 
 }
 /* SeuComponente.css (ou SeuComponente.scss se estiver usando Sass) */
-
+.dashUsuario p{
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 1px;
+}
+.dashUsuario a{
+  font-size: 18px;
+}
 .button-container {
-  margin-top: 20px; /* Espaçamento superior para separar do conteúdo acima, ajuste conforme necessário */
+  margin-top: 50px; /* Espaçamento superior para separar do conteúdo acima, ajuste conforme necessário */
 }
 
 button {

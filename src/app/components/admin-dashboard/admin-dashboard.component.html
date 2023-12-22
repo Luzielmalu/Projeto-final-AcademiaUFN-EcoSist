@@ -3,11 +3,9 @@
   <p>Seja bem-vindo!     <span class="material-symbols-outlined">
     account_circle
     </span></p>
-    <li><a routerLink="/perfilAdmin">Cadastros</a></li>
-    <li><a routerLink="/perfilAdmin">Agendamentos</a></li>
-    <li><a routerLink="/coletas">Sobre nós</a></li>
+    <li><a routerLink="/perfilAdmin/cadastro">Cadastros dos usuários</a></li>
+    <li><a routerLink="/perfilAdmin/agendamento">Agendamentos das coletas</a></li>
 </ul>
 <div class="button-container">
 <button (click)="logout()">Sair</button>
-<div *ngIf="shouldShowSidebar()"></div>
 </div>

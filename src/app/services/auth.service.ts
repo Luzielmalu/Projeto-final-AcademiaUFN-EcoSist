@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { UserService } from './user.service';
 
 
@@ -11,11 +11,15 @@ import { UserService } from './user.service';
 })
 export class AuthService {
   private isAuthenticated: boolean = false;
-
+  private userType: string = '';
+  hasRoles: any;
   getAuthenticationStatus(): boolean {
     return this.isAuthenticated;
   }
-  setAuthenticationStatus(status: true) {
+  getUserType(): string {
+    return this.userType;
+  }
+  setAuthenticationStatus(status: boolean): void{
     this.isAuthenticated = status;
   }
   // Método para obter o status de autenticação
@@ -25,18 +29,20 @@ export class AuthService {
 
     login(login: string, password: string): Observable<any> {
       // Simula uma chamada HTTP para verificar o login e senha
-      const fakeApiUrl = 'http://localhost:8089/auth/login';
+      const fakeUrl = 'http://localhost:8089/auth/login';
       const loginData = { login, password };
 
-      return this.http.post(fakeApiUrl, loginData).pipe(
-        map((response: any) => {
+      return this.http.post(fakeUrl, loginData).pipe(
+        tap((response: any) => {
           // Se a autenticação for bem-sucedida, o servidor pode retornar informações adicionais, como o tipo de usuário
-          const userType = response.userType || 'USER';
-
-          if (userType === 'ADMIN') {
-            this.router.navigate(['/adminDashboard']);
+          this.userType = response.userType || 'USER';
+          this.isAuthenticated = true;
+          if (this.userType === 'ADMIN') {
+            this.router.navigate(['/admin-dashboard']);
           } else {
             this.router.navigate(['/dashboard']);
+            console.log('Redirecionado para /admin-dashboard');
+
           }
 
           // Retorne o valor que desejar (ou undefined/null se não houver valor específico a ser retornado)
@@ -51,13 +57,10 @@ export class AuthService {
       );
     }
 
-    logout() {
-      // Realize as operações de logout, se necessário
-      // Por exemplo, limpar tokens de autenticação, redefinir o estado, etc.
-      this.setAuthenticationStatus(true);
-      // Navegue para a página de login ou outra página adequada
-      this.router.navigate(['/']);
+    logout(): void {
+      // Lógica de logout
+      this.isAuthenticated = false;
+      this.userType = '';
     }
-
 
 }

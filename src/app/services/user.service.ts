@@ -6,18 +6,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
+  hasRequiredRoles(requiredRoles: string[]) {
+    throw new Error('Method not implemented.');
+  }
+  private userType: string = '';
   constructor(private http: HttpClient) {}
 
-    getUserType(login: string): Observable<string> {
-        // Implemente a lógica para obter o tipo de usuário do backend ou de onde for necessário
-        // Pode ser uma chamada HTTP para um endpoint específico no seu backend
-        // ...
+  getUserType(): string {
+    return this.userType;
+  }
+  fetchUserType(): Observable<string> {
 
-        // Exemplo simplificado: se o username contiver "admin", consideramos um administrador
-        return new Observable<string>((observer) => {
-            observer.next(login.includes('ADMIN') ? 'ADMIN' : 'USER');
-            observer.complete();
-        });
+    return this.http.get<string>('http://localhost:8089/auth/login');
+  }
+  setUserType(userType: string): void {
+      this.userType = userType;
     }
 }

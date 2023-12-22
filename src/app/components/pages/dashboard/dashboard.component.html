@@ -1,14 +1,22 @@
 
-
+<style>
+  .material-symbols-outlined {
+    vertical-align: middle;
+  }
+</style>
 <div class="dashUsuario">
 <ul>
-  <p>Seja bem-vindo!     <span class="material-symbols-outlined">
+  <p>Seja bem-vindo!   <span class="material-symbols-outlined">
     account_circle
     </span></p>
-    <li><a routerLink="/cadastrar">Cadastrar seus dados</a></li>
-    <li><a routerLink="/agendar">Agendar coleta</a></li>
-    <li><a routerLink="/perfilUsuario/cadastro">Seu cadastro</a></li>
-    <li><a routerLink="/perfilUsuario/agendamento">Seus agendamentos</a></li>
+      <br><span class="material-symbols-outlined">
+        library_books <a routerLink="/cadastrar">Cadastrar seus dados</a></span>
+      <br><span class="material-symbols-outlined">
+        calendar_clock <a routerLink="/agendar">Agendar sua coleta</a></span>
+        <br><span class="material-symbols-outlined">
+          person <a routerLink="/perfilUsuario/cadastro">Seu cadastro</a></span>
+    <br><span class="material-symbols-outlined">
+      calendar_month <a routerLink="/perfilUsuario/agendamento">Seus agendamentos</a></span>
 
 
 
@@ -16,6 +24,4 @@
 </ul>
 <div class="button-container">
 <button (click)="logout()">Sair</button>
-<div *ngIf="shouldShowSidebar()"></div>
-</div>
 </div>

@@ -14,8 +14,4 @@ export class AdminDashboardComponent {
     this.authService.logout();
   }
 
-shouldShowSidebar(): boolean {
-  // Verifica se o usuário está autenticado
-  return this.authService.getAuthenticationStatus();
-}
 }

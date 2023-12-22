@@ -12,8 +12,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
+import { AdminListaAgendamentosComponent } from './admin-lista-agendamentos/admin-lista-agendamentos.component';
+import { AdminListaCadastrosComponent } from './admin-lista-cadastros/admin-lista-cadastros.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuardService } from './auth-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormAgendarComponent } from './components/form-agendar/form-agendar.component';
@@ -34,7 +37,6 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,8 @@ import { TokenInterceptor } from './services/custome.interceptor';
     FormAgendarComponent,
     ListaCadastroComponent,
     ListaAgendamentoComponent,
+    AdminListaCadastrosComponent,
+    AdminListaAgendamentosComponent,
 
   ],
   imports: [
@@ -87,7 +91,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
         useClass:TokenInterceptor,
         multi:true
       },
-
+      [AuthGuardService],
   ],
   bootstrap: [AppComponent]
 })
