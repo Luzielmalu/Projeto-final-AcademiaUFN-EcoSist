@@ -30,14 +30,16 @@
   margin-right: 8px;
   font-size: 12px;
   padding: 8px;
-
+  cursor: pointer;
 }
 
 .table-container input {
   padding: 8px;
   margin-right: 10px;
 }
-
+.table-container h2{
+  padding: 20px;
+}
 
 /* Estilo para o botão de atualizar */
 /*.botão-atualizar {

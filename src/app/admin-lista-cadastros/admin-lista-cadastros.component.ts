@@ -8,9 +8,7 @@ import { CadastroService } from '../services/cadastro.service';
   styleUrl: './admin-lista-cadastros.component.css'
 })
 export class AdminListaCadastrosComponent implements OnInit{
-
   dataSource: any[] = [];
-
   displayedColumns: string[] = [
     'id',
     'nomeCompleto',
@@ -26,7 +24,6 @@ export class AdminListaCadastrosComponent implements OnInit{
     'observacao',
     'actions',
   ];
-buscarDados: any;
 
   constructor(private cadastroService: CadastroService, private router: Router) {}
 
@@ -66,4 +63,8 @@ buscarDados: any;
   }
 
 }
+
+
+
+
 

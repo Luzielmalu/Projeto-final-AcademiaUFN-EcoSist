@@ -11,7 +11,7 @@ export class PerfilUsuarioComponent implements OnInit{
 
   ngOnInit(): void {}
   isLoggedIn(): boolean {
-    return this.authService.getAuthenticationStatus();
+    return this.authService.isAuthenticated();
   }
     logout(): void {
       this.authService.logout();

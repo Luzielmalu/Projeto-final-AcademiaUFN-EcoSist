@@ -18,19 +18,19 @@ export class HeaderComponent implements OnInit {
 
 
   isLoggedIn(): boolean {
-    return this.authService.getAuthenticationStatus();
+    return this.authService.isAuthenticated();
   }
 
   logout(): void {
     this.authService.logout();
   }
   login() {
-    // Lógica de login aqui
+
     console.log('Usuário está tentando fazer login');
   }
   onLinkClick(): void {
-    console.log('Verificando autenticação:', this.authService.getAuthenticationStatus());
-    // Resto do código
+    console.log('Verificando autenticação:', this.authService.isAuthenticated());
+
   }
 }
 

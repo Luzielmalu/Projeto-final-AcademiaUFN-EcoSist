@@ -26,42 +26,42 @@ export class AgendarComponent {
         this.agendamentos = agendar;
       });
     }
-    createAgendar(novoAgendamento: Agendar): void {
-      this.agendarService.createAgendar(novoAgendamento).subscribe(() => {
+    createAgendamento(novoAgendamento: Agendar): void {
+      this.agendarService.createAgendamento(novoAgendamento).subscribe(() => {
         this.getAgendamentos(); // Atualiza a lista após a criação
 
       });
     }
 
-    addAgendar(){
+    addAgendamento(){
       this.agendar.dia = "19/12/2023";
       this.agendar.horario = "9h00";
       this.agendar.cpfCnpj = "05543104418";
       this.agendar.enderecoColeta = "rua";
       this.agendar.quantOleo = 10;
-      this.agendarService.saveAgendar(this.agendar).subscribe(() => {
+      this.agendarService.saveAgendamento(this.agendar).subscribe(() => {
     });
     }
-    saverAgendar(form: NgForm){
+    saverAgendamento(form: NgForm){
       if (form.valid) {
       if(this.agendar.id !== undefined){
-        this.agendarService.updateAgendar(this.agendar).subscribe(() => {
+        this.agendarService.updateAgendamento(this.agendar).subscribe(() => {
           this.cleanForm(form);
         });
         }else{
-          this.agendarService.saveAgendar(this.agendar).subscribe(() =>{
+          this.agendarService.saveAgendamento(this.agendar).subscribe(() =>{
             this.cleanForm(form);
           });
       }
     }
   }
-    deleteAgendar(agendar: Agendar){
-    this.agendarService.deleteAgendar(agendar).subscribe(() => {
+    deleteAgendamento(agendamento: Agendar){
+    this.agendarService.deleteAgendamento(agendamento).subscribe(() => {
       this.getAgendamentos();
     });
     }
-    editAgendar(agendar: Agendar){
-      this.agendar = { ...agendar };
+    editAgendamento(agendamento: Agendar){
+      this.agendar = { ...agendamento };
     }
 
     cleanForm(form: NgForm){

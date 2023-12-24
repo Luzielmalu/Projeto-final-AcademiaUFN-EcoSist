@@ -32,7 +32,9 @@
   padding: 8px;
 
 }
-
+.table-container h2{
+  padding: 20px;
+}
 .table-container input {
   padding: 8px;
   margin-right: 10px;

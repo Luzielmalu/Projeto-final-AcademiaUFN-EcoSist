@@ -42,9 +42,10 @@ export class ListaCadastroComponent implements OnInit{
               }
           );
   }
+
   }
-  atualizarCadastro(cadastro: any): void {
-    // Lógica para atualizar o cadastro
+  getCadastros() {
+    throw new Error('Method not implemented.');
   }
 
   sair(): void {
@@ -52,7 +53,4 @@ export class ListaCadastroComponent implements OnInit{
     this.router.navigate(['/dashboard']);
   }
 
-
 }
-
-

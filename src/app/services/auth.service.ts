@@ -1,64 +1,87 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { UserService } from './user.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated: boolean = false;
   private userType: string = '';
-  hasRoles: any;
-  getAuthenticationStatus(): boolean {
-    return this.isAuthenticated;
-  }
+  getUserRoles: any;
+
   getUserType(): string {
     return this.userType;
   }
-  setAuthenticationStatus(status: boolean): void{
-    this.isAuthenticated = status;
+
+  isAuthenticated(): boolean {
+    return !!this.getToken();
   }
-  // Método para obter o status de autenticação
-  constructor(private http: HttpClient,
-    private router: Router,
-    private userService: UserService) { }
 
-    login(login: string, password: string): Observable<any> {
-      // Simula uma chamada HTTP para verificar o login e senha
-      const fakeUrl = 'http://localhost:8089/auth/login';
-      const loginData = { login, password };
+  login(login: string, password: string): Observable<any> {
+    const fakeUrl = 'http://localhost:8089/auth/login';
+    const loginData = { login, password };
 
-      return this.http.post(fakeUrl, loginData).pipe(
-        tap((response: any) => {
-          // Se a autenticação for bem-sucedida, o servidor pode retornar informações adicionais, como o tipo de usuário
-          this.userType = response.userType || 'USER';
-          this.isAuthenticated = true;
-          if (this.userType === 'ADMIN') {
-            this.router.navigate(['/admin-dashboard']);
-          } else {
-            this.router.navigate(['/dashboard']);
-            console.log('Redirecionado para /admin-dashboard');
+    return this.http.post(fakeUrl, loginData).pipe(
+      tap((response: any) => {
+        const token = response.token;
+        const tokenPayload = this.decodeTokenPayload(token);
+        this.userType = tokenPayload?.role || 'USER';
 
-          }
+        if (this.userType === 'ADMIN') {
+          console.log('Tipo de usuário' + this.userType);
+          this.router.navigate(['admin-dashboard']);
 
-          // Retorne o valor que desejar (ou undefined/null se não houver valor específico a ser retornado)
-          return null;
-        }),
-        catchError((error) => {
-          // Lógica de tratamento de erro (por exemplo, redirecionar para uma página de erro)
-          console.error('Erro durante o login', error);
-          this.router.navigate(['/error']);
-          return of(null); // Retornando um Observable vazio ou um valor padrão em caso de erro
-        })
-      );
+        } else {
+          console.log('Tipo de usuário' + this.userType);
+          this.router.navigate(['dashboard']);
+
+        }
+
+        return null;
+      }),
+      catchError((error) => {
+        console.error('Erro durante o login', error);
+        this.router.navigate(['/error']);
+        return of(null);
+      })
+    );
+  }
+  decodeToken(token: string): any {
+    try {
+      const decodedToken = jwtDecode(token);
+      console.log(decodedToken); // Mova esta linha para dentro do bloco try
+      return decodedToken;
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
     }
+  }
+  logout(): void {
+    localStorage.removeItem('loginToken');
+    this.router.navigate(['/login']);
+  }
 
-    logout(): void {
-      this.router.navigate(['/login']);
+  private getToken(): string | null {
+    return localStorage.getItem('loginToken');
+  }
+
+  private decodeTokenPayload(token: string): any {
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payload = atob(payloadBase64);
+      return JSON.parse(payload);
+    } catch (error) {
+      console.error('Erro ao decodificar o token', error);
+      return null;
     }
+  }
 
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 }

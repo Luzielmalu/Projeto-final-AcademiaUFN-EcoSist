@@ -71,11 +71,13 @@
 
 <div class="dashAdmin">
 <ul>
-  <p>Seja bem-vindo!     <span class="material-symbols-outlined">
+  <p>Seja bem-vindo, Admin!     <span class="material-symbols-outlined">
     account_circle
     </span></p>
-    <li><a routerLink="/perfilAdmin/cadastro">Cadastros dos usuários</a></li>
-    <li><a routerLink="/perfilAdmin/agendamento">Agendamentos das coletas</a></li>
+    <span class="material-symbols-outlined">
+      library_books  <a routerLink="/perfilAdmin/cadastro">Cadastros dos usuários</a></span>
+    <span class="material-symbols-outlined">
+      calendar_clock  <a routerLink="/perfilAdmin/agendamento">Agendamentos das coletas</a></span>
 </ul>
 <div class="button-container">
 <button (click)="logout()">Sair</button>

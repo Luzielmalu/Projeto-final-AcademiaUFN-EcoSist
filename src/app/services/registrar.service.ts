@@ -17,7 +17,6 @@ export class RegistrarService {
 
   registrarUsuario(novoRegistro: Registrar): Observable<any> {
     // Faça a chamada HTTP para registrar o usuário
-    // Substitua 'sua-url-de-registro' pela URL real do seu endpoint de registro
     return this.httpClient.post<any>('http://localhost:8089/auth/register', novoRegistro);
   }
 

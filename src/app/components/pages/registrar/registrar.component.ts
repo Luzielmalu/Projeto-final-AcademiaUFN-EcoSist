@@ -33,7 +33,8 @@ title = 'Registrar'
       });
     }
     addRegistrar(){
-      this.registrar.login = "Luzielma";
+      this.registrar.nome = "Luzielma";
+      this.registrar.login = "LuzielmaSilva";
       this.registrar.password = "123456";
       this.registrar.role = "USER";
       this.registrarService.saveRegistrar(this.registrar).subscribe(() => {

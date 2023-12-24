@@ -69,9 +69,8 @@
 <!-- tabela-cadastro.component.html -->
 
 <div class="table-container mat-elevation-z8">
-  <input [(ngModel)]="buscarDados" placeholder="Digite o Id ou cpf">
-<button (click)="buscarDados()">Buscar</button>
-  <table mat-table [dataSource]="dataSource">
+  <h2>Cadastros dos usuários</h2>
+  <mat-table mat-table [dataSource]="dataSource">
     <!-- Defina as colunas aqui -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -128,7 +127,7 @@
           <mat-icon>Atualizar</mat-icon>
         </button>
         <button mat-icon-button color="myCustomColor" matTooltip="Excluir" (click)="deleteCadastro(cadastro)" value="Excluir">
-          <mat-icon>Atualizar</mat-icon>
+          <mat-icon>Ecluir</mat-icon>
         </button>
         <button mat-icon-button  color="myCustomColor" matTooltip="Sair" (click)="sair()" value="Sair">
           <mat-icon>Sair</mat-icon>
@@ -137,4 +136,5 @@
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+
+  </mat-table>

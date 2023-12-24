@@ -27,7 +27,7 @@ export class ListaAgendamentoComponent {
   buscarPorCpfCnpj() {
     if (this.cpfParaBuscar) {
       const cpfCnpj = this.cpfParaBuscar.replace(/\D/g, ''); // Remover caracteres não numéricos do CPF/CNPJ
-      this.agendarService.getAgendarByCpfCnpj(this.cpfParaBuscar)
+      this.agendarService.getAgendamentoByCpfCnpj(this.cpfParaBuscar)
           .subscribe(
               (dados) => {
                 console.log('Dados recebidos:', dados);

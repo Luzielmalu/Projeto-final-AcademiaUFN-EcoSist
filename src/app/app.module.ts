@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -37,6 +38,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
+import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
     ListaAgendamentoComponent,
     AdminListaCadastrosComponent,
     AdminListaAgendamentosComponent,
+    AtualizarCadastroComponent,
 
   ],
   imports: [
@@ -79,7 +82,8 @@ import { TokenInterceptor } from './services/custome.interceptor';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
 
 
 

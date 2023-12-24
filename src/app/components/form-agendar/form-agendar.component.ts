@@ -34,7 +34,7 @@ export class FormAgendarComponent {
     this.agendarService.agendamentoUsuario(this.novoAgendamento).subscribe(
       (usuarioAgendado) => {
         // Exibe um alerta de sucesso
-        alert('Agendamento  realizado com sucesso! Enviaremos para seu e-mail todas as informações.Antes  da coleta, você receberá o contato do nosso funcionário responsável pela coleta,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário. Em caso de cancelamento, por gentileza, realizar com um dia de antecedência!');
+        alert('Agendamento  realizado com sucesso! Antes  da coleta, você receberá o contato do nosso funcionário responsável para confirmação,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário. Em caso de cancelamento, por gentileza, realizar com um dia de antecedência!');
 
         // Redireciona para a página do perfil do usuário
         //this.router.navigate(['/perfilUsuario']);

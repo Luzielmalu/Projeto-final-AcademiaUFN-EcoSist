@@ -24,44 +24,44 @@ export class AgendarService {
       retry(2),
       catchError(this.handleError))
   }
-  getAgendarById(id: number): Observable<Agendar> {
+  getAgendamentoById(id: number): Observable<Agendar> {
     return this.httpClient.get<Agendar>(`${this.url}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
-  getAgendarByCpfCnpj(cpfCnpj: string): Observable<any> {
+  getAgendamentoByCpfCnpj(cpfCnpj: string): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/cpfCnpj?cpfCnpj=${cpfCnpj}`);
 }
-  createAgendar(agendar: Agendar): Observable<Agendar> {
-    return this.httpClient.post<Agendar>(this.url, agendar);
+  createAgendamento(agendamento: Agendar): Observable<Agendar> {
+    return this.httpClient.post<Agendar>(this.url, agendamento);
   }
-  saveAgendar(agendar: Agendar): Observable<Agendar>{
-    return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendar), this.httpOptions)
+  saveAgendamento(agendamento: Agendar): Observable<Agendar>{
+    return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendamento), this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError))
 
   }
-  updateAgendar(agendar: Agendar): Observable<Agendar>{
-    return this.httpClient.put<Agendar>(this.url +'/'+ agendar.id, JSON.stringify(agendar), this.httpOptions)
+  updateAgendamento(agendamento: Agendar): Observable<Agendar>{
+    return this.httpClient.put<Agendar>(this.url +'/'+ agendamento.id, JSON.stringify(agendamento), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  deleteAgendar(agendar: Agendar){
-    return this.httpClient.delete<Agendar>(this.url +'/'+ agendar.id)
+  deleteAgendamento(agendamento: Agendar){
+    return this.httpClient.delete<Agendar>(this.url +'/'+ agendamento.id)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
-  adicionarAgendar(agendar: Agendar): Observable<Agendar>{
-    console.log(this.url, JSON.stringify(agendar))
+  adicionarAgendamento(agendamento: Agendar): Observable<Agendar>{
+    console.log(this.url, JSON.stringify(agendamento))
     try {
       // Verifica se o localStorage está disponível
       if (localStorage) {
         // Se estiver disponível, continue com o código original
-        return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendar), this.httpOptions)
+        return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendamento), this.httpOptions)
           .pipe(
             retry(1),
             catchError((error: HttpErrorResponse) => this.handleError(error)) // Adicionado tipo de parâmetro

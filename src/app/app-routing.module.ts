@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminListaAgendamentosComponent } from './admin-lista-agendamentos/admin-lista-agendamentos.component';
 import { AdminListaCadastrosComponent } from './admin-lista-cadastros/admin-lista-cadastros.component';
+import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AgendarComponent } from './components/pages/agendar/agendar.component';
@@ -56,7 +57,7 @@ const routes: Routes = [
   /*{path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },*/
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
-
+{path:'atualizar-cadastro/:cpfCnpj', component: AtualizarCadastroComponent}
 ];
 
 @NgModule({
