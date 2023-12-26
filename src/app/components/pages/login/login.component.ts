@@ -21,15 +21,18 @@ export class LoginComponent {
       if(res.token) {
         alert('login feito com sucesso!');
         localStorage.setItem('loginToken', res.token);/*salva o token no localstorage*/
+
         this.authService.login(this.loginObj.login, this.loginObj.password).subscribe(
           (res: any) => {
-            console.log(res); //isso res é o nome da resposta que eu defini;
+            console.log(res);
+
             if (res.token) {
               //res.token é a resposta no caso o token recebido
-              //this.openSnackBar();
               localStorage.setItem('loginToken', res.token); //aqui eu salvo o token no localStorage
 
               const decodedToken = this.authService.decodeToken(res.token);
+
+              if (decodedToken && decodedToken.roles && decodedToken.roles.includes) {
               if (decodedToken.roles.includes('ROLE_ADMIN')) {
                 this.router.navigateByUrl('/admin-dashboard');
               } else if (decodedToken.roles.includes('ROLE_USER')) {
@@ -37,14 +40,18 @@ export class LoginComponent {
               } else {
                 alert('Usuário não reconhecido');
               }
-            } else {
-              console.log('This is the log message: ' + res.message);
-              alert('Login failed: ' + res.message);
+            //} else {
+              //console.log('This is the log message: ' + res.message);
+              //alert('Login failed: ' + res.message);
+              //}
             }
-          },
+          }
+        },
+
+
           (error) => {
-            console.error('An error occurred during login:', error);
-            alert('An error occurred during login. Please try again.');
+            console.error('Um erro ocorreu durante o login:', error);
+            alert('Um erro ocorreu durante o login. Por favor, tente novamente.');
           }
         );
         this.router.navigateByUrl('dashboard');

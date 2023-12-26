@@ -38,6 +38,14 @@
       <label for="quantidadeOleo">Quantidade de óleo:</label>
       <input type="number" id="quantidade" [(ngModel)]="novoAgendamento.quantOleo" name="quantOleo" placeholder="Digite a quantidade de óleo. Ex.: 10" required/>
     </div>
-
+    <div class="form-group">
+      <label for="userType">Status da coleta:</label>
+      <select class="form-control" id="status" [(ngModel)]="novoAgendamento.statusColeta" name="statusColeta" required>
+        <option value="" disabled selected>Selecione: a realizar</option>
+        <option value="a realizar">A realizar</option>
+        <option value="realizada">Realizada</option>
+        <option value="cancelada">Cancelada</option>
+        </select>
+    </div>
     <input type="submit" value="{{btnText || 'Enviar'}}"/>
 </form>

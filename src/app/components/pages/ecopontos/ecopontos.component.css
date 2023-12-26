@@ -73,7 +73,7 @@ img {
   background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
   height: 300px;
   margin-bottom: 30px;
-  line-height: 1.0;
+  line-height: 1.3;
 }
 
 /* A última criança não deve ter margem direita para evitar espaçamento extra */
@@ -98,16 +98,19 @@ img {
   line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
 }
 .botão-ok{
+  background-color: rgb(43, 33, 238);
   color: white;
-  background-color: #4d19f8; /* Cor de fundo desejada */
-  padding: 15px; /* Adapte conforme necessário */
-  text-align: center; /* Centraliza o texto */
-  max-width: 100px; /* Define uma largura máxima para o conteúdo */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  margin-bottom: 70px;
-  height: 40px; /* Ajuste a altura conforme necessário */
-  border-radius: 9px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid rgb(43, 33, 238);
+  padding: 0.6em 1em;
+  font-weight: bold;
+  font-size: 1.1em;
   cursor: pointer;
-  border: 2px solid rgb(#4d19f8);
-  line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
+  transition: 0.4s;
+  height: auto;
+  margin-top: 10px;
+  width: 15%;
+  float: center;
+  box-sizing: border-box;
 }

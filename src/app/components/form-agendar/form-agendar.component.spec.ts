@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAgendarComponent } from './FormAgendarComponent';
+import { FormAgendarComponent } from './form-agendar.component';
 
 describe('FormAgendarComponent', () => {
   let component: FormAgendarComponent;

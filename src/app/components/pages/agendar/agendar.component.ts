@@ -39,6 +39,7 @@ export class AgendarComponent {
       this.agendar.cpfCnpj = "05543104418";
       this.agendar.enderecoColeta = "rua";
       this.agendar.quantOleo = 10;
+      this.agendar.statusColeta = "a realizar";
       this.agendarService.saveAgendamento(this.agendar).subscribe(() => {
     });
     }

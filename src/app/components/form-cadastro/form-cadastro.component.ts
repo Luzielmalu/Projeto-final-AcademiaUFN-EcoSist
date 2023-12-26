@@ -12,6 +12,7 @@ export class FormCadastroComponent  {
   @Input()
   btnText: any;
   router: any;
+  isSubmitting: boolean | undefined;
   constructor(private cadastroService: CadastroService, private location: Location) {}
 
   checkEmailAvailability(email: string): void {
@@ -39,7 +40,8 @@ export class FormCadastroComponent  {
   };
 
   onSubmit(): void {
-    this.cadastrar.emit(this.novoCadastro);
+    this.isSubmitting = true;
+
     this.cadastroService.cadastroUsuario(this.novoCadastro).subscribe(
       (usuarioCadastrado) => {
         // Exibe um alerta de sucesso
@@ -54,7 +56,11 @@ export class FormCadastroComponent  {
         // Lógica de tratamento de erro, se necessário
         console.error('Erro durante o cadastro', error);
       }
-    );
+      ).add(() => {
+        // Reativa o botão após a conclusão da requisição (com sucesso ou erro)
+        this.isSubmitting = false;
+     });
+
     this.novoCadastro = {
       id: '',
     nomeCompleto: '',

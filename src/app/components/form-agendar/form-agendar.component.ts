@@ -13,6 +13,7 @@ import { AgendarService } from '../../services/agendar.service';
 })
 export class FormAgendarComponent {
   @Input() btnText: any;
+  isSubmitting: boolean | undefined;
 
   constructor(private agendarService: AgendarService, private router: Router, private location: Location){
 
@@ -26,15 +27,17 @@ export class FormAgendarComponent {
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: 0,
+    statusColeta: '',
 
   };
 
   onSubmit(): void {
-    this.agendar.emit(this.novoAgendamento);
+    this.isSubmitting = true;
+
     this.agendarService.agendamentoUsuario(this.novoAgendamento).subscribe(
       (usuarioAgendado) => {
         // Exibe um alerta de sucesso
-        alert('Agendamento  realizado com sucesso! Antes  da coleta, você receberá o contato do nosso funcionário responsável para confirmação,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário. Em caso de cancelamento, por gentileza, realizar com um dia de antecedência!');
+        alert('Agendamento  realizado com sucesso! Antes  da coleta, você receberá o contato do nosso funcionário responsável para confirmação,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário.');
 
         // Redireciona para a página do perfil do usuário
         //this.router.navigate(['/perfilUsuario']);
@@ -44,7 +47,12 @@ export class FormAgendarComponent {
         // Lógica de tratamento de erro, se necessário
         console.error('Erro durante o cadastro', error);
       }
-    );
+      ).add(() => {
+        // Reativa o botão após a conclusão da requisição (com sucesso ou erro)
+        this.isSubmitting = false;
+     });
+
+
     this.novoAgendamento = {
     id: '',
     dia: '',
@@ -52,6 +60,7 @@ export class FormAgendarComponent {
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: 0,
+    statusColeta: '',
     } // Limpa os campos do novo cadastro
 
   }

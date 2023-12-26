@@ -10,7 +10,7 @@ import { AgendarService } from '../services/agendar.service';
 export class AdminListaAgendamentosComponent implements OnInit{
 
   dataSource: any[] = [];
-  displayedColumns: string[] = ['id','dia','horario','cpfCnpj','enderecoColeta','quantOleo', 'actions'];
+  displayedColumns: string[] = ['id','dia','horario','cpfCnpj','enderecoColeta','quantOleo', 'statusColeta', 'actions'];
   constructor(private agendarService: AgendarService, private router: Router) {}
   ngOnInit(): void {
     this.getAgendamentos();

@@ -11,6 +11,7 @@ import { RegistrarService } from '../../services/registrar.service';
 
 export class FormRegistrarComponent {
 @Input() btnText: any;
+  isSubmitting: boolean | undefined;
 
 constructor(private registrarService: RegistrarService, private router: Router){}
 
@@ -25,19 +26,20 @@ constructor(private registrarService: RegistrarService, private router: Router){
   };
 
   onSubmit(): void {
-    this.registrar.emit(this.novoRegistro);
+    this.isSubmitting = true;
     this.registrarService.registrarUsuario(this.novoRegistro).subscribe(
       (usuarioRegistrado) =>{
         alert('Registro realizado com sucesso!');
-
         this.router.navigate(['/login']);
       },
       (error) => {
         // Lógica de tratamento de erro, se necessário
         console.error('Erro durante o registro', error);
       }
-    );
-
+      ).add(() => {
+        // Reativa o botão após a conclusão da requisição (com sucesso ou erro)
+        this.isSubmitting = false;
+      });
     this.novoRegistro = {
       id: '',
       nome:'',

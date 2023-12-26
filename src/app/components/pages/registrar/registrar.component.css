@@ -74,6 +74,7 @@ img {
   background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
   height: 300px;
   margin-bottom: 30px;
+  line-height: 1.3;
 }
 
 /* A última criança não deve ter margem direita para evitar espaçamento extra */
