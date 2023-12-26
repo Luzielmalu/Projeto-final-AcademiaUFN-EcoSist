@@ -13,10 +13,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AdminListaAgendamentosComponent } from './admin-lista-agendamentos/admin-lista-agendamentos.component';
 import { AdminListaCadastrosComponent } from './admin-lista-cadastros/admin-lista-cadastros.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -28,6 +30,7 @@ import { AgendarComponent } from './components/pages/agendar/agendar.component';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
 import { ContatoComponent } from './components/pages/contato/contato.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { EcopontosComponent } from './components/pages/ecopontos/ecopontos.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LayoutComponent } from './components/pages/layout/layout.component';
 import { LoginComponent } from './components/pages/login/login.component';
@@ -38,7 +41,6 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
-import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +66,7 @@ import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadas
     AdminListaCadastrosComponent,
     AdminListaAgendamentosComponent,
     AtualizarCadastroComponent,
+    EcopontosComponent,
 
   ],
   imports: [
@@ -83,7 +86,7 @@ import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadas
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
 
 
 

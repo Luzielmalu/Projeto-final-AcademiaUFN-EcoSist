@@ -44,9 +44,6 @@ export class ListaCadastroComponent implements OnInit{
   }
 
   }
-  getCadastros() {
-    throw new Error('Method not implemented.');
-  }
 
   sair(): void {
     console.log('Botão Sair clicado');

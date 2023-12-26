@@ -61,7 +61,9 @@ export class AdminListaCadastrosComponent implements OnInit{
     console.log('Botão Sair clicado');
     this.router.navigate(['/admin-dashboard']);
   }
-
+  irParaAtualizacao(cadastroId: number): void {
+    this.router.navigate(['/atualizar-cadastro/:id', cadastroId]);
+  }
 }
 
 

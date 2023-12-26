@@ -65,17 +65,28 @@
         </div>
       </div>
 
-      <form [formGroup]="updateForm">
-        <div>
-          <label for="novoValor">Nome completo:</label>
-          <input type="text" id="novoValor" formControlName="nomeCompleto" class="caixa-texto">
-        </div>
-        <div>
-          <label for="novoValor">Data de nascimento:</label>
-          <input type="text" id="novoValor" formControlName="dataNascimento" class="caixa-texto">
-        </div>
+    <div class="ecopontos">
+      <span style="display: block; font-weight: bold;">Nossos Ecopontos:</span>
+      <span class="material-symbols-outlined">
+        location_on
+        </span>
+      <span style="display: block; font-weight: bold; ">Olinda<br></span>
+      <span style="display: block;"> Restaurante Olindense:</span>
+      <span>Endereço: Av. Ministro Marcos Freire, 1862, Bairro Novo, Olinda/PE</span><br>
+      <span class="material-symbols-outlined">
+        location_on
+        </span>
+      <span style="display: block; font-weight: bold; ">Paulista<br></span>
+      <span style="display: block;"> Restaurante Fi do Lunga:</span>
+      <span>Endereço: Av. Claúdio Gueiros Leite, s/n , Janga, Paulista/PE</span><br>
+      <span class="material-symbols-outlined">
+        location_on
+        </span>
+      <span style="display: block; font-weight: bold; ">Recife<br></span>
+      <span style="display: block;"> Mercado de São José:</span>
+      <span>Endereço: Rua das Calçadas, 270, Centro, Recife/PE</span>
+      <span style="display: block;"> Restaurante Entre Amigos:</span>
+      <span>Endereço: Av. Domingos Ferreira, 256, Boa Viagem, Recife/PE</span><br>
 
-        <!-- Adicione outros campos conforme necessário -->
-
-        <button mat-button color="primary" (click)="atualizarCampo()">Atualizar</button>
-      </form>
+    <button class="botão-ok" (click)="redirecionarParaHome()">OK</button>
+    </div>

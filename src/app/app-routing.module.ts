@@ -9,6 +9,7 @@ import { AgendarComponent } from './components/pages/agendar/agendar.component';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
 import { ContatoComponent } from './components/pages/contato/contato.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { EcopontosComponent } from './components/pages/ecopontos/ecopontos.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'agendamento/cpfCnpj', component: ListaAgendamentoComponent},
   {path: 'cadastro', component: AdminListaCadastrosComponent},
   {path: 'agendamento', component: AdminListaAgendamentosComponent},
-
+  {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
+  {path: 'ecopontos', component: EcopontosComponent},
   {path:'contato',component: ContatoComponent},
   {path: 'login', component: LoginComponent},
   {
@@ -57,7 +59,7 @@ const routes: Routes = [
   /*{path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },*/
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
-{path:'atualizar-cadastro/:cpfCnpj', component: AtualizarCadastroComponent}
+{path:'atualizar-cadastro/:id', component: AtualizarCadastroComponent}
 ];
 
 @NgModule({

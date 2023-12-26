@@ -73,17 +73,41 @@ img {
   background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
   height: 300px;
   margin-bottom: 30px;
-  line-height: 1.3;
+  line-height: 1.0;
 }
-.bloco .link{
-  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
-  color: blue; /* Adicione uma cor para indicar que é um link */
-}
-.bloco a{
-  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
-  color: blue; /* Adicione uma cor para indicar que é um link */
-}
+
 /* A última criança não deve ter margem direita para evitar espaçamento extra */
 .bloco:last-child {
   margin-right: 0;
+}
+.ecopontos{
+  position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
+  top: 60%; /* Posicionamento a partir do topo */
+  left: 50%; /* Posicionamento a partir da esquerda */
+  transform: translate(-50%, -50%); /* Centraliza o bloco */
+  z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
+  background-color: #a8f39b; /* Cor de fundo desejada */
+  padding: 20px; /* Adapte conforme necessário */
+  text-align: center; /* Centraliza o texto */
+  max-width: 600px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 100px;
+  height: 600px; /* Ajuste a altura conforme necessário */
+  border-radius: 10px;
+  border: 2px solid rgb(68, 243, 77);
+  line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
+}
+.botão-ok{
+  color: white;
+  background-color: #4d19f8; /* Cor de fundo desejada */
+  padding: 15px; /* Adapte conforme necessário */
+  text-align: center; /* Centraliza o texto */
+  max-width: 100px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 70px;
+  height: 40px; /* Ajuste a altura conforme necessário */
+  border-radius: 9px;
+  cursor: pointer;
+  border: 2px solid rgb(#4d19f8);
+  line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
 }
