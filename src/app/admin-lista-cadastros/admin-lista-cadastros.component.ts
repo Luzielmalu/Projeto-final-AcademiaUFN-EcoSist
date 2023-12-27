@@ -41,8 +41,23 @@ export class AdminListaCadastrosComponent implements OnInit{
       }
     );
   }
-  atualizarCadastro(cadastro: any): void {
-    // Lógica para atualizar o cadastro
+  atualizarCadastro(id: number): void {
+    this.router.navigate(['/atualizar-cadastro'], {
+      queryParams: {
+        id: id,
+        nomeCompleto: '',
+        dataNascimento: '',
+        cpfCnpj: '',
+        telefone: '',
+        email: '',
+        cep: '',
+        enderecoCompleto: '',
+        bairroCidEst: '',
+        tipoEndereco: '',
+        pontoReferencia: '',
+        observacao: '',
+      }
+    });
   }
   deleteCadastro(cadastro: any): void {
     if (confirm('Tem certeza que deseja excluir este cadastro?')) {
@@ -62,7 +77,7 @@ export class AdminListaCadastrosComponent implements OnInit{
     this.router.navigate(['/admin-dashboard']);
   }
   irParaAtualizacao(cadastroId: number): void {
-    this.router.navigate(['/atualizar-cadastro/:id', cadastroId]);
+    this.router.navigate(['/atualizar-cadastro', cadastroId]);
   }
 }
 

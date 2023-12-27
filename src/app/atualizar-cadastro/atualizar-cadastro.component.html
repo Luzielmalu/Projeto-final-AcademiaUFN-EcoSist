@@ -65,17 +65,41 @@
         </div>
       </div>
 
-      <form [formGroup]="updateForm">
-        <div>
-          <label for="novoValor">Nome completo:</label>
-          <input type="text" id="novoValor" formControlName="nomeCompleto" class="caixa-texto">
-        </div>
-        <div>
-          <label for="novoValor">Data de nascimento:</label>
-          <input type="text" id="novoValor" formControlName="dataNascimento" class="caixa-texto">
-        </div>
-
-        <!-- Adicione outros campos conforme necessário -->
-
-        <button mat-button color="primary" (click)="atualizarCampo()">Atualizar</button>
-      </form>
+      <div class="atualizacao">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome Completo</th>
+            <th>Data de Nascimento</th>
+            <th>CPF/CNPJ</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>CEP</th>
+            <th>Endereço Completo</th>
+            <th>Bairro/Cidade/Estado</th>
+            <th>Tipo de Endereço</th>
+            <th>Ponto de Referência</th>
+            <th>Observação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cadastro of cadastros">
+            <td>{{ cadastro.nomeCompleto }}</td>
+            <td>{{ cadastro.dataNascimento }}</td>
+            <td>{{ cadastro.cpfCnpj }}</td>
+            <td>{{ cadastro.telefone }}</td>
+            <td>{{ cadastro.email }}</td>
+            <td>{{ cadastro.cep }}</td>
+            <td>{{ cadastro.enderecoCompleto }}</td>
+            <td>{{ cadastro.bairroCidEst }}</td>
+            <td>{{ cadastro.tipoEndereco }}</td>
+            <td>{{ cadastro.pontoReferencia }}</td>
+            <td>{{ cadastro.observacao }}</td>
+            <td>
+              <button (click)="salvarAtualizacao()">Salvar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

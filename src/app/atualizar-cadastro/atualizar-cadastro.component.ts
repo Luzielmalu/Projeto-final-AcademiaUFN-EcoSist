@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CadastroService } from '../services/cadastro.service';
 
@@ -8,48 +7,30 @@ import { CadastroService } from '../services/cadastro.service';
   templateUrl: './atualizar-cadastro.component.html',
   styleUrl: './atualizar-cadastro.component.css'
 })
-export class AtualizarCadastroComponent implements OnInit {
-  id!: number;
-  updateForm!: FormGroup;
+export class AtualizarCadastroComponent {
+  cadastro: any = {};
+  cadastros: any;
 
-  constructor(private route: ActivatedRoute,private router: Router,private cadastroService: CadastroService, private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    const routeSnapshot = this.route.snapshot;
-      // Acessa o paramMap apenas se ActivatedRoute.snapshot não for null
-      if (routeSnapshot && routeSnapshot.paramMap) {
-        const idParam = routeSnapshot.paramMap.get('id');
-        if (idParam !== null) {
-          this.id = +idParam;   }
-  this.initializeForm();
+  constructor(
+    private route: ActivatedRoute,
+    private cadastroService: CadastroService, private router: Router
+  ) { this.route.queryParams.subscribe(params => {
+    const id = +params['id'];
+    if (!isNaN(id)) {
+      this.cadastroService.getCadastroById(id).subscribe(cadastro => {
+        this.cadastro = cadastro;
+      });
+  }
+});
 }
-}
-  initializeForm(): void {
-    // Criar um FormControl para cada campo que você deseja atualizar
-    // Neste exemplo, estou usando apenas um campo "novoValor"
-    this.updateForm = new FormGroup({
-      novoValor: new FormControl('', Validators.required)
 
+  salvarAtualizacao(): void {
+    this.cadastroService.updateCadastro(this.cadastro).subscribe(() => {
+      // Lógica após a atualização bem-sucedida
+      console.log('Salvar atualização para o cadastro:', this.cadastro);
+
+      this.router.navigate(['/admin-lista-cadastro']);
     });
   }
 
-  atualizarCampo(): void {
-    const campoSelecionado = ''; // Substitua pelo campo real escolhido
-
-    if (this.updateForm && this.updateForm.get('novoValor')) {
-      const novoValor = this.updateForm.get('novoValor')!.value;
-      if (novoValor !== null && novoValor !== undefined) {
-        this.cadastroService.updateCampoCadastro(this.id, campoSelecionado, novoValor).subscribe(
-          () => {
-            console.log('Cadastro atualizado com sucesso!');
-            this.router.navigate(['/admin-dashboard', this.id]);
-          },
-          (error) => {
-            console.error('Erro ao atualizar cadastro:', error);
-            // Lógica de tratamento de erro
-          }
-        );
-      }
-    }
-}
 }

@@ -59,7 +59,7 @@ const routes: Routes = [
   /*{path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },*/
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
-{path:'atualizar-cadastro/:id', component: AtualizarCadastroComponent}
+{path:'atualizar-cadastro', component: AtualizarCadastroComponent}
 ];
 
 @NgModule({
