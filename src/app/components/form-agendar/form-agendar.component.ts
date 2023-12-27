@@ -26,7 +26,7 @@ export class FormAgendarComponent {
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
-    quantOleo: 0,
+    quantOleo: '0',
     statusColeta: '',
 
   };
@@ -59,7 +59,7 @@ export class FormAgendarComponent {
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
-    quantOleo: 0,
+    quantOleo: '0',
     statusColeta: '',
     } // Limpa os campos do novo cadastro
 

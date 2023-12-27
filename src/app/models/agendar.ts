@@ -4,6 +4,6 @@ export interface Agendar {
   horario: String;
   cpfCnpj: String;
   enderecoColeta: String;
-  quantOleo: number;
+  quantOleo: String;
   statusColeta: String;
 }

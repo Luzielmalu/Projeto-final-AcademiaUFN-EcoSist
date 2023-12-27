@@ -26,9 +26,7 @@ export class AdminListaAgendamentosComponent implements OnInit{
       }
     );
   }
-  atualizarAgendamento(cadastro: any): void {
-    // Lógica para atualizar o cadastro
-  }
+
   deleteAgendamento(agendamento: any): void {
     if (confirm('Tem certeza que deseja excluir este cadastro?')) {
       this.agendarService.deleteAgendamento(agendamento.id).subscribe(
@@ -46,5 +44,20 @@ export class AdminListaAgendamentosComponent implements OnInit{
     console.log('Botão Sair clicado');
     this.router.navigate(['/admin-dashboard']);
   }
-
+  irParaAtualizacao(id: number): void {
+    this.router.navigate(['/atualizar-agendamento', id]);
+  }
+  atualizarAgendamento(id: number): void {
+    this.router.navigate(['/atualizar-agendamento'], {
+      queryParams: {
+        id: id,
+        dia: '',
+        horario: '',
+        cpfCnpj: '',
+        enderecoColeta: '',
+        quantOleo:'',
+        statusColeta:'',
+      }
+    });
+  }
 }

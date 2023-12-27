@@ -29,9 +29,13 @@ const routes: Routes = [
   {path: 'agendamento/cpfCnpj', component: ListaAgendamentoComponent},
   {path: 'cadastro', component: AdminListaCadastrosComponent},
   {path: 'agendamento', component: AdminListaAgendamentosComponent},
-  {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
+  {path: 'agendamento', component: AtualizarAgendamentoComponent},
+  {path: 'agendamento/{id}/{campo}', component: AtualizarAgendamentoComponent},
+  {path: 'agendamento/{id}', component: AtualizarAgendamentoComponent},
   {path:'cadastro/{id}', component: AtualizarCadastroComponent},
   {path:'cadastro', component: AtualizarCadastroComponent},
+  {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
+
 
 
   {path: 'ecopontos', component: EcopontosComponent},
@@ -66,7 +70,8 @@ const routes: Routes = [
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
 {path:'atualizar-cadastro', component: AtualizarCadastroComponent},
 {path:'admin-lista-cadastro', component: AdminListaCadastrosComponent},
-{path:'atualizar-agendamento', component: AtualizarAgendamentoComponent}
+{path:'atualizar-agendamento', component: AtualizarAgendamentoComponent},
+{path:'admin-lista-agendamento', component: AdminListaAgendamentosComponent}
 ];
 
 @NgModule({

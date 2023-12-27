@@ -9,6 +9,7 @@ import { Agendar } from '../models/agendar';
 export class AgendarService {
 
   private url = 'http://localhost:8089/agendamento';
+  novoValor: any;
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
@@ -44,10 +45,33 @@ export class AgendarService {
 
   }
   updateAgendamento(agendamento: Agendar): Observable<Agendar>{
-    return this.httpClient.put<Agendar>(this.url +'/'+ agendamento.id, JSON.stringify(agendamento), this.httpOptions)
+    const url = `${this.url}/${agendamento.id}`;
+    return this.httpClient.put<Agendar>(url, agendamento, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError))
+  }
+
+  updateCampoAgendamento(id: number, campo: string, novoValor: string): Observable<any> {
+    const url = `${this.url}/${id}/${campo}?novoValor=${encodeURIComponent(novoValor)}`;
+
+    return this.httpClient.put(url, {}, this.httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 404) {
+          console.error('Agendamento não encontrado', error);
+        } else {
+          console.error('Erro ao atualizar agendamento', error);
+        }
+        return throwError(error);
+      })
+    );
+  }
+  getAgendamentoField(id: number, campo: string): Observable<any> {
+    const url = `${this.url}/${id}/${campo}?novoValor=${this.novoValor}`;
+    return this.httpClient.get(url, this.httpOptions).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
   deleteAgendamento(agendamento: Agendar){
     return this.httpClient.delete<Agendar>(this.url +'/'+ agendamento.id)
