@@ -66,40 +66,33 @@
       </div>
 
       <div class="atualizacao">
+        <form (ngSubmit)="salvarAtualizacao()">
       <table>
-        <thead>
-          <tr>
-            <th>Nome Completo</th>
-            <th>Data de Nascimento</th>
-            <th>CPF/CNPJ</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>CEP</th>
-            <th>Endereço Completo</th>
-            <th>Bairro/Cidade/Estado</th>
-            <th>Tipo de Endereço</th>
-            <th>Ponto de Referência</th>
-            <th>Observação</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
+        <h2>Preencha os campos para atualização</h2>
         <tbody>
-          <tr *ngFor="let cadastro of cadastros">
-            <td>{{ cadastro.nomeCompleto }}</td>
-            <td>{{ cadastro.dataNascimento }}</td>
-            <td>{{ cadastro.cpfCnpj }}</td>
-            <td>{{ cadastro.telefone }}</td>
-            <td>{{ cadastro.email }}</td>
-            <td>{{ cadastro.cep }}</td>
-            <td>{{ cadastro.enderecoCompleto }}</td>
-            <td>{{ cadastro.bairroCidEst }}</td>
-            <td>{{ cadastro.tipoEndereco }}</td>
-            <td>{{ cadastro.pontoReferencia }}</td>
-            <td>{{ cadastro.observacao }}</td>
-            <td>
-              <button (click)="salvarAtualizacao()">Salvar</button>
-            </td>
-          </tr>
+          <label for="id">ID: </label>
+  <input type="text" id="id" [(ngModel)]="id" name="id" required><br>
+
+  <label for="userType">Campo: </label>
+  <select type="text" id="campo" [(ngModel)]="campo" name="campo" required>
+  <option value="" disabled selected>Selecione:</option>
+  <option value="nomeCompleto">nomeCompleto</option>
+  <option value="dataNascimento">dataNascimento</option>
+  <option value="cpfCnpj">cpfCnpj</option>
+  <option value="telefone">telefone</option>
+  <option value="email">email</option>
+  <option value="cep">cep</option>
+  <option value="enderecoCompleto">enderecoCompleto</option>
+  <option value="bairroCidEst">bairroCidEst</option>
+  <option value="tipoEndereco">tipoEndereco</option>
+  <option value="pontoReferencia">pontoReferencia</option>
+  <option value="observacao">observacao</option>
+  </select><br>
+  <label for="novoValor">Novo Valor: </label>
+  <input type="text" id="novoValor" [(ngModel)]="novoValor" name="novoValor" required><br>
+
+           <button type="submit">Salvar</button>
         </tbody>
       </table>
+    </form>
     </div>

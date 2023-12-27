@@ -41,6 +41,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
+import { AtualizarAgendamentoComponent } from './atualizar-agendamento/atualizar-agendamento.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,7 @@ import { TokenInterceptor } from './services/custome.interceptor';
     AdminListaAgendamentosComponent,
     AtualizarCadastroComponent,
     EcopontosComponent,
+    AtualizarAgendamentoComponent,
 
   ],
   imports: [

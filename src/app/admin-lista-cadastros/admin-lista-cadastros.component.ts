@@ -22,7 +22,7 @@ export class AdminListaCadastrosComponent implements OnInit{
     'tipoEndereco',
     'pontoReferencia',
     'observacao',
-    'actions',
+    'acoes',
   ];
 
   constructor(private cadastroService: CadastroService, private router: Router) {}
@@ -40,6 +40,26 @@ export class AdminListaCadastrosComponent implements OnInit{
         console.error('Erro ao buscar cadastros', erro);
       }
     );
+  }
+  deleteCadastro(cadastro: any): void {
+    if (confirm('Tem certeza que deseja excluir este cadastro?')) {
+      this.cadastroService.deleteCadastro(cadastro.id).subscribe(
+        () => {
+          // Atualiza a lista após a exclusão
+          this.getCadastros();
+        },
+        (erro) => {
+          console.error('Erro ao excluir cadastro', erro);
+        }
+      );
+    }
+  }
+  sair(): void {
+    console.log('Botão Sair clicado');
+    this.router.navigate(['/admin-dashboard']);
+  }
+  irParaAtualizacao(id: number): void {
+    this.router.navigate(['/atualizar-cadastro', id]);
   }
   atualizarCadastro(id: number): void {
     this.router.navigate(['/atualizar-cadastro'], {
@@ -59,26 +79,7 @@ export class AdminListaCadastrosComponent implements OnInit{
       }
     });
   }
-  deleteCadastro(cadastro: any): void {
-    if (confirm('Tem certeza que deseja excluir este cadastro?')) {
-      this.cadastroService.deleteCadastro(cadastro.id).subscribe(
-        () => {
-          // Atualiza a lista após a exclusão
-          this.getCadastros();
-        },
-        (erro) => {
-          console.error('Erro ao excluir cadastro', erro);
-        }
-      );
-    }
-  }
-  sair(): void {
-    console.log('Botão Sair clicado');
-    this.router.navigate(['/admin-dashboard']);
-  }
-  irParaAtualizacao(cadastroId: number): void {
-    this.router.navigate(['/atualizar-cadastro', cadastroId]);
-  }
+
 }
 
 

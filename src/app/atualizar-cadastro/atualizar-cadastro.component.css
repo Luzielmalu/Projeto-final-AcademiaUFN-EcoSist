@@ -89,25 +89,13 @@ body {
   margin: 0;
 }
 
-.update-cadastro-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #333;
-}
 
 /* Estilos para o formulário */
 .atualizacao {
-  display: flex;
-  flex-direction: column;
+  margin: 20px auto;
+  overflow-x: auto;
   position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
-  top: 60%; /* Posicionamento a partir do topo */
+  top: 40%; /* Posicionamento a partir do topo */
   left: 50%; /* Posicionamento a partir da esquerda */
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
@@ -117,11 +105,23 @@ h2 {
   max-width: 1200px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
   margin-bottom: 100px;
-  height: 600px; /* Ajuste a altura conforme necessário */
+  height: 300px; /* Ajuste a altura conforme necessário */
   border-radius: 10px;
   border: 2px solid rgb(68, 243, 77);
-  line-height: 1.5; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */
-
+  line-height: 2.0; /* Altere o valor para ajustar*/
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+/*.atualizacao th, .atualizacao td {
+  border: 1px solid #1b1818; /* Adiciona divisórias com linhas */
+  /*padding: 2px; /* Adiciona espaçamento interno */
+  /*text-align: left;
+}*/
+.atualizacao select{
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 label {

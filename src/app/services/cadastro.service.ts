@@ -11,6 +11,7 @@ import { Cadastro } from '../models/cadastro';
 export class CadastroService {
 
   private url = 'http://localhost:8089/cadastro';
+  novoValor: any;
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
@@ -51,15 +52,16 @@ export class CadastroService {
 
   }
   updateCadastro(cadastro: Cadastro): Observable<Cadastro>{
-    return this.httpClient.put<Cadastro>(this.url +'/cadastro'+ cadastro.id, JSON.stringify(cadastro), this.httpOptions)
+    const url = `${this.url}/${cadastro.id}`;
+    return this.httpClient.put<Cadastro>(url, cadastro, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError))
   }
   updateCampoCadastro(id: number, campo: string, novoValor: string): Observable<any> {
-    const url = `${this.url}/{id}/{campo}/${id}/${campo}`;
+    const url = `${this.url}/${id}/${campo}?novoValor=${encodeURIComponent(novoValor)}`;
 
-    return this.httpClient.put(url, { valor: novoValor }, this.httpOptions).pipe(
+    return this.httpClient.put(url, {}, this.httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 404) {
           console.error('Cadastro não encontrado', error);
@@ -68,6 +70,13 @@ export class CadastroService {
         }
         return throwError(error);
       })
+    );
+  }
+  getCadastroField(id: number, campo: string): Observable<any> {
+    const url = `${this.url}/${id}/${campo}?novoValor=${this.novoValor}`;
+    return this.httpClient.get(url, this.httpOptions).pipe(
+      retry(1),
+      catchError(this.handleError)
     );
   }
   deleteCadastro(cadastro: Cadastro){

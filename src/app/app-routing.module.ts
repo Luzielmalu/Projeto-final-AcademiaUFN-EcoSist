@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminListaAgendamentosComponent } from './admin-lista-agendamentos/admin-lista-agendamentos.component';
 import { AdminListaCadastrosComponent } from './admin-lista-cadastros/admin-lista-cadastros.component';
+import { AtualizarAgendamentoComponent } from './atualizar-agendamento/atualizar-agendamento.component';
 import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {path: 'cadastro', component: AdminListaCadastrosComponent},
   {path: 'agendamento', component: AdminListaAgendamentosComponent},
   {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
+  {path:'cadastro/{id}', component: AtualizarCadastroComponent},
+  {path:'cadastro', component: AtualizarCadastroComponent},
+
+
   {path: 'ecopontos', component: EcopontosComponent},
   {path:'contato',component: ContatoComponent},
   {path: 'login', component: LoginComponent},
@@ -59,7 +64,9 @@ const routes: Routes = [
   /*{path: 'admin', component: PerfilAdminComponent, canActivate: [RoleGuardService], data: { roles: ['ADMIN'] } },*/
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
-{path:'atualizar-cadastro', component: AtualizarCadastroComponent}
+{path:'atualizar-cadastro', component: AtualizarCadastroComponent},
+{path:'admin-lista-cadastro', component: AdminListaCadastrosComponent},
+{path:'atualizar-agendamento', component: AtualizarAgendamentoComponent}
 ];
 
 @NgModule({

@@ -40,7 +40,7 @@ margin-bottom: 1em;
 .form-group input,
 .form-group textarea{
   padding: .6em;
-  color: #777;
+  color: #1b1a1a;
   font-size: 0.8em;
 }
 input[type="submit"]{

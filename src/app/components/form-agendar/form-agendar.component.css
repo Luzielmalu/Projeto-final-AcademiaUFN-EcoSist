@@ -25,3 +25,15 @@
 h2{
   text-align: center;
 }
+fieldset {
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: .4em;
+  text-align: left;
+}
+
+legend {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
