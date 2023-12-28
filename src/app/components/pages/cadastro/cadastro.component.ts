@@ -106,8 +106,8 @@ export class CadastroComponent {
       this.cadastro.observacao = n;
       this.cadastroService.saveCadastro(this.cadastro);
     }
-    deleteCadastro(cadastro: Cadastro){
-    this.cadastroService.deleteCadastro(cadastro).subscribe(() => {
+    deleteCadastro(id: number){
+    this.cadastroService.deleteCadastro(id).subscribe(() => {
       this.getCadastros();
     });
     }

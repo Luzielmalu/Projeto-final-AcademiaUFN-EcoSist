@@ -104,13 +104,13 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let agendamento">
-        <button mat-icon-button color="myCustomColor" matTooltip="Atualizar" (click)="atualizarAgendamento(agendamento)" value="Atualizar">
+        <button mat-icon-button style="border-radius: 10px;  padding: 0.6em 1em; color: white;" matTooltip="Atualizar" (click)="atualizarAgendamento(agendamento)" value="Atualizar">
           <mat-icon>Atualizar</mat-icon>
         </button>
-        <button mat-icon-button color="myCustomColor" matTooltip="Excluir" (click)="deleteAgendamento(agendamento)" value="Excluir">
+        <button mat-icon-button style="background-color: red;border-color: red; border-radius: 10px;  padding: 0.6em 1em; color: white;" matTooltip="Excluir" (click)="deleteAgendamento(agendamento)" value="Excluir">
           <mat-icon>Ecluir</mat-icon>
         </button>
-        <button mat-icon-button  color="myCustomColor" matTooltip="Sair" (click)="sair()" value="Sair">
+        <button mat-icon-button  style=" background-color: rgb(143, 5, 213); border-radius: 10px;  padding: 0.6em 1em; color: white;" matTooltip="Sair" (click)="sair()" value="Sair">
           <mat-icon>Sair</mat-icon>
         </button>
       </mat-cell>

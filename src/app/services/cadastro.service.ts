@@ -79,11 +79,12 @@ export class CadastroService {
       catchError(this.handleError)
     );
   }
-  deleteCadastro(cadastro: Cadastro){
-    return this.httpClient.delete<Cadastro>(this.url +'/'+ cadastro.id)
-    .pipe(
+  deleteCadastro(id: number): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this.httpClient.delete(url).pipe(
       retry(1),
-      catchError(this.handleError))
+      catchError(this.handleError)
+    );
   }
   adicionarCadastro(cadastro: Cadastro): Observable<Cadastro>{
     console.log(this.url, JSON.stringify(cadastro))

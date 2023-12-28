@@ -73,11 +73,12 @@ export class AgendarService {
       catchError(this.handleError)
     );
   }
-  deleteAgendamento(agendamento: Agendar){
-    return this.httpClient.delete<Agendar>(this.url +'/'+ agendamento.id)
-    .pipe(
+  deleteAgendamento(id: number): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this.httpClient.delete(url).pipe(
       retry(1),
-      catchError(this.handleError))
+      catchError(this.handleError)
+    );
   }
   adicionarAgendamento(agendamento: Agendar): Observable<Agendar>{
     console.log(this.url, JSON.stringify(agendamento))

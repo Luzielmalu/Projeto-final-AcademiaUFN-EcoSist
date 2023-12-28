@@ -123,13 +123,13 @@
     <ng-container matColumnDef="acoes">
       <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
       <mat-cell *matCellDef="let cadastro">
-        <button mat-icon-button color="myCustomColor" matTooltip="Atualizar" (click)="irParaAtualizacao(cadastro)">
+        <button mat-icon-button style="border-radius: 10px;  padding: 0.6em 1em; color: white;"  matTooltip="Atualizar" (click)="irParaAtualizacao(cadastro)">
           <mat-icon>Atualizar</mat-icon>
         </button>
-        <button mat-icon-button color="myCustomColor" matTooltip="Excluir" (click)="deleteCadastro(cadastro)" value="Excluir">
+  <button mat-icon-button style="background-color: red;border-color: red; border-radius: 10px;  padding: 0.6em 1em; color: white;" matTooltip="Excluir" (click)="deleteCadastro(cadastro)" value="Excluir">
           <mat-icon>Ecluir</mat-icon>
         </button>
-        <button mat-icon-button  color="myCustomColor" matTooltip="Sair" (click)="sair()" value="Sair">
+        <button mat-icon-button style=" background-color: rgb(143, 5, 213); border-radius: 10px;  padding: 0.6em 1em; color: white;"  matTooltip="Sair" (click)="sair()" value="Sair">
           <mat-icon>Sair</mat-icon>
         </button>
       </mat-cell>

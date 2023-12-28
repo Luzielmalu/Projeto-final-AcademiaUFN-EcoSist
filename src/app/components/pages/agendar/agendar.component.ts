@@ -56,8 +56,8 @@ export class AgendarComponent {
       }
     }
   }
-    deleteAgendamento(agendamento: Agendar){
-    this.agendarService.deleteAgendamento(agendamento).subscribe(() => {
+    deleteAgendamento(id: number){
+    this.agendarService.deleteAgendamento(id).subscribe(() => {
       this.getAgendamentos();
     });
     }

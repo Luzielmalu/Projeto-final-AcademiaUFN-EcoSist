@@ -42,7 +42,7 @@ export class AtualizarAgendamentoComponent implements OnInit {
     const novoValor: string = this.novoValor || '';
 
     this.agendarService.updateCampoAgendamento(id, campo , this.novoValor).subscribe(() => {
-      console.log(`Salvar atualização para o campo ${this.campo} do agendamento ID ${id}`);
+      console.log(`Salvar atualização para o campo ${this.campo} do agendamento ID ${this.id}`);
       this.router.navigate(['/admin-lista-agendamento']);
     });
   }

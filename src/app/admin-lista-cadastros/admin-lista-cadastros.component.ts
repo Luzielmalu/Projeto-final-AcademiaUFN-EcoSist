@@ -43,10 +43,13 @@ export class AdminListaCadastrosComponent implements OnInit{
   }
   deleteCadastro(cadastro: any): void {
     if (confirm('Tem certeza que deseja excluir este cadastro?')) {
+      if (cadastro && cadastro.id){
       this.cadastroService.deleteCadastro(cadastro.id).subscribe(
         () => {
           // Atualiza a lista após a exclusão
           this.getCadastros();
+          this.router.navigate(['/admin-lista-cadastro']);
+
         },
         (erro) => {
           console.error('Erro ao excluir cadastro', erro);
@@ -54,6 +57,7 @@ export class AdminListaCadastrosComponent implements OnInit{
       );
     }
   }
+}
   sair(): void {
     console.log('Botão Sair clicado');
     this.router.navigate(['/admin-dashboard']);

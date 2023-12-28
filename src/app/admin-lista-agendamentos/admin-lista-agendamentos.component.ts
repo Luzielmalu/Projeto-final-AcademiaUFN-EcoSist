@@ -28,11 +28,14 @@ export class AdminListaAgendamentosComponent implements OnInit{
   }
 
   deleteAgendamento(agendamento: any): void {
-    if (confirm('Tem certeza que deseja excluir este cadastro?')) {
+    if (confirm('Tem certeza que deseja excluir este agendamento?')) {
+      if (agendamento && agendamento.id){
       this.agendarService.deleteAgendamento(agendamento.id).subscribe(
         () => {
           // Atualiza a lista após a exclusão
           this.getAgendamentos();
+          this.router.navigate(['/admin-lista-agendamento']);
+
         },
         (erro) => {
           console.error('Erro ao excluir cadastro', erro);
@@ -40,6 +43,7 @@ export class AdminListaAgendamentosComponent implements OnInit{
       );
     }
   }
+}
   sair(): void {
     console.log('Botão Sair clicado');
     this.router.navigate(['/admin-dashboard']);

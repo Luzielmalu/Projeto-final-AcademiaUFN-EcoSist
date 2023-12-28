@@ -32,9 +32,12 @@ const routes: Routes = [
   {path: 'agendamento', component: AtualizarAgendamentoComponent},
   {path: 'agendamento/{id}/{campo}', component: AtualizarAgendamentoComponent},
   {path: 'agendamento/{id}', component: AtualizarAgendamentoComponent},
+  {path: 'agendamento/{id}', component: AdminListaAgendamentosComponent},
   {path:'cadastro/{id}', component: AtualizarCadastroComponent},
   {path:'cadastro', component: AtualizarCadastroComponent},
   {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
+  {path:'cadastro/{id}', component: AdminListaCadastrosComponent},
+
 
 
 
