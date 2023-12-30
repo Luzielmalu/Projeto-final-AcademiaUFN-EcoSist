@@ -27,10 +27,7 @@ export class CadastroService {
       retry(2),
       catchError(this.handleError))
   }
-  checkEmailExists(email: string): Observable<boolean> {
-    const url = `${this.url}/exists?email=${email}`;
-    return this.httpClient.get<boolean>(url);
-  }
+
   getCadastroById(id: number): Observable<Cadastro> {
     return this.httpClient.get<Cadastro>(`${this.url}/${id}`)
       .pipe(

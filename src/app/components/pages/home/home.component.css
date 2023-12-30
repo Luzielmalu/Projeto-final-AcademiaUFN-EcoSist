@@ -62,6 +62,13 @@ img {
   margin-left: 30px;
 
 }
+@media screen and (max-width: 600px) {
+  .oleoArmazenado{
+    width: 80%;
+    margin-left: 20px;
+  }
+
+}
 .blocos {
   display: flex;
   justify-content: space-between;

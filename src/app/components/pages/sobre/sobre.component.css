@@ -52,7 +52,7 @@
 img {
   /*max-width: 100%;
   margin-bottom: 20px;*/
-  width: 80%; /* A imagem ocupará 100% da largura do contêiner pai */
+  width: 100%; /* A imagem ocupará 100% da largura do contêiner pai */
   height: auto; /* Mantém a proporção da imagem */
   display: block;
 }
@@ -61,9 +61,15 @@ img {
   height: 20%;
   display: flex;
   margin-bottom: 10px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
+@media screen and (max-width: 600px) {
+  .oleoArmazenado{
+    width: 80%;
+    margin-left: 20px;
+  }
 
+}
 .blocos {
   display: flex;
   justify-content: space-between;
