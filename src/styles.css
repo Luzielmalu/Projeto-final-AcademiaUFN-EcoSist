@@ -16,8 +16,17 @@ a:hover{
 }
 body{
   background-image: url("/assets/th2.jpg");
-  background-attachment: fixed;
-  background-position: 5% 5%;
+  font-size: 16px;
+  background-size: contain; /* Ajusta a imagem para cobrir completamente o elemento pai */
+  background-position: center; /* Centraliza a imagem na tela */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  height: 120vh; /* Define a altura do elemento como 100% da altura da viewport */
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
 }
 /*Form*/
 .form-container{
@@ -59,6 +68,16 @@ input[type="submit"]{
   width: 30%;
   float: left;
   box-sizing: border-box; /* Garantir que o padding não afete a largura total */
+}
+@media screen and (max-width: 600px) {
+  input[type="submit"]{
+
+    font-size: 11px;
+    width: 30%;
+    text-align: left;
+    padding: 0.6em 1em;
+  }
+
 }
 .form-container form {
   box-sizing: content-box; /* Ou border-box, ajuste conforme necessário */

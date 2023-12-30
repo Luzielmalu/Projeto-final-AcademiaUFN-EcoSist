@@ -2,21 +2,22 @@ import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Agendar } from '../../../models/agendar';
 import { AgendarService } from '../../../services/agendar.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-agendar',
   templateUrl: './agendar.component.html',
   styleUrl: './agendar.component.css'
 })
-export class AgendarComponent {
+export class AgendarComponent  {
   @Input() btnText: any='Enviar'
 
   title = 'Agendar'
   agendar = {} as Agendar;
   agendamentos: Agendar[] = [];
 
-  constructor(private agendarService: AgendarService){}
+  constructor(private agendarService: AgendarService, private authService: AuthService){}
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.getAgendamentos();
     }
 

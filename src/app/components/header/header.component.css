@@ -14,12 +14,18 @@ nav{
 
 }
 .brand img{
-  width: 100px;
+  width: 20vh;
   margin-right: 0.6em;
-  border: 3px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
+  border: 2px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
    /* Opcional: adiciona bordas arredondadas */
   max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
   height: auto;
+}
+@media screen and (max-width: 600px) {
+.brand img{
+  max-width: 100%; /* ou outro valor adequado */
+}
+
 }
 .brand h2{
   transition: .4s;
@@ -46,6 +52,13 @@ nav{
   border-radius: 5px; /* Borda arredondada, ajuste conforme necessário */
   padding: 10px 15px;
   cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .custom-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 5px;
+  }
 }
 nav .mat-flat-button {
   color: white !important;

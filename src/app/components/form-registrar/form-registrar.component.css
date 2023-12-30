@@ -1,8 +1,8 @@
 :host {
-  display: block;
+  display: flex;
   background-color: #a8f39b; /* Cor de fundo desejada */
   padding: 20px; /* Ajuste de espaçamento interno */
-  max-width: 500px; /* Define uma largura máxima para o conteúdo */
+  max-width: 100%; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
   border-radius: 10px;
   border: 2px solid rgb(68, 243, 77);

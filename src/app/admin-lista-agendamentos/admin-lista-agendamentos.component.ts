@@ -52,7 +52,7 @@ export class AdminListaAgendamentosComponent implements OnInit{
     this.router.navigate(['/atualizar-agendamento', id]);
   }
   atualizarAgendamento(id: number): void {
-    this.router.navigate(['/atualizar-agendamento'], {
+    this.router.navigate(['/atualizar-agendamento', id], {
       queryParams: {
         id: id,
         dia: '',

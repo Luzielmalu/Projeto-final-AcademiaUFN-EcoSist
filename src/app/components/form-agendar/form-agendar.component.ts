@@ -45,7 +45,7 @@ export class FormAgendarComponent {
       },
       (error) => {
         // Lógica de tratamento de erro, se necessário
-        console.error('Erro durante o cadastro', error);
+        console.error('Erro durante o agendamento', error);
       }
       ).add(() => {
         // Reativa o botão após a conclusão da requisição (com sucesso ou erro)
