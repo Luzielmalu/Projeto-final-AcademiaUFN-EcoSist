@@ -1,9 +1,9 @@
 export interface Agendar {
-  id?: String;
-  dia: String;
-  horario: String;
-  cpfCnpj: String;
-  enderecoColeta: String;
-  quantOleo: String;
-  statusColeta: String;
+  id?: string;
+  data: string;
+  horario: string;
+  cpfCnpj: string;
+  enderecoColeta: string;
+  quantOleo: string;
+  statusColeta: string;
 }

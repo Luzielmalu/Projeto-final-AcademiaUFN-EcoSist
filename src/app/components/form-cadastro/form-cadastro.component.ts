@@ -15,13 +15,7 @@ export class FormCadastroComponent  {
   isSubmitting: boolean | undefined;
   constructor(private cadastroService: CadastroService, private location: Location) {}
 
-  checkEmailAvailability(email: string): void {
-    this.cadastroService.checkEmailExists(email).subscribe((exists) => {
-      if (exists) {
-        alert('E-mail já cadastrado. Por favor, escolha outro.');
-      }
-    });
-  }
+
  @Output() cadastrar = new EventEmitter<Cadastro>();
   novoCadastro: Cadastro = {
     id: '',

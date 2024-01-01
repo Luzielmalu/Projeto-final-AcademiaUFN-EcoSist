@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent {
+
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}

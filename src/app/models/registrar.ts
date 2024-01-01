@@ -1,7 +1,7 @@
 export interface Registrar {
-  id?: String;
-  nome: String;
-  login: String;
-  password:String;
-  role: String;
+  id?: string;
+  nome: string;
+  login: string;
+  password:string;
+  role: string;
 }

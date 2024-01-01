@@ -18,6 +18,7 @@ import { AdminListaAgendamentosComponent } from './admin-lista-agendamentos/admi
 import { AdminListaCadastrosComponent } from './admin-lista-cadastros/admin-lista-cadastros.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AtualizarAgendamentoComponent } from './atualizar-agendamento/atualizar-agendamento.component';
 import { AtualizarCadastroComponent } from './atualizar-cadastro/atualizar-cadastro.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -26,6 +27,7 @@ import { FormAgendarComponent } from './components/form-agendar/form-agendar.com
 import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.component';
 import { FormRegistrarComponent } from './components/form-registrar/form-registrar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AdminHeaderComponent } from './components/pages/admin-header/admin-header.component';
 import { AgendarComponent } from './components/pages/agendar/agendar.component';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
 import { ContatoComponent } from './components/pages/contato/contato.component';
@@ -41,7 +43,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
-import { AtualizarAgendamentoComponent } from './atualizar-agendamento/atualizar-agendamento.component';
+import { UsuarioHeaderComponent } from './components/pages/usuario-header/usuario-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,9 @@ import { AtualizarAgendamentoComponent } from './atualizar-agendamento/atualizar
     AtualizarCadastroComponent,
     EcopontosComponent,
     AtualizarAgendamentoComponent,
+    AdminHeaderComponent,
+    UsuarioHeaderComponent,
+
 
   ],
   imports: [

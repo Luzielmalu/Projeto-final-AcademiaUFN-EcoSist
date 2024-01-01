@@ -6,6 +6,7 @@ nav{
   background-color: rgb(77, 193, 77);
   height: 80px;
   max-width: 100%;
+
 }
 
 .brand, .links{
@@ -18,7 +19,7 @@ nav{
   width: 20vh;
   margin-right: 0.6em;
   border: 2px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
-  max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
+  max-width: 100%;
   height: auto;
 }
 @media screen and (max-width: 600px) {
@@ -44,25 +45,4 @@ nav{
 #add a:hover{
   background-color: #777;
 
-}
-.custom-button {
-  background-color: #1014e6;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .custom-button {
-    width: 100%;
-    font-size: 14px;
-    padding: 5px 5px;
-  }
-}
-nav .mat-flat-button {
-  color: white !important;
-}
-.custom-button:hover {
-  background-color: #1e9cf7;
 }

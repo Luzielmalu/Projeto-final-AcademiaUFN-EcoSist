@@ -14,11 +14,13 @@ export class AgendarComponent  {
   title = 'Agendar'
   agendar = {} as Agendar;
   agendamentos: Agendar[] = [];
+  novoAgendamento: any;
 
   constructor(private agendarService: AgendarService, private authService: AuthService){}
 
   ngOnInit(): void {
     this.getAgendamentos();
+
     }
 
     getAgendamentos(){
@@ -27,6 +29,7 @@ export class AgendarComponent  {
         this.agendamentos = agendar;
       });
     }
+
     createAgendamento(novoAgendamento: Agendar): void {
       this.agendarService.createAgendamento(novoAgendamento).subscribe(() => {
         this.getAgendamentos(); // Atualiza a lista após a criação
@@ -35,7 +38,7 @@ export class AgendarComponent  {
     }
 
     addAgendamento(){
-      this.agendar.dia = "19/12/2023";
+      this.agendar.data = "1986/02/16";
       this.agendar.horario = "9h00";
       this.agendar.cpfCnpj = "05543104418";
       this.agendar.enderecoColeta = "rua";

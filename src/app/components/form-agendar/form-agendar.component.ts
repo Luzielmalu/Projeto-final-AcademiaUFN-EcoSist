@@ -22,7 +22,7 @@ export class FormAgendarComponent {
  @Output() agendar = new EventEmitter<Agendar>();
   novoAgendamento: Agendar = {
     id: '',
-    dia: '',
+    data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
@@ -39,23 +39,27 @@ export class FormAgendarComponent {
         // Exibe um alerta de sucesso
         alert('Agendamento  realizado com sucesso! Antes  da coleta, você receberá o contato do nosso funcionário responsável para confirmação,através do seu telefone cadastrado. Todas as informações do seu agendamento estão na sua conta de usuário.');
 
-        // Redireciona para a página do perfil do usuário
-        //this.router.navigate(['/perfilUsuario']);
+        // Redireciona para a página anterior
         this.location.back();
       },
       (error) => {
-        // Lógica de tratamento de erro, se necessário
-        console.error('Erro durante o agendamento', error);
+        if (error.error && error.error.message === 'Horário já agendado. Escolha outro horário.') {
+          // Exibe um alerta na tela
+          alert('Horário já agendado. Escolha outro horário.');
+        } else {
+          // Exibe um alerta de erro genérico
+          alert('Horário já agendado. Escolha outro horário.');
+          console.error('Erro durante o agendamento', error);
+        }
       }
       ).add(() => {
         // Reativa o botão após a conclusão da requisição (com sucesso ou erro)
         this.isSubmitting = false;
      });
 
-
     this.novoAgendamento = {
     id: '',
-    dia: '',
+    data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',

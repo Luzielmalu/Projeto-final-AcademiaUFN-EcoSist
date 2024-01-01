@@ -1,5 +1,6 @@
 
 
+<app-admin-header></app-admin-header>
 
 <div class="centralizar-justificar">
   <h1>Bem-vindos a EcoSist!</h1>
@@ -72,16 +73,17 @@
 
 <div class="dashAdmin">
 <ul>
-  <p>Seja bem-vindo, Admin!     <span class="material-symbols-outlined">
-    account_circle
-    </span></p>
+  <span class="material-symbols-outlined">
+    menu
+    </span><br>
     <span class="material-symbols-outlined">
       library_books  <a routerLink="/perfilAdmin/cadastro">Cadastros dos usuários</a></span>
     <span class="material-symbols-outlined">
       calendar_clock  <a routerLink="/perfilAdmin/agendamento">Agendamentos das coletas</a></span><br>
-      <a routerLink="/registrar">Registrar usuário</a><br>
-      <a routerLink="/cadastrar">Cadastrar usuário</a><br>
-      <a routerLink="/agendar">Realizar agendamento do usuário</a><br>
+      <span class="material-symbols-outlined">
+        person   <a routerLink="/cadastrar">Cadastrar usuário</a><br></span>
+      <span class="material-symbols-outlined">
+        add_ad   <a routerLink="/agendar">Realizar agendamento do usuário</a><br></span>
 </ul>
 <div class="button-container">
 <button (click)="logout()">Sair</button>

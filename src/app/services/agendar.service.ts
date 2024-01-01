@@ -10,6 +10,7 @@ export class AgendarService {
 
   private url = 'http://localhost:8089/agendamento';
   novoValor: any;
+  novoAgendamento: any;
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
@@ -34,10 +35,12 @@ export class AgendarService {
   getAgendamentoByCpfCnpj(cpfCnpj: string): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/cpfCnpj?cpfCnpj=${cpfCnpj}`);
 }
-  createAgendamento(agendamento: Agendar): Observable<Agendar> {
-    return this.httpClient.post<Agendar>(this.url, agendamento);
-  }
-  saveAgendamento(agendamento: Agendar): Observable<Agendar>{
+
+createAgendamento(agendamento: Agendar): Observable<Agendar> {
+  return this.httpClient.post<Agendar>(this.url, agendamento);
+}
+
+saveAgendamento(agendamento: Agendar): Observable<Agendar>{
     return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendamento), this.httpOptions)
     .pipe(
       retry(2),
