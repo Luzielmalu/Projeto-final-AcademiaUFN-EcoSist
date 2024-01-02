@@ -1,5 +1,5 @@
 export interface Registrar {
-  id?: string;
+  id?: number;
   nome: string;
   login: string;
   password:string;

@@ -19,5 +19,15 @@ footer span{
   color: #4405a9;
 }
 
-
-
+.brand img{
+  width: 20vh;
+  margin-right: 0.6em;
+  border: 2px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
+  max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
+  height: auto;
+}
+@media screen and (max-width: 600px) {
+.brand img{
+  max-width: 100%;
+}
+}

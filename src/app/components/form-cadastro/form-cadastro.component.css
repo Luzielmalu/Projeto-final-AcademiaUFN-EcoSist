@@ -1,7 +1,7 @@
 :host {
   position: absolute;
   display: block;
-  background-color: #a8f39b; /* Cor de fundo desejada */
+  background-color: #a8f39b;
   padding: 20px; /* Ajuste de espaçamento interno */
   max-width: 500px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
@@ -15,8 +15,8 @@
 
 }
 .link-registrar {
-  color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
-  text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+  color: #007bff;
+  text-decoration: underline; /*sublinhado para indicar que é um link */
   cursor: pointer; /* Altera o cursor para indicar que é clicável */
 }
 .link-registrar:hover {

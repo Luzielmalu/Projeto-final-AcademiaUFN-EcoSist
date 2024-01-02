@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
   display: block;
-  background-color: #a8f39b; /* Cor de fundo desejada */
+  background-color: #a8f39b;
   padding: 20px; /* Ajuste de espaçamento interno */
   max-width: 500px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
@@ -14,8 +14,8 @@
   border: 2px solid rgb(68, 243, 77);
 }
 .link-cadastrar {
-  color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
-  text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+  color: #007bff;
+  text-decoration: underline; /*sublinhado para indicar que é um link */
   cursor: pointer; /* Altera o cursor para indicar que é clicável */
 }
 .link-cadastrar:hover {

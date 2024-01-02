@@ -88,7 +88,7 @@ saveAgendamento(agendamento: Agendar): Observable<Agendar>{
     try {
       // Verifica se o localStorage está disponível
       if (localStorage) {
-        // Se estiver disponível, continue com o código original
+        // Se estiver disponível, continua com o código original
         return this.httpClient.post<Agendar>(this.url, JSON.stringify(agendamento), this.httpOptions)
           .pipe(
             retry(1),

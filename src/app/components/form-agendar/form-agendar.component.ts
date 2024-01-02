@@ -44,7 +44,7 @@ export class FormAgendarComponent {
       },
       (error) => {
         if (error.error && error.error.message === 'Horário já agendado. Escolha outro horário.') {
-          // Exibe um alerta na tela
+
           alert('Horário já agendado. Escolha outro horário.');
         } else {
           // Exibe um alerta de erro genérico
@@ -65,7 +65,7 @@ export class FormAgendarComponent {
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
-    } // Limpa os campos do novo cadastro
+    }
 
   }
 

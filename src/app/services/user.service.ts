@@ -12,14 +12,14 @@ export class UserService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   hasRequiredRoles(requiredRoles: string[]): boolean {
-    const userRoles = this.getUserRoles(); // Implemente esse método para obter os papéis do usuário
+    const userRoles = this.getUserRoles(); //Método para obter os papéis do usuário
     return requiredRoles.every(role => userRoles.includes(role));
   }
 
   getUserType(): Observable<UserTypeResponse> {
     if (this.authService.isAuthenticated()) {
       const userType = this.authService.getUserType();
-      const userRoles = this.authService.getUserRoles(); // Implemente esse método para obter os papéis do usuário
+      const userRoles = this.authService.getUserRoles();
       return of({ userType, roles: userRoles });
     } else {
       return this.http.get<UserTypeResponse>('http://localhost:8089/auth/login');

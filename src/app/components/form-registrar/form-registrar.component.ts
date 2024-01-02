@@ -17,7 +17,7 @@ constructor(private registrarService: RegistrarService, private router: Router){
 
  @Output() registrar = new EventEmitter<Registrar>();
   novoRegistro: Registrar = {
-    id: '',
+    id: 0,
     nome: '',
     login: '',
     password:'',
@@ -41,7 +41,7 @@ constructor(private registrarService: RegistrarService, private router: Router){
         this.isSubmitting = false;
       });
     this.novoRegistro = {
-      id: '',
+      id: 0,
       nome:'',
       login: '',
       password:'',

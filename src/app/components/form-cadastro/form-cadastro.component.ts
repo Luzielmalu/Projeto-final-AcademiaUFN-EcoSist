@@ -41,8 +41,7 @@ export class FormCadastroComponent  {
         // Exibe um alerta de sucesso
         alert('Seus dados foram cadastrados com sucesso!');
 
-        // Redireciona para a página do perfil do usuário
-        //this.router.navigate(['/perfilUsuario']);
+
         this.location.back();//volta para página anterior
 
       },
@@ -68,8 +67,7 @@ export class FormCadastroComponent  {
     tipoEndereco: '',
     pontoReferencia: '',
     observacao: '',
-    }; // Limpa os campos do novo cadastro
-
+    };
   }
 
 

@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: #a8f39b; /* Cor de fundo  */
+  background-color: #a8f39b;
   padding: 30px; /*  espaçamento interno */
   max-width: 500px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
@@ -15,10 +15,10 @@
 }
 
 input[type="submit"] {
-  margin-top: 10px; /* Ajuste a quantidade conforme necessário */
+  margin-top: 10px;
 }
 .link-login{
-  color: #007bff; /* Cor azul, você pode usar qualquer cor aqui */
-  text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+  color: #007bff;
+  text-decoration: underline; /*sublinhado para indicar que é um link */
   cursor: pointer;
 }

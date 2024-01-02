@@ -7,16 +7,14 @@ import { Registrar } from '../models/registrar';
   providedIn: 'root'
 })
 export class RegistrarService {
-  //registrarUsuario(novoRegistro: Registrar) {
-   // throw new Error('Method not implemented.');
-  //}
+
 
   private url = 'http://localhost:8089/auth/register';
 
   constructor(private httpClient: HttpClient) { }
 
   registrarUsuario(novoRegistro: Registrar): Observable<any> {
-    // Faça a chamada HTTP para registrar o usuário
+    // Faz a chamada HTTP para registrar o usuário
     return this.httpClient.post<any>('http://localhost:8089/auth/register', novoRegistro);
   }
 
@@ -62,7 +60,7 @@ export class RegistrarService {
     try {
       // Verifica se o localStorage está disponível
       if (localStorage) {
-        // Se estiver disponível, continue com o código original
+        // Se estiver disponível, continua com o código original
         return this.httpClient.post<Registrar>(this.url, JSON.stringify(registrar), this.httpOptions)
           .pipe(
             retry(1),

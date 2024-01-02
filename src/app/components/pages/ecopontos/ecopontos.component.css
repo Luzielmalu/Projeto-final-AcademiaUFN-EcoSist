@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
+  max-width: 600px;
   margin: auto; /* Para centralizar horizontalmente */
   padding: 20px;
 }
@@ -35,7 +35,7 @@
 .imagem-container {
   max-width: 100%;
   border: 2px solid #b0a806; /* Adicione a borda desejada ao contêiner */
-  border-radius: 8px; /* Opcional: Adicione bordas arredondadas ao contêiner */
+  border-radius: 8px;
   overflow: hidden; /* Garante que a borda não se estenda além do contêiner */
 }
 .centralizar {
@@ -81,7 +81,7 @@ img {
 }
 @media screen and (max-width: 600px) {
   .blocos {
-    font-size: 14px; /* ou outro tamanho adequado */
+    font-size: 14px;
     width: 100%;
     margin: 10px 0;
     padding: 20px;
@@ -100,7 +100,7 @@ img {
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   width: 80%;
@@ -108,15 +108,14 @@ img {
 }
 @media screen and (max-width: 600px) {
   .bloco1 {
-    font-size: 14px; /* ou outro tamanho adequado */
-    width: 100%;
+    font-size: 14px;
 
 
 }
 }
 .bloco1 .link {
-  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
-  color: blue; /* Adicione uma cor para indicar que é um link */
+  text-decoration: underline; /*sublinhado para indicar que é um link */
+  color: blue;
 }
 .bloco {
   flex: 1;
@@ -125,7 +124,7 @@ img {
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   line-height: 1.0;
@@ -134,12 +133,12 @@ img {
 }
 @media screen and (max-width: 600px) {
   .bloco {
-    font-size: 14px; /* ou outro tamanho adequado */
+    font-size: 14px;
     width: 100%;
   }
 }
 
-/* A última criança não deve ter margem direita para evitar espaçamento extra */
+/* A última não deve ter margem direita para evitar espaçamento extra */
 .bloco:last-child {
   margin-right: 0;
 }
@@ -149,13 +148,13 @@ img {
   left: 50%; /* Posicionamento a partir da esquerda */
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
-  background-color: #a8f39b; /* Cor de fundo desejada */
-  padding: 20px; /* Adapte conforme necessário */
+  background-color: #a8f39b;
+  padding: 20px;
   text-align: center; /* Centraliza o texto */
   max-width: 600px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
   margin-bottom: 100px;
-  height: 600px; /* Ajuste a altura conforme necessário */
+  height: 600px;
   border-radius: 10px;
   border: 2px solid rgb(68, 243, 77);
   line-height: 2.0; /* Altere o valor para ajustar o espaçamento vertical entre as linhas */

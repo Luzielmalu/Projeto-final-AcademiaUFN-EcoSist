@@ -18,12 +18,10 @@ export class ListaCadastroComponent implements OnInit{
   displayedColumns: string[] = ['id', 'nomeCompleto', 'dataNascimento','cpfCnpj','telefone','email', 'cep','enderecoCompleto','bairroCidEst','tipoEndereco','pontoReferencia','observacao','actions'];
   constructor(private cadastroService: CadastroService, private router: Router) {}
 
-  /*constructor(private cadastroService: CadastroService) {
-    this.dataSource = new MatTableDataSource<Cadastro>([]);
-  }*/
+
   ngOnInit(): void {
   }
-  /*ngOnInit(): void {}*/
+
   buscarPorCpfOuCnpj(): void {
     this.buscarPorCpfCnpj();
   }
@@ -35,7 +33,7 @@ export class ListaCadastroComponent implements OnInit{
               (dados) => {
                 console.log('Dados recebidos:', dados);
                   this.dadosUsuario = dados;
-                  this.dataSource.data = dados; // Adicione os dados ao dataSource
+                  this.dataSource.data = dados; // Adiciona os dados ao dataSource
               },
               (erro) => {
                   console.error('Erro ao buscar por CPF', erro);

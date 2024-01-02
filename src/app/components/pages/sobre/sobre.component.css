@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
-  margin: auto; /* Para centralizar horizontalmente */
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
 }
 .imagemcircular{
@@ -18,12 +18,12 @@
   height: 500px;
   border-top: 1px solid rgb(25, 214, 25);
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
+  max-width: 600px;
   /*margin: auto; /* Para centralizar horizontalmente */
   width: 30%; /* A imagem ocupará 100% da largura do contêiner pai */
   height: auto; /* Mantém a proporção da imagem */
   display: block;
-  margin: auto; /* Para centralizar horizontalmente */
+  margin: auto;
   padding: 20px;
 
 
@@ -37,7 +37,7 @@
 .imagem-container {
   max-width: 100%;
   border: 2px solid #b0a806; /* Adicione a borda desejada ao contêiner */
-  border-radius: 8px; /* Opcional: Adicione bordas arredondadas ao contêiner */
+  border-radius: 8px;
   overflow: hidden; /* Garante que a borda não se estenda além do contêiner */
 }
 .centralizar {
@@ -105,7 +105,7 @@ img {
 }
 @media screen and (max-width: 600px) {
   .bloco1 {
-    font-size: 14px; /* ou outro tamanho adequado */
+    font-size: 14px;
     width: 100%;
 
 
@@ -147,11 +147,11 @@ img {
   left: 50%; /* Posicionamento a partir da esquerda */
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
-  background-color: #a8f39b; /* Cor de fundo desejada */
+  background-color: #a8f39b;
   padding: 20px;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
   max-width: 100%; /* Define uma largura máxima para o conteúdo */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 0 auto;
   margin-bottom: 100px;
   height: 600px; /* Ajusta a altura */
   border-radius: 10px;

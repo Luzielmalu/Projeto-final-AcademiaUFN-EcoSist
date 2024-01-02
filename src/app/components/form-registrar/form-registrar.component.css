@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  background-color: #a8f39b; /* Cor de fundo desejada */
+  background-color: #a8f39b;
   padding: 20px; /* Ajuste de espaçamento interno */
   max-width: 100%; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */

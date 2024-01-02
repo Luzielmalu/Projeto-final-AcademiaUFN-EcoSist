@@ -67,7 +67,7 @@ input[type="submit"]{
   margin-top: 10px;
   width: 30%;
   float: left;
-  box-sizing: border-box; /* Garantir que o padding não afete a largura total */
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 @media screen and (max-width: 600px) {
   input[type="submit"]{

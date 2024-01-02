@@ -61,11 +61,11 @@ form .form-input {
 }
 
 #txt-input {
-  width: calc(100% - 3px); /* Ajuste conforme necessário */
+  width: calc(100% - 3px);
 }
 
 input[type="password"] {
-  width: calc(100% - 40px); /* Ajuste conforme necessário */
+  width: calc(100% - 40px);
 }
 
 header {
@@ -185,7 +185,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
+  max-width: 600px;
   margin: auto; /* Para centralizar horizontalmente */
   padding: 20px;
 }
@@ -198,8 +198,8 @@ button:hover {
   height: 500px;
   border-top: 1px solid rgb(25, 214, 25);
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
- /* margin: auto; /* Para centralizar horizontalmente */
+  max-width: 600px;
+  margin: auto; */
   width: 30%; /* A imagem ocupará 100% da largura do contêiner pai */
   height: auto; /* Mantém a proporção da imagem */
   display: block;
@@ -216,7 +216,7 @@ button:hover {
 .imagem-container {
   max-width: 100%;
   border: 2px solid #b0a806; /* Adicione a borda desejada ao contêiner */
-  border-radius: 8px; /* Opcional: Adicione bordas arredondadas ao contêiner */
+  border-radius: 8px;
   overflow: hidden; /* Garante que a borda não se estenda além do contêiner */
 }
 .centralizar {
@@ -277,21 +277,21 @@ img {
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   width: 80%;
 }
 @media screen and (max-width: 600px) {
   .bloco1 {
-    font-size: 14px; /* ou outro tamanho adequado */
+    font-size: 14px;
     width: 100%;
 
 }
 }
 .bloco1 .link {
-  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
-  color: blue; /* Adicione uma cor para indicar que é um link */
+  text-decoration: underline;
+  color: blue;
 }
 .bloco {
   flex: 1;
@@ -300,7 +300,7 @@ img {
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   line-height: 1.0;
@@ -313,7 +313,7 @@ img {
   }
 }
 
-/* A última criança não deve ter margem direita para evitar espaçamento extra */
+/* A última não deve ter margem direita para evitar espaçamento extra */
 .bloco:last-child {
   margin-right: 0;
 }

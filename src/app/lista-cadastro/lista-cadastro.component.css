@@ -7,16 +7,16 @@
   left: 50%; /* Posicionamento a partir da esquerda */
   transform: translate(-50%, -50%); /* Centraliza o bloco */
   z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
-  background-color: #a8f39b; /* Cor de fundo desejada */
-  padding: 20px; /* Adapte conforme necessário */
-  text-align: center; /* Centraliza o texto */
+  background-color: #a8f39b;
+  padding: 20px;
+  text-align: center;
   max-width: 1200px; /* Define uma largura máxima para o conteúdo */
   margin: 0 auto; /* Centraliza horizontalmente */
   margin-bottom: 100px;
-  height: 300px; /* Ajuste a altura conforme necessário */
+  height: 300px;
   border-radius: 10px;
   border: 2px solid rgb(68, 243, 77);
-  line-height: 1.5; /* Altere o valor para ajustar*/
+  line-height: 1.5;
 }
 @media screen and (max-width: 600px) {
   .table-container {
@@ -85,8 +85,8 @@
   align-items: center;
   justify-content: center;
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
-  margin: auto; /* Para centralizar horizontalmente */
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
 }
 .imagemcircular{
@@ -98,12 +98,12 @@
   height: 500px;
   border-top: 1px solid rgb(25, 214, 25);
   text-align: justify;
-  max-width: 600px; /* Ajuste conforme necessário */
+  max-width: 600px;
  /* margin: auto; /* Para centralizar horizontalmente */
  width: 30%; /* A imagem ocupará 100% da largura do contêiner pai */
  height: auto; /* Mantém a proporção da imagem */
  display: block;
- margin: auto; /* Para centralizar horizontalmente */
+ margin: auto;
  padding: 20px;
 
 }
@@ -116,9 +116,9 @@
 
 .imagem-container {
   max-width: 100%;
-  border: 2px solid #b0a806; /* Adicione a borda desejada ao contêiner */
-  border-radius: 8px; /* Opcional: Adicione bordas arredondadas ao contêiner */
-  overflow: hidden; /* Garante que a borda não se estenda além do contêiner */
+  border: 2px solid #b0a806;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .centralizar {
   display: flex;
@@ -166,36 +166,36 @@ img {
 }
 .bloco1 {
   flex: 1;
-  box-sizing: border-box; /* Garante que a largura do bloco inclua preenchimento e borda */
+  box-sizing: border-box;
   padding: 20px;
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   width: 80%;
 }
 @media screen and (max-width: 600px) {
   .bloco1 {
-    font-size: 14px; /* ou outro tamanho adequado */
+    font-size: 14px;
     width: 100%;
 
 
 }
 }
 .bloco1 .link {
-  text-decoration: underline; /* Adicione sublinhado para indicar que é um link */
-  color: blue; /* Adicione uma cor para indicar que é um link */
+  text-decoration: underline;
+  color: blue;
 }
 .bloco {
   flex: 1;
-  box-sizing: border-box; /* Garante que a largura do bloco inclua preenchimento e borda */
+  box-sizing: border-box;
   padding: 20px;
   border: 2px solid #0ad228;
   border-radius: 8px;
   margin-right: 30px;
-  background-color: #4de35f; /* Adicione a cor de preenchimento desejada */
+  background-color: #4de35f;
   height: 300px;
   margin-bottom: 30px;
   line-height: 1.0;
@@ -208,7 +208,6 @@ img {
   }
 }
 
-/* A última criança não deve ter margem direita para evitar espaçamento extra */
 .bloco:last-child {
   margin-right: 0;
 }

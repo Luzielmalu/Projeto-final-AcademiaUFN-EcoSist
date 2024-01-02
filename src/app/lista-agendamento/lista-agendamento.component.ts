@@ -15,12 +15,10 @@ export class ListaAgendamentoComponent {
   displayedColumns: string[] = ['id','data','horario','cpfCnpj','enderecoColeta','quantOleo','statusColeta', 'actions'];
   constructor(private agendarService: AgendarService, private router: Router) {}
 
-  /*constructor(private cadastroService: CadastroService) {
-    this.dataSource = new MatTableDataSource<Cadastro>([]);
-  }*/
+
   ngOnInit(): void {
   }
-  /*ngOnInit(): void {}*/
+
   buscarPorCpfOuCnpj(): void {
     this.buscarPorCpfCnpj();
   }
@@ -32,7 +30,7 @@ export class ListaAgendamentoComponent {
               (dados) => {
                 console.log('Dados recebidos:', dados);
                   this.dadosUsuario = dados;
-                  this.dataSource.data = dados; // Adicione os dados ao dataSource
+                  this.dataSource.data = dados; // Adiciona os dados ao dataSource
               },
               (erro) => {
                   console.error('Erro ao buscar por CPF', erro);
