@@ -18,7 +18,7 @@ export class FormCadastroComponent  {
 
  @Output() cadastrar = new EventEmitter<Cadastro>();
   novoCadastro: Cadastro = {
-    id: '',
+    id: 0,
     nomeCompleto: '',
     dataNascimento: '',
     cpfCnpj: '',
@@ -55,7 +55,7 @@ export class FormCadastroComponent  {
      });
 
     this.novoCadastro = {
-      id: '',
+      id: 0,
     nomeCompleto: '',
     dataNascimento: '',
     cpfCnpj: '',

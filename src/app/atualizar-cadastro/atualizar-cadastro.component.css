@@ -22,7 +22,7 @@
   width: 30%; /* A imagem ocupará 100% da largura do contêiner pai */
   height: auto; /* Mantém a proporção da imagem */
   display: block;
-  margin: auto; /* Para centralizar horizontalmente */
+  margin: auto;
   padding: 20px
 
 }

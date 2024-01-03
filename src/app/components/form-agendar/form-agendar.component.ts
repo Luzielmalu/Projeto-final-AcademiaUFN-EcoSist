@@ -15,19 +15,23 @@ export class FormAgendarComponent {
   @Input() btnText: any;
   isSubmitting: boolean | undefined;
 
+
+
   constructor(private agendarService: AgendarService, private router: Router, private location: Location){
 
   }
 
  @Output() agendar = new EventEmitter<Agendar>();
   novoAgendamento: Agendar = {
-    id: '',
+    id: 0,
     data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
+    cadastro_id: 0,
+    user_id:  0,
 
   };
 
@@ -47,7 +51,7 @@ export class FormAgendarComponent {
 
           alert('Horário já agendado. Escolha outro horário.');
         } else {
-          // Exibe um alerta de erro genérico
+
           alert('Horário já agendado. Escolha outro horário.');
           console.error('Erro durante o agendamento', error);
         }
@@ -58,13 +62,15 @@ export class FormAgendarComponent {
      });
 
     this.novoAgendamento = {
-    id: '',
+    id: 0,
     data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
+    cadastro_id: 0,
+    user_id:  0,
     }
 
   }

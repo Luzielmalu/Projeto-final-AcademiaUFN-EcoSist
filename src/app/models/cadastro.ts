@@ -1,5 +1,5 @@
 export interface Cadastro {
-  id?: string;
+  id?: number;
   nomeCompleto: string;
   dataNascimento: string;
 	cpfCnpj: string;
@@ -10,7 +10,7 @@ export interface Cadastro {
 	bairroCidEst: string;
 	tipoEndereco: string;
 	pontoReferencia: string;
-  observacao?: string;
+  observacao: string;
 }
 
 

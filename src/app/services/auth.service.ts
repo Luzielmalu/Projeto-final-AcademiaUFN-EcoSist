@@ -21,7 +21,7 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
-
+/*Aqui identifica qual tipo de role fez o login, se user ou admin, e direciona para as dashs correspondentes*/
   login(login: string, password: string): Observable<any> {
     const fakeUrl = 'http://localhost:8089/auth/login';
     const loginData = { login, password };

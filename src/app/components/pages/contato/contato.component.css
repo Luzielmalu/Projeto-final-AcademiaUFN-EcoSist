@@ -18,7 +18,7 @@
   height: 500px;
   border-top: 1px solid rgb(25, 214, 25);
   text-align: justify;
-  max-width: 600px;
+  max-width: 600px;*/
   width: 30%; /* A imagem ocupará 100% da largura do contêiner pai */
   height: auto; /* Mantém a proporção da imagem */
   display: block;
