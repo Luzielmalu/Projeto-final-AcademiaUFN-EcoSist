@@ -7,27 +7,27 @@ A EcoSist, é uma aplicação web desenvolvida com o objetivo de sanar um proble
 ## Visão geral
 
 As coletas são feitas em residências e comércios. Problema: a empresa não dispor para os usuários doadores do óleo, um sistema para registro, cadastro e agendamentos das coletas.
-E também, a empresa não ter o controle desses cadatros, agendamentos e coletas. 
+E também, a empresa não ter o controle desses cadastros, agendamentos e coletas. A aplicação web seria disponibilizada aos usuários, através de um link pelo atendimento do WhatsApp.
 
 ## Funcionalidades principais
-Registro
-Login
-Cadastro
-Agendamento
-Lista dos cadastros
-Lista dos agendamentos
-Atualização do status das coletas
+*Registro
+*Login
+*Cadastro
+*Agendamento
+*Lista dos cadastros
+*Lista dos agendamentos
+*Atualização do status das coletas
 
 ## Tecnologias utilizadas
-IDEs:  Eclipse e VsCode
-Linguagens: Java e TypeScript
-Html e CSS
-Spring Boot com Maven, JPA + Hibernate
-JWT SecurityLombokSwagger
-Angular
-Angular Material
-Google Material
-Banco de dados MySql
+*IDEs:  Eclipse e VsCode
+*Linguagens: Java e TypeScript
+*Html e CSS
+*Spring Boot com Maven, JPA + Hibernate
+*JWT SecurityLombokSwagger
+*Angular
+*Angular Material
+*Google Material
+*Banco de dados MySql
 
 
 ## Sitemap
