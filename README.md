@@ -23,7 +23,9 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 * Linguagens: Java e TypeScript
 * Html e CSS
 * Spring Boot com Maven, JPA + Hibernate
-* JWT SecurityLombokSwagger
+* JWT Security
+* Lombok
+* Swagger
 * Angular
 * Angular Material
 * Google Material
