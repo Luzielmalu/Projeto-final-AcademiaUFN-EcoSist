@@ -49,6 +49,10 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 
 <img width="256" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/1473c6ec-45c4-4640-843f-c7b6c4a60ab3">
 
+
+<img width="229" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/e750ac61-adf7-40cc-91a7-ae1626bbde2c">
+
+
 <img width="261" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0e062bc2-1dc8-4bfa-ae27-51f217e1811c">
 
 
