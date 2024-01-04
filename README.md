@@ -1,7 +1,8 @@
 # Projeto EcoSist
 
 # Sitemap
-Página inicial
+
+![Projeto (1)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/9381ff49-d5a5-425d-bc91-722f37c920c8)
 
 
 
@@ -9,66 +10,16 @@ Página inicial
 
 
 
-Home
-Sobre
-Contato
-Registrar
-Login
 
 
 
 
 
 
-Saiba mais
-Sobre a empresa
-Telefone
-Formulário
-Formulário
-Login Admin
 
 
 
 
-
-
-Missão
-E-mail
-Login usuário
-Dashboard
-Ecopontos
-
-
-
-Compromisso com a sustentabilidade
-Dashboard
-Cadastro dos usuários
-Lista  cadastros
-Pág. atualizar cadastro
-
-
-
-Sustentabiliade
-
-Cadastrar dados
-Agendamentos dos usuários
-Lista agendamentos
-Pág. atualizar agendamento
-
-
-
-
-Cadastrar
-Agendar coleta
-
-
-Agendar
-Seu cadastro
-Lista cadastro
-
-
-Seus agendamentos
-Lista agendamentos
 
 
 # Link do design feito no Figma
