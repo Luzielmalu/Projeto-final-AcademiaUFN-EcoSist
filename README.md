@@ -19,6 +19,8 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 * Atualização do status das coletas
 
 ## Tecnologias utilizadas
+[![Angular](https://img.shields.io/badge/Angular-2%2B-red)](https://angular.io/)
+
 * IDEs:  Eclipse e VsCode
 * Linguagens: Java e TypeScript
 * Html e CSS
