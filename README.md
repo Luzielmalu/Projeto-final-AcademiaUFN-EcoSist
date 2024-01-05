@@ -1,27 +1,61 @@
-# EcoSistAngular
+# Projeto EcoSist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+![Eco (3)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/8c65e5c6-4bce-4d13-8b6a-a555ee883fa2)
 
-## Development server
+A EcoSist, é uma aplicação web desenvolvida com o objetivo de sanar um problema de uma empresa prestadora de serviços de coleta de óleo e gordura vegetal usados. A empresa faz a reciclagem desse óleo, e destina para algumas indústrias de ração animal e fabricação de sabão.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Visão geral
 
-## Code scaffolding
+As coletas são feitas em residências e comércios. Problema: a empresa não dispor para os usuários doadores do óleo, um sistema para registro, cadastro e agendamentos das coletas.
+E também, a empresa não ter o controle desses cadastros, agendamentos e coletas. A aplicação web seria disponibilizada aos usuários, através de um link pelo atendimento do WhatsApp. Podendo ser acessada pelo smartphone ou desktop.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades principais
+* Registro
+* Login
+* Cadastro
+* Agendamento
+* Lista dos cadastros
+* Lista dos agendamentos
+* Atualização do status das coletas
 
-## Build
+## Tecnologias utilizadas
+* IDEs:  Eclipse e VsCode
+* Linguagens: Java e TypeScript
+* Html e CSS
+* Spring Boot com Maven, JPA + Hibernate
+* JWT Security
+* Lombok
+* Swagger
+* Angular
+* Angular Material
+* Google Material
+* Banco de dados MySql
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Sitemap
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Projeto (1)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/9381ff49-d5a5-425d-bc91-722f37c920c8)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+## Link do design feito no Figma
+
+https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20-19&mode=design&t=XrbEuCnhXNbEOhXp-0
+
+
+## Responsividade da aplicação
+
+<img width="256" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/1473c6ec-45c4-4640-843f-c7b6c4a60ab3">
+
+
+<img width="229" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/e750ac61-adf7-40cc-91a7-ae1626bbde2c">
+
+
+<img width="261" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0e062bc2-1dc8-4bfa-ae27-51f217e1811c">
+
+
+
