@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
@@ -44,12 +44,26 @@ export class AuthService {
 
         return null;
       }),
-      catchError((error) => {
+      catchError((error: HttpErrorResponse) => {
+        //console.log('Erro durante o login.');
         console.error('Erro durante o login', error);
+
+        if (error.status === 401) {
+
+            alert('Usuário não encontrado ou senha incorreta.');
+          } else {
+            alert('Erro de autenticação. Por favor, verifique suas credenciais.');
+          }
+        //} else {
+         // console.log('Erro durante o login. Por favor, tente novamente.');
+         // alert('Erro durante o login. Por favor, tente novamente.');
+        //}
+
         this.router.navigate(['/error']);
         return of(null);
       })
     );
+
   }
   decodeToken(token: string): any {
     try {

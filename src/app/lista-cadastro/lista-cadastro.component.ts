@@ -15,7 +15,7 @@ export class ListaCadastroComponent implements OnInit{
 
   cpfParaBuscar = '';
   dadosUsuario: any;
-  displayedColumns: string[] = ['id', 'nomeCompleto', 'dataNascimento','cpfCnpj','telefone','email', 'cep','enderecoCompleto','bairroCidEst','tipoEndereco','pontoReferencia','observacao','actions'];
+  displayedColumns: string[] = ['id', 'nomeCompleto', 'dataNascimento','cpfCnpj','telefone','email', 'cep','enderecoCompleto','bairroCidEst','tipoEndereco','pontoReferencia','observacao','acoes'];
   constructor(private cadastroService: CadastroService, private router: Router) {}
 
 
