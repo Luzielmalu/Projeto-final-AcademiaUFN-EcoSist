@@ -19,6 +19,7 @@ import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { UsuarioHeaderComponent } from './components/pages/usuario-header/usuario-header.component';
 import { PerfilAdminComponent } from './components/perfil-admin/perfil-admin.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { UsuarioAtualizarCadastroComponent } from './components/usuario-atualizar-cadastro/usuario-atualizar-cadastro.component';
 import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { RoleGuardService } from './role-guard.service';
@@ -31,18 +32,14 @@ const routes: Routes = [
   {path: 'agendamento/cpfCnpj', component: ListaAgendamentoComponent},
   {path: 'cadastro', component: AdminListaCadastrosComponent},
   {path: 'agendamento', component: AdminListaAgendamentosComponent},
-  {path: 'agendamento', component: AtualizarAgendamentoComponent},
+  /*{path: 'agendamento', component: AtualizarAgendamentoComponent},*/
   {path: 'agendamento/{id}/{campo}', component: AtualizarAgendamentoComponent},
   {path: 'agendamento/{id}', component: AtualizarAgendamentoComponent},
   {path: 'agendamento/{id}', component: AdminListaAgendamentosComponent},
   {path:'cadastro/{id}', component: AtualizarCadastroComponent},
-  {path:'cadastro', component: AtualizarCadastroComponent},
+  /*{path:'cadastro', component: AtualizarCadastroComponent},*/
   {path:'cadastro/{id}/{campo}', component: AtualizarCadastroComponent},
   {path:'cadastro/{id}', component: AdminListaCadastrosComponent},
-
-
-
-
   {path: 'ecopontos', component: EcopontosComponent},
   {path:'contato',component: ContatoComponent},
   {path: 'login', component: LoginComponent},
@@ -74,10 +71,12 @@ const routes: Routes = [
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
 {path:'atualizar-cadastro', component: AtualizarCadastroComponent},
-{path:'admin-lista-cadastro', component: AdminListaCadastrosComponent},
+{path:'admin-lista-cadastros', component: AdminListaCadastrosComponent},
 {path:'atualizar-agendamento', component: AtualizarAgendamentoComponent},
 {path:'admin-lista-agendamento', component: AdminListaAgendamentosComponent},
-{path:'usuarioHeader', component: UsuarioHeaderComponent}
+{path:'usuarioHeader', component: UsuarioHeaderComponent},
+{path: 'lista-cadastro', component: ListaCadastroComponent},
+{path: 'usuario-atualizar-cadastro', component: UsuarioAtualizarCadastroComponent}
 ];
 
 @NgModule({

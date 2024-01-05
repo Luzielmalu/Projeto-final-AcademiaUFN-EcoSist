@@ -44,6 +44,7 @@ import { ListaAgendamentoComponent } from './lista-agendamento/lista-agendamento
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
 import { TokenInterceptor } from './services/custome.interceptor';
 import { UsuarioHeaderComponent } from './components/pages/usuario-header/usuario-header.component';
+import { UsuarioAtualizarCadastroComponent } from './components/usuario-atualizar-cadastro/usuario-atualizar-cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,7 @@ import { UsuarioHeaderComponent } from './components/pages/usuario-header/usuari
     AtualizarAgendamentoComponent,
     AdminHeaderComponent,
     UsuarioHeaderComponent,
+    UsuarioAtualizarCadastroComponent,
 
 
   ],

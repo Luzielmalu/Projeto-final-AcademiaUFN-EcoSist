@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { CadastroService } from '../services/cadastro.service';
+import { CadastroService } from '../../services/cadastro.service';
 
 @Component({
-  selector: 'app-atualizar-cadastro',
-  templateUrl: './atualizar-cadastro.component.html',
-  styleUrl: './atualizar-cadastro.component.css',
-  providers: [AuthService]
+  selector: 'app-usuario-atualizar-cadastro',
+  templateUrl: './usuario-atualizar-cadastro.component.html',
+  styleUrl: './usuario-atualizar-cadastro.component.css'
 })
-export class AtualizarCadastroComponent implements OnInit {
+export class UsuarioAtualizarCadastroComponent {
   cadastro: any = {};
   campo: any;
   id: number =0;
@@ -20,7 +18,6 @@ export class AtualizarCadastroComponent implements OnInit {
     private route: ActivatedRoute,
     private cadastroService: CadastroService,
     private router: Router,
-    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +35,6 @@ export class AtualizarCadastroComponent implements OnInit {
       this.cadastro[this.campo] = novoValor;
     });
   }
-
   salvarAtualizacao(): void {
     const campo: string = this.campo;
     const id: number = this.id;
@@ -46,8 +42,7 @@ export class AtualizarCadastroComponent implements OnInit {
 
     this.cadastroService.updateCampoCadastro(id, campo , this.novoValor).subscribe(() => {
       console.log(`Salvar atualização para o campo ${this.campo} do cadastro ID ${id}`);
-      this.router.navigate(['/admin-lista-cadastros']);
+      this.router.navigate(['/lista-cadastro']);
     });
   }
 }
-

@@ -15,7 +15,9 @@ export class ListaCadastroComponent implements OnInit{
 
   cpfParaBuscar = '';
   dadosUsuario: any;
-  displayedColumns: string[] = ['id', 'nomeCompleto', 'dataNascimento','cpfCnpj','telefone','email', 'cep','enderecoCompleto','bairroCidEst','tipoEndereco','pontoReferencia','observacao','acoes'];
+  displayedColumns: string[] = ['id', 'nomeCompleto', 'dataNascimento','cpfCnpj',
+  'telefone','email', 'cep','enderecoCompleto','bairroCidEst','tipoEndereco',
+  'pontoReferencia','observacao','acoes'];
   constructor(private cadastroService: CadastroService, private router: Router) {}
 
 
@@ -41,6 +43,27 @@ export class ListaCadastroComponent implements OnInit{
           );
   }
 
+  }
+  irParaAtualizacao(id: number): void {
+    this.router.navigate(['/usuario-atualizar-cadastro', id]);
+  }
+  atualizarCadastro(id: number): void {
+    this.router.navigate(['/usuario-atualizar-cadastro'], {
+      queryParams: {
+        id: id,
+        nomeCompleto: '',
+        dataNascimento: '',
+        cpfCnpj: '',
+        telefone: '',
+        email: '',
+        cep: '',
+        enderecoCompleto: '',
+        bairroCidEst: '',
+        tipoEndereco: '',
+        pontoReferencia: '',
+        observacao: '',
+      }
+    });
   }
 
   sair(): void {

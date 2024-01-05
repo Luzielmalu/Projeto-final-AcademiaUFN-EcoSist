@@ -21,6 +21,10 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
+  isUserAdmin(): boolean {
+    console.log('Tipo de usuário do AuthService:', this.userType);
+    return this.userType === 'ADMIN';
+  }
 /*Aqui identifica qual tipo de role fez o login, se user ou admin, e direciona para as dashs correspondentes*/
   login(login: string, password: string): Observable<any> {
     const fakeUrl = 'http://localhost:8089/auth/login';
@@ -65,6 +69,7 @@ export class AuthService {
     );
 
   }
+
   decodeToken(token: string): any {
     try {
       const decodedToken = jwtDecode(token);
