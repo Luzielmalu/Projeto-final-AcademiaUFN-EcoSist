@@ -10,6 +10,7 @@ As coletas são feitas em residências e comércios. Problema: a empresa não di
 E também, a empresa não ter o controle desses cadastros, agendamentos e coletas. A aplicação web seria disponibilizada aos usuários, através de um link pelo atendimento do WhatsApp. Podendo ser acessada pelo smartphone ou desktop.
 
 ## Funcionalidades principais
+
 * Registro
 * Login
 * Cadastro
@@ -19,7 +20,6 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 * Atualização do status das coletas
 
 ## Tecnologias utilizadas
-[![Angular](https://img.shields.io/badge/Angular-2%2B-red)](https://angular.io/)
 
 * IDEs:  Eclipse e VsCode
 * Linguagens: Java e TypeScript
@@ -37,11 +37,6 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 ## Sitemap
 
 ![Projeto (1)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/9381ff49-d5a5-425d-bc91-722f37c920c8)
-
-
-
-
-
 
 
 ## Link do design feito no Figma
