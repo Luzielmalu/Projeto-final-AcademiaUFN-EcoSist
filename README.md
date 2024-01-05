@@ -21,17 +21,24 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 
 ## Tecnologias utilizadas
 
-* IDEs:  Eclipse e VsCode
-* Linguagens: Java e TypeScript
-* Html e CSS
+Back-end:
+* IDE:  Eclipse 
+* Linguagen: Java
 * Spring Boot com Maven, JPA + Hibernate
+* Spring Security
 * JWT Security
 * Lombok
 * Swagger
-* Angular
+* Banco de dados MySql
+  
+Front-end:
+* IDE: VsCode
+* Linguagem: TypeScript
+* Html e CSS
+* Angular Framework
 * Angular Material
 * Google Material
-* Banco de dados MySql
+
 
 
 ## Sitemap
