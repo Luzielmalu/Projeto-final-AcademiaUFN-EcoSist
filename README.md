@@ -36,7 +36,7 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 
 ## Sitemap
 
-![Projeto (1)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/9381ff49-d5a5-425d-bc91-722f37c920c8)
+![Projeto (2)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/360a99f7-4ab9-4b34-b754-3dd2b4bda55e)
 
 
 ## Link do design feito no Figma
