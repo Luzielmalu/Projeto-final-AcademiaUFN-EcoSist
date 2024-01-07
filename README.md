@@ -81,7 +81,7 @@ classDiagram
 
     User "1" --> "1" UserRole : role
     Cadastro "1" --> "1" User
-    Agendamento "1" --> "1" User
+    Agendamento "0...n" --> "1" User: user
    ```
 
 ## Sitemap
