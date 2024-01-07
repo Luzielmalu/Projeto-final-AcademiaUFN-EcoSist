@@ -61,7 +61,7 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 
 ## Contribuidores no projeto
 
-Alunos da Academia Java UFN:
+Colegas da Academia Java UFN:
  * Osvaldo Ribeiro
  * Lucas Batista
  * Rafael Lins
