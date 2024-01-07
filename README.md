@@ -21,7 +21,7 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 
 ## Tecnologias utilizadas
 
-Back-End:
+![Back-End Badge](https://img.shields.io/badge/Back--End-blue?style=flat&logo=server&logoColor=white&labelColor=black)
 * IDE:  Eclipse 
 * Linguagen: Java
 * Spring Boot com Maven, JPA + Hibernate
@@ -31,7 +31,7 @@ Back-End:
 * Swagger
 * Banco de dados MySql
   
-Front-End:
+![Front-End Badge](https://img.shields.io/badge/Front--End-orange?style=flat&logo=html5&logoColor=white&labelColor=black)
 * IDE: VsCode
 * Linguagem: TypeScript
 * Html e CSS
