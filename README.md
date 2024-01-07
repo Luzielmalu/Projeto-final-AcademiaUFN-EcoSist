@@ -1,6 +1,6 @@
 # Projeto EcoSist
 
-![Eco (3)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/8c65e5c6-4bce-4d13-8b6a-a555ee883fa2)
+![Eco (3)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/fa2f46b8-3459-4059-84c8-ac6b919fcdc3)
 
 A EcoSist, é uma aplicação web desenvolvida com o objetivo de sanar um problema de uma empresa prestadora de serviços de coleta de óleo e gordura vegetal usados. A empresa faz a reciclagem desse óleo, e destina para algumas indústrias de ração animal e fabricação de sabão.
 
@@ -21,22 +21,73 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 
 ## Tecnologias utilizadas
 
-* IDEs:  Eclipse e VsCode
-* Linguagens: Java e TypeScript
-* Html e CSS
+![Back-End Badge](https://img.shields.io/badge/Back--End-blue?style=flat&logo=server&logoColor=white&labelColor=black)
+* IDE:  Eclipse 
+* Linguagen: Java
 * Spring Boot com Maven, JPA + Hibernate
+* Spring Security
 * JWT Security
 * Lombok
 * Swagger
-* Angular
+* Banco de dados MySql
+  
+![Front-End Badge](https://img.shields.io/badge/Front--End-orange?style=flat&logo=html5&logoColor=white&labelColor=black)
+* IDE: VsCode
+* Linguagem: TypeScript
+* Html e CSS
+* Angular Framework
 * Angular Material
 * Google Material
-* Banco de dados MySql
 
+## Diagrama de classes
+```mermaid
+classDiagram
+    class User {
+        + id: Long
+        + nome: String
+        + login: String
+        + password: String
+        + role: UserRole
+    }
+
+    class Cadastro {
+        + id: Long
+        + nomeCompleto: String
+        + dataNascimento: String
+        + cpfCnpj: String
+        + telefone: String
+        + email: String
+        + cep: String
+        + enderecoCompleto: String
+        + bairroCidEst: String
+        + tipoEndereco: String
+        + pontoReferencia: String
+        + observacao: String
+    }
+
+    class Agendamento {
+        + id: Long
+        + data: String
+        + horario: String
+        + cpfCnpj: String
+        + enderecoColeta: String
+        + quantOleo: String
+        + statusColeta: String
+    }
+
+    class UserRole {
+        + role: String
+    }
+
+    User "1" --> "1" UserRole : role
+    User "1" --> "0..n" Agendamento : agendamentos
+    User "1" --> "1" Cadastro
+    Agendamento "0..n" --> "1" User: user
+   ```
 
 ## Sitemap
 
-![Projeto (1)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/9381ff49-d5a5-425d-bc91-722f37c920c8)
+![Projeto (2)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/360a99f7-4ab9-4b34-b754-3dd2b4bda55e)
 
 
 ## Link do design feito no Figma
@@ -48,11 +99,20 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 
 <img width="256" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/1473c6ec-45c4-4640-843f-c7b6c4a60ab3">
 
-
 <img width="229" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/e750ac61-adf7-40cc-91a7-ae1626bbde2c">
-
 
 <img width="261" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0e062bc2-1dc8-4bfa-ae27-51f217e1811c">
 
+## Contribuidores do projeto
 
+Colegas da Academia Java UFN:
+ * Osvaldo Ribeiro
+ * Lucas Batista
+ * Rafael Lins
+ 
+Professores da Academia Java UFN: 
+ * Gabriel Flores
+ * Luan Vieira
 
+Desenvolvedora:
+* Luzielma J da Silva

@@ -75,6 +75,7 @@ public class AgendamentoController {
         return ResponseEntity.ok(agendamentos);
     }
 	
+	
 	@PostMapping
 	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento)throws Exception {
 	    try {

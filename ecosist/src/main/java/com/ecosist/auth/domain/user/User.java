@@ -26,7 +26,8 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
     @JsonIgnore
-	@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
+	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Agendamento> agendamentos = new ArrayList<>();
     
     //@JsonIgnore
@@ -117,9 +118,10 @@ public class User implements UserDetails {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	//public List<Agendamento> getAgendamentos() {
-		//return agendamentos;
-	//}
+	
+	public List<Agendamento> getAgendamentos() {
+		return agendamentos;
+	}
 	//public List<Cadastro> getCadastro() {
 		//return cadastro;
 	//}
