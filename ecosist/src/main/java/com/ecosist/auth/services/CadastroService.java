@@ -2,8 +2,6 @@ package com.ecosist.auth.services;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,36 +14,36 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class CadastroService {
-	
+
 
 	@Autowired
 	private final CadastroRepository cadastroRepository;
-	
-	 
+
+
 	public CadastroService(CadastroRepository cadastroRepository) {
 		this.cadastroRepository= cadastroRepository;
-	}	
-	
-	
+	}
+
+
 	public void inicializarCadastro() {
 		Cadastro cadastro = new Cadastro();
 		cadastroRepository.save(cadastro);
-        
-	    
-		
+
+
+
 	}
 
-    
+
 	public List<Cadastro> getAllCadastros() {
 		return (List<Cadastro>) cadastroRepository.findAll();
 	}
-	
+
 	public Cadastro getCadastroById(Long id) {
 		Optional<Cadastro> optionalCadastro = (Optional<Cadastro>) cadastroRepository.findById(id);
-	    return optionalCadastro.orElse(null);	
-	    
+	    return optionalCadastro.orElse(null);
+
 	}
-	
+
 	public List<Cadastro> getCadastroByCpfCnpj(String cpfCnpj) {
 		return cadastroRepository.findByCpfCnpj(cpfCnpj);
 	}
@@ -58,7 +56,7 @@ public class CadastroService {
             cadastro.setId(id);
             return cadastroRepository.save(cadastro);
         } else {
-            return null; 
+            return null;
         }
     }
 
@@ -114,16 +112,16 @@ public class CadastroService {
 	}
 
 
-	
-
-	
 
 
 
 
-	
-		
-	
+
+
+
+
+
+
 }
 
 

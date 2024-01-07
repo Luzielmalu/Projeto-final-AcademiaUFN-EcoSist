@@ -1,6 +1,5 @@
 package com.ecosist.auth.repositories;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -21,8 +20,8 @@ public interface AgendamentoRepository extends JpaRepository<Agendamento, Long>{
 	Agendamento findByIdWithCadastroAndUser(Long id);
 
 
-	
 
-	
+
+
 
 }

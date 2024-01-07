@@ -1,9 +1,6 @@
 package com.ecosist.auth.controllers;
 
-import java.security.Principal;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,21 +26,21 @@ import com.ecosist.auth.services.CadastroService;
 @RestController
 @RequestMapping(path="/agendamento")
 public class AgendamentoController {
-	
+
 	@Autowired
 	private final AgendamentoService agendamentoService;
-	
+
 	private final AgendamentoRepository agendamentoRepository;
-	
-	
-	
+
+
+
 	public AgendamentoController(AgendamentoService agendamentoService, CadastroService cadastroService, AgendamentoRepository agendamentoRepository ) {
 		this.agendamentoService = agendamentoService;
 		this.agendamentoRepository = agendamentoRepository;
-		
+
 	}
-	
-	
+
+
 	public void init() {
 		Agendamento novoAgendamento = new Agendamento();
 		agendamentoService.inicializarAgendamento(novoAgendamento);
@@ -61,8 +58,8 @@ public class AgendamentoController {
 	    Agendamento agendamento = agendamentoService.getAgendamentoById(id);
 
 	    if (agendamento != null) {
-	        agendamento.getUser(); 
-	        agendamento.getCadastro(); 
+	        agendamento.getUser();
+	        agendamento.getCadastro();
 
 	        return new ResponseEntity<>(agendamento, HttpStatus.OK);
 	    } else {
@@ -74,8 +71,8 @@ public class AgendamentoController {
         List<Agendamento> agendamentos = agendamentoService.buscarAgendamentosPorCpf(cpfCnpj);
         return ResponseEntity.ok(agendamentos);
     }
-	
-	
+
+
 	@PostMapping
 	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento)throws Exception {
 	    try {
@@ -99,14 +96,14 @@ public class AgendamentoController {
 	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 	}
-	
-	
+
+
 	@PutMapping("/{id}")
 	public Agendamento updateAgendamento(@PathVariable Long id, @RequestBody Agendamento agendamento) throws Exception {
          return agendamentoService.updateAgendamento(id, agendamento);
-		
+
 	}
-	
+
 	@PutMapping("/{id}/{campo}")
 	public ResponseEntity<Agendamento> updateCampoAgendamento(
 	    @PathVariable Long id,
@@ -125,8 +122,8 @@ public class AgendamentoController {
 	public void deleteAgendamento(@PathVariable Long id) {
 		agendamentoService.deleteAgendamento(id);
 	}
-	
-	
+
+
 }
 
 

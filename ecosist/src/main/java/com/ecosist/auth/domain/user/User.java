@@ -1,18 +1,27 @@
 package com.ecosist.auth.domain.user;
 
-import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ecosist.auth.domain.coleta.Agendamento;
-import com.ecosist.auth.domain.coleta.Cadastro;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 @Entity(name = "users")
 @Table(name = "users")
 @EqualsAndHashCode(of = "id")
@@ -26,38 +35,38 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
     @JsonIgnore
-	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
+	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER)
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Agendamento> agendamentos = new ArrayList<>();
-    
+
     //@JsonIgnore
-	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
+	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER)
 	//private List<Cadastro> cadastro = new ArrayList<>();
 
-    
+
 
     public User() {
-    	
+
     }
     public User(Long id, String nome, String login, String password, UserRole role){
     	this.id = id;
-    	this.nome = nome;       
+    	this.nome = nome;
     	this.login = login;
         this.password = password;
         this.role = role;
-         
+
         }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.role == UserRole.ADMIN) 
-        	return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), 
+        if(this.role == UserRole.ADMIN)
+        	return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"),
         			new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
 
-    	
+
 	@Override
     public String getUsername() {
         return login;
@@ -87,16 +96,16 @@ public class User implements UserDetails {
 	public String getPassword() {
 		return password;
 	}
-	
+
 
 	public String getLogin() {
 		return login;
 	}
-	
+
 	public UserRole getRole() {
 		return role;
 	}
-	
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
@@ -118,7 +127,7 @@ public class User implements UserDetails {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public List<Agendamento> getAgendamentos() {
 		return agendamentos;
 	}
@@ -137,7 +146,7 @@ public class User implements UserDetails {
 	//public void setCadastro(Cadastro cadastro) {
 		//this.cadastro = cadastro;
 	//}
-	
-	
-	
+
+
+
 }
