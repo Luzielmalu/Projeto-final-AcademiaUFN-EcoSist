@@ -39,7 +39,50 @@ Front-End:
 * Angular Material
 * Google Material
 
+## Diagrama de classes
+```mermaid
+classDiagram
+    class User {
+        + id: Long
+        + nome: String
+        + login: String
+        + password: String
+        + role: UserRole
+    }
 
+    class Cadastro {
+        + id: Long
+        + nomeCompleto: String
+        + dataNascimento: String
+        + cpfCnpj: String
+        + telefone: String
+        + email: String
+        + cep: String
+        + enderecoCompleto: String
+        + bairroCidEst: String
+        + tipoEndereco: String
+        + pontoReferencia: String
+        + observacao: String
+    }
+
+    class Agendamento {
+        + id: Long
+        + data: String
+        + horario: String
+        + cpfCnpj: String
+        + enderecoColeta: String
+        + quantOleo: String
+        + statusColeta: String
+    }
+
+    class UserRole {
+        + role: String
+    }
+
+    User "1" --> "1" UserRole : role
+    Cadastro "1" --> "1" User
+    Agendamento "1" --> "1" User
+   ```
 
 ## Sitemap
 
