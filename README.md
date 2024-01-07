@@ -62,13 +62,13 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 ## Contribuidores no projeto
 
 Alunos da Academia Java UFN:
- Osvaldo Ribeiro
- Lucas Batista
- Rafael Lins
+ * Osvaldo Ribeiro
+ * Lucas Batista
+ * Rafael Lins
  
 Professores da Academia Java UFN: 
- Gabriel Flores
- Luan Vieira
+ * Gabriel Flores
+ * Luan Vieira
 
 Desenvolvedora:
-Luzielma J da Silva
+* Luzielma J da Silva
