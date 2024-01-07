@@ -59,7 +59,7 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 
 <img width="261" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0e062bc2-1dc8-4bfa-ae27-51f217e1811c">
 
-## Contribuidores no projeto
+## Contribuidores do projeto
 
 Colegas da Academia Java UFN:
  * Osvaldo Ribeiro
