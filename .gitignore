@@ -1,4 +1,29 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### Eclipse ###
+/.classpath
+/.project
+/.settings
+/.metadata
+/bin/
+
+### VS Code ###
+.vscode/
+
 
 # Compiled output
 /dist
@@ -39,3 +64,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
