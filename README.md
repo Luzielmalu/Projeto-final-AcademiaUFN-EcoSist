@@ -29,6 +29,7 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 * JWT Security
 * Lombok
 * Swagger
+* Tomcat
 * Banco de dados MySql
   
 ![Front-End Badge](https://img.shields.io/badge/Front--End-orange?style=flat&logo=html5&logoColor=white&labelColor=black)
