@@ -30,8 +30,6 @@ export class FormAgendarComponent {
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
-    cadastro_id: 0,
-    user_id:  0,
 
   };
 
@@ -69,8 +67,6 @@ export class FormAgendarComponent {
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
-    cadastro_id: 0,
-    user_id:  0,
     }
 
   }
