@@ -1,20 +1,9 @@
 package com.ecosist.auth.services;
 
-import java.security.Principal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-
 import com.ecosist.auth.domain.coleta.Agendamento;
 import com.ecosist.auth.domain.coleta.Cadastro;
 import com.ecosist.auth.domain.user.User;

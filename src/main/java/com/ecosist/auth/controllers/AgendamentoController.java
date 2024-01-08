@@ -1,10 +1,6 @@
 package com.ecosist.auth.controllers;
 
-import java.security.Principal;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.ecosist.auth.domain.coleta.Agendamento;
 import com.ecosist.auth.domain.coleta.Cadastro;
 import com.ecosist.auth.domain.user.User;
@@ -79,11 +74,9 @@ public class AgendamentoController {
 	@PostMapping
 	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento)throws Exception {
 	    try {
-	        // Certifique-se de que o usuário e o cadastro estão corretamente associados ao agendamento
 	        User user = novoAgendamento.getUser();
 	        Cadastro cadastro = novoAgendamento.getCadastro();
 
-	        // Verifique se user e cadastro não são nulos antes de associá-los ao agendamento
 	        if (user != null) {
 	            novoAgendamento.setUser(user);
 	        }

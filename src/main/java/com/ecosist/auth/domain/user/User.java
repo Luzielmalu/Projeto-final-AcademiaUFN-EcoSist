@@ -7,7 +7,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ecosist.auth.domain.coleta.Agendamento;
-import com.ecosist.auth.domain.coleta.Cadastro;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
@@ -122,21 +121,7 @@ public class User implements UserDetails {
 	public List<Agendamento> getAgendamentos() {
 		return agendamentos;
 	}
-	//public List<Cadastro> getCadastro() {
-		//return cadastro;
-	//}
-	//public Cadastro getCadastro() {
-		//return cadastro;
-	//}
-	//public void setAgendamentos(List<Agendamento> agendamentos) {
-		//this.agendamentos = agendamentos;
-	//}
-	//public void setCadastro(List<Cadastro> cadastros) {
-		//this.cadastro = cadastro;
-	//}
-	//public void setCadastro(Cadastro cadastro) {
-		//this.cadastro = cadastro;
-	//}
+	
 	
 	
 	
