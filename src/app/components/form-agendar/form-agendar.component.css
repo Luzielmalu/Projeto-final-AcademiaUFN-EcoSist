@@ -1,0 +1,39 @@
+
+:host {
+  position: absolute; /* ou 'fixed', dependendo do comportamento desejado */
+  top: 70%; /* Posicionamento a partir do topo */
+  left: 50%; /* Posicionamento a partir da esquerda */
+  transform: translate(-50%, -50%); /* Centraliza o bloco */
+  z-index: 999; /* Define a ordem de empilhamento sobre outros elementos */
+  display: block;
+  background-color: #a8f39b;
+  padding: 20px; /* Ajuste de espaçamento interno */
+  max-width: 500px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  border-radius: 10px;
+  border: 2px solid rgb(68, 243, 77);
+}
+.link-cadastrar {
+  color: #007bff;
+  text-decoration: underline; /*sublinhado para indicar que é um link */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+.link-cadastrar:hover {
+  color: #0056b3; /* Cor alterada ao passar o mouse sobre o link */
+
+}
+h2{
+  text-align: center;
+}
+fieldset {
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: .4em;
+  text-align: left;
+}
+
+legend {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}

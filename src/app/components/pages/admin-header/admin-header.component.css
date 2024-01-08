@@ -1,0 +1,48 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid #777;
+  background-color: rgb(77, 193, 77);
+  height: 80px;
+  max-width: 100%;
+
+}
+
+.brand, .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.brand img{
+  width: 20vh;
+  margin-right: 0.6em;
+  border: 2px solid rgb(244, 15, 179); /* Adiciona uma borda sólida de 2px com cor*/
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 600px) {
+.brand img{
+  max-width: 100%;
+}
+
+}
+.brand h2{
+  transition: .4s;
+}
+.links a{
+  padding: 0.1em 0.3em;
+}
+.links li{
+  margin-right: 1em;
+  list-style: none;
+
+}
+#add a{
+  color:blanchedalmond
+}
+#add a:hover{
+  background-color: #777;
+
+}

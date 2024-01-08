@@ -1,0 +1,41 @@
+footer{
+  border-top: 1px solid #29e44f;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*justify-content: center;*/
+  height: 80px;
+  background-color: gainsboro;
+  width: 100%;
+
+
+
+}
+
+footer h3{
+  margin-bottom: 1.2em;
+}
+footer span{
+  font-weight: bold;
+  color: #4405a9;
+}
+.text-container {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.brand img{
+  max-width: 60px;
+  height: auto;
+  max-height: 50px;
+  display: block;
+  margin-left: 10px;
+  border: 2px solid rgb(244, 15, 179);
+
+}
+@media screen and (max-width: 600px) {
+.brand img{
+  width: 100%;
+
+}
+}
