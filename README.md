@@ -74,6 +74,8 @@ classDiagram
         + enderecoColeta: String
         + quantOleo: String
         + statusColeta: String
+        + cadastro_id: Cadastro
+        + user_id: User
     }
 
     class UserRole {
