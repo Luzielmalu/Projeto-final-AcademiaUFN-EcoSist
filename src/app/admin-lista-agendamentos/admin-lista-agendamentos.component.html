@@ -79,6 +79,10 @@
       <th mat-header-cell *matHeaderCellDef>ID</th>
       <td mat-cell *matCellDef="let item">{{ item.id }}</td>
     </ng-container>
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let item">{{ item.nome }}</td>
+    </ng-container>
     <ng-container matColumnDef="data">
       <th mat-header-cell *matHeaderCellDef>Data</th>
       <td mat-cell *matCellDef="let item">{{ item.data }}</td>
@@ -102,6 +106,14 @@
     <ng-container matColumnDef="statusColeta">
       <th mat-header-cell *matHeaderCellDef>Status da coleta</th>
       <td mat-cell *matCellDef="let item">{{ item.statusColeta }}</td>
+    </ng-container>
+    <ng-container matColumnDef="cadastro_id">
+      <th mat-header-cell *matHeaderCellDef>Cadastro_id</th>
+      <td mat-cell *matCellDef="let item">{{ item.cadastro_id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="user_id">
+      <th mat-header-cell *matHeaderCellDef>User_id</th>
+      <td mat-cell *matCellDef="let item">{{ item.user_id }}</td>
     </ng-container>
     <ng-container matColumnDef="acoes">
       <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>

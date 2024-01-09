@@ -38,6 +38,7 @@ export class AgendarComponent  {
     }
 
     addAgendamento(){
+      this.agendar.nome = "Luzielma Silva"
       this.agendar.data = "1986/02/16";
       this.agendar.horario = "9h00";
       this.agendar.cpfCnpj = "05543104418";

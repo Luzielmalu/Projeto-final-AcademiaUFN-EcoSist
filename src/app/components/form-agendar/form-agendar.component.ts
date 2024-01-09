@@ -24,12 +24,15 @@ export class FormAgendarComponent {
  @Output() agendar = new EventEmitter<Agendar>();
   novoAgendamento: Agendar = {
     id: 0,
+    nome: '',
     data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
+    cadastro_id: 0,
+    user_id: 0,
 
   };
 
@@ -61,12 +64,15 @@ export class FormAgendarComponent {
 
     this.novoAgendamento = {
     id: 0,
+    nome: '',
     data: '',
     horario:'',
     cpfCnpj: '',
     enderecoColeta:'',
     quantOleo: '0',
     statusColeta: '',
+    cadastro_id: 0,
+    user_id: 0,
     }
 
   }

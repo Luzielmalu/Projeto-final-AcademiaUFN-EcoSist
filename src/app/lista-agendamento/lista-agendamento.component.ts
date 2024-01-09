@@ -12,7 +12,7 @@ export class ListaAgendamentoComponent {
 
   cpfParaBuscar = '';
   dadosUsuario: any;
-  displayedColumns: string[] = ['id','data','horario','cpfCnpj','enderecoColeta','quantOleo','statusColeta', 'actions'];
+  displayedColumns: string[] = ['id','nome','data','horario','cpfCnpj','enderecoColeta','quantOleo','statusColeta', 'acoes'];
   constructor(private agendarService: AgendarService, private router: Router) {}
 
 
