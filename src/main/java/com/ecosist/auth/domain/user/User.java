@@ -26,12 +26,12 @@ public class User implements UserDetails {
     private UserRole role;
     @JsonIgnore
 	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Agendamento> agendamentos = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Agendamento> agendamentos;
     
     //@JsonIgnore
 	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
-	//private List<Cadastro> cadastro = new ArrayList<>();
+	//private List<Cadastro> cadastro = new ArrayList<>();= new ArrayList<>();
 
     
 

@@ -42,8 +42,8 @@ public class Cadastro{
 	private String observacao;
 	@JsonIgnore
 	//@OneToMany(mappedBy = "cadastro",  fetch= FetchType.EAGER)
-	@OneToMany(mappedBy = "cadastro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Agendamento> agendamentos = new ArrayList<>();
+	@OneToMany(mappedBy = "cadastro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Agendamento> agendamentos;
 	
 
 	

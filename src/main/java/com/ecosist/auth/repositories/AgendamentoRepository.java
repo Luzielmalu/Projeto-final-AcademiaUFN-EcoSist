@@ -17,9 +17,8 @@ public interface AgendamentoRepository extends JpaRepository<Agendamento, Long>{
 
 	List<Agendamento> findByCpfCnpj(String cpfCnpj);
 
-	@Query("SELECT a FROM Agendamento a JOIN FETCH a.cadastro JOIN FETCH a.user WHERE a.id = :id")
-	Agendamento findByIdWithCadastroAndUser(Long id);
-
+	@Query("SELECT DISTINCT a FROM Agendamento a LEFT JOIN FETCH a.user LEFT JOIN FETCH a.cadastro")
+	List<Agendamento> findAllWithJoinFetch();
 
 	
 
