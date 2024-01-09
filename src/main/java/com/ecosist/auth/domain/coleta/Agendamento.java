@@ -34,6 +34,7 @@ public class Agendamento {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
 	private String data;
 	private String horario;
 	private String cpfCnpj;
@@ -42,27 +43,15 @@ public class Agendamento {
 	private String statusColeta;
 	
 	
-	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinColumn(name = "cadastro_id")
     private Cadastro cadastro;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
 	private User user;
 	
-	public Long getCadastro_id() {
-        if (cadastro != null) {
-            //return cadastro.getId();
-        }
-        return null; 
-    }
-
-	public Long getUser_id() {
-       if (user != null) {
-          return user.getId();
-        }
-        return null; 
-   }
+	
 
 	
 	

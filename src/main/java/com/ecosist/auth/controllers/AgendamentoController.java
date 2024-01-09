@@ -20,6 +20,8 @@ import com.ecosist.auth.repositories.AgendamentoRepository;
 import com.ecosist.auth.services.AgendamentoService;
 import com.ecosist.auth.services.CadastroService;
 
+import jakarta.persistence.EntityNotFoundException;
+
 
 @RestController
 @RequestMapping(path="/agendamento")
@@ -41,12 +43,18 @@ public class AgendamentoController {
 	
 	public void init() {
 		Agendamento novoAgendamento = new Agendamento();
-		agendamentoService.inicializarAgendamento(novoAgendamento);
+		agendamentoService.inicializarAgendamento();
 	}
+	
 	@GetMapping
-	public List<Agendamento> getAllAgendamentos(){
-		return agendamentoService.getAllAgendamentos();
+	public List<Agendamento> getAllAgendamentos() {
+	    return agendamentoRepository.findAllWithJoinFetch();
 	}
+	//@GetMapping
+	//public List<Agendamento> getAllAgendamentos(){
+		//return agendamentoService.getAllAgendamentos();
+	//}
+	
 	@GetMapping("/{id}")
 	public Agendamento getAgendamentoById(@PathVariable Long id) {
 		return agendamentoService.getAgendamentoById(id);
@@ -72,7 +80,25 @@ public class AgendamentoController {
 	
 	
 	@PostMapping
-	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento)throws Exception {
+    public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento) {
+        try {
+            //agendamentoService.inicializarAgendamento(novoAgendamento);
+
+        	agendamentoService.createAgendamento(novoAgendamento);
+            return new ResponseEntity<>(novoAgendamento, HttpStatus.CREATED);
+        } catch (EntityNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        
+    }
+
+	
+	
+	
+	/*@PostMappingthrows Exception
+	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento) {
 	    try {
 	        User user = novoAgendamento.getUser();
 	        Cadastro cadastro = novoAgendamento.getCadastro();
@@ -91,7 +117,7 @@ public class AgendamentoController {
 	    } catch (Exception e) {
 	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
-	}
+	}*/
 	
 	
 	@PutMapping("/{id}")
