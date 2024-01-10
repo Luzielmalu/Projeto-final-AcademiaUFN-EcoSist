@@ -38,13 +38,16 @@ export class AgendarComponent  {
     }
 
     addAgendamento(){
-      this.agendar.nome = "Luzielma Silva"
+      this.agendar.id = 0;
+      this.agendar.nome = "Luzielma Silva";
       this.agendar.data = "1986/02/16";
       this.agendar.horario = "9h00";
       this.agendar.cpfCnpj = "05543104418";
       this.agendar.enderecoColeta = "rua";
       this.agendar.quantOleo = "10";
       this.agendar.statusColeta = "a realizar";
+      this.agendar.user_id = 0;
+      this.agendar.cadastro_id = 0;
       this.agendarService.saveAgendamento(this.agendar).subscribe(() => {
     });
     }

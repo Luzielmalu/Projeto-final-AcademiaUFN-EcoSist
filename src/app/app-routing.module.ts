@@ -71,7 +71,7 @@ const routes: Routes = [
   {path: 'perfilAdmin/cadastro', component: AdminListaCadastrosComponent},
   {path: 'perfilAdmin/agendamento', component: AdminListaAgendamentosComponent},
 {path:'atualizar-cadastro', component: AtualizarCadastroComponent},
-{path:'admin-lista-cadastros', component: AdminListaCadastrosComponent},
+{path:'admin-lista-cadastro', component: AdminListaCadastrosComponent},
 {path:'atualizar-agendamento', component: AtualizarAgendamentoComponent},
 {path:'admin-lista-agendamento', component: AdminListaAgendamentosComponent},
 {path:'usuarioHeader', component: UsuarioHeaderComponent},

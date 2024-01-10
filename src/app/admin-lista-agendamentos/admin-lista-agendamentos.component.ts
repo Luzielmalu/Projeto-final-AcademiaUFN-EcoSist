@@ -62,8 +62,9 @@ export class AdminListaAgendamentosComponent implements OnInit{
         enderecoColeta: '',
         quantOleo:'',
         statusColeta:'',
-        cadastro_id: id,
         user_id: id,
+        cadastro_id: id,
+
       }
     });
   }
