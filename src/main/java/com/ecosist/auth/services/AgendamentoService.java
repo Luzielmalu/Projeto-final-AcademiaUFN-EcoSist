@@ -1,8 +1,13 @@
 package com.ecosist.auth.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ecosist.auth.domain.coleta.Agendamento;
@@ -19,13 +24,15 @@ import jakarta.transaction.Transactional;
 @Service
 public class AgendamentoService {
 
+    private static final Logger logger = LoggerFactory.getLogger(AgendamentoService.class);
+
 	@Autowired
 	private final AgendamentoRepository agendamentoRepository;
 	@Autowired
 	private final UserRepository repository;
 	@Autowired
 	private final CadastroRepository cadastroRepository;
-	private User user;
+	
 	
 	public AgendamentoService(AgendamentoRepository agendamentoRepository,UserRepository repository,
             CadastroRepository cadastroRepository ) {
@@ -39,36 +46,17 @@ public class AgendamentoService {
 	@Transactional
 	public void inicializarAgendamento() {}
         
-		/*List<Cadastro> cadastros = cadastroRepository.findByCpfCnpj(agendamento.getCpfCnpj());
-
-        Cadastro cadastro = cadastros.stream().findFirst()
-                .orElseThrow(() -> new EntityNotFoundException("Nenhum cadastro encontrado com o CPF/CNPJ: " + agendamento.getCpfCnpj()));
-        
-		Optional<User> users = repository.findByNome(agendamento.getNome());
-
-        User user = repository.findByNome(agendamento.getNome())
-                .orElseThrow(() -> new EntityNotFoundException("User não encontrado com o nome: " + agendamento.getNome()));
-
-	agendamento.setCadastro(cadastro);
-    agendamento.setUser(user);
-  
-	    agendamento.setUser(user);
-	    agendamento.setCadastro(cadastro);
-	    agendamento.setData(agendamento.getData());
-	    agendamento.setHorario(agendamento.getHorario());
-	    agendamento.setCpfCnpj(agendamento.getCpfCnpj());
-	    agendamento.setEnderecoColeta(agendamento.getEnderecoColeta());
-	    agendamento.setQuantOleo(agendamento.getQuantOleo());
-	    agendamento.setStatusColeta(agendamento.getStatusColeta());
 	
-		// Salvar o agendamento*
-		agendamentoRepository.save(agendamento);    
-		
-	}*/
-	public List<Agendamento> getAllAgendamentos() {
-	    return agendamentoRepository.findAllWithJoinFetch();
-	}
-
+	@Transactional
+    public List<Map<String, Object>> getAllAgendamentos() {
+		logger.info("Iniciando busca de todos os agendamentos.");
+        List<Agendamento> agendamentos = agendamentoRepository.findAllWithJoinFetch();
+        logger.info("Total de agendamentos encontrados: {}", agendamentos.size());
+        return agendamentos.stream()
+            .map(Agendamento::toJSON)
+            .collect(Collectors.toList());
+    }
+	
 	//public List<Agendamento> getAllAgendamentos() {
 		//return (List<Agendamento>) agendamentoRepository.findAll();
 		//}
@@ -91,7 +79,7 @@ public class AgendamentoService {
 	}
 	
 	
-	@Transactional
+	@Transactional  //verifica o cpf ou cnpj no cadastro e o nome em user, para poder relacionar os ids em agendamentos.
 	public Agendamento createAgendamento(Agendamento novoAgendamento) {
 	    try {
 	        List<Cadastro> cadastros = cadastroRepository.findByCpfCnpj(novoAgendamento.getCpfCnpj());
@@ -104,6 +92,7 @@ public class AgendamentoService {
 	        novoAgendamento.setCadastro(cadastro);
             novoAgendamento.setUser(user);
 	        
+            //verifica se o horário está disponível
 	        if (isHorarioDisponivel(novoAgendamento.getHorario())) {
 	          
 	            return agendamentoRepository.save(novoAgendamento);
@@ -121,22 +110,6 @@ public class AgendamentoService {
 	    Set<Agendamento> agendamentos = agendamentoRepository.findByHorario(horario);
 	    return agendamentos.isEmpty();
 	}
-	
-	
-   /*public Agendamento createAgendamento(Agendamento novoAgendamento) throws Exception {
-		
-		if (isHorarioDisponivel(novoAgendamento.getHorario())) {
-           return agendamentoRepository.save(novoAgendamento);
-       } else {
-       	throw new Exception("Horário já agendado. Escolha outro horário.");
-       }
-		
-		}
-
-	private boolean isHorarioDisponivel(String horario) {
-		Set<Agendamento> agendamentos = agendamentoRepository.findByHorario(horario);
-       return agendamentos.isEmpty(); 
-	}*/
    
  //lógica para atualizar o agendamento por campo específico.
 	public Agendamento updateCampoAgendamento(Long id, String campo, String novoValor) {
@@ -168,9 +141,13 @@ public class AgendamentoService {
 	    return agendamentoRepository.save(agendamento);
 	}
 	
+	@Transactional
 	public void deleteAgendamento(Long id) {
 		agendamentoRepository.deleteById(id);
 	}
+
+
+	
 
 
 
