@@ -46,7 +46,7 @@ export class AtualizarCadastroComponent implements OnInit {
 
     this.cadastroService.updateCampoCadastro(id, campo , this.novoValor).subscribe(() => {
       console.log(`Salvar atualização para o campo ${this.campo} do cadastro ID ${id}`);
-      this.router.navigate(['/admin-lista-cadastros']);
+      this.router.navigate(['/admin-lista-cadastro']);
     });
   }
 }
