@@ -74,8 +74,8 @@ classDiagram
         + enderecoColeta: String
         + quantOleo: String
         + statusColeta: String
-        + cadastro_id: Cadastro
         + user_id: User
+        + cadastro_id: Cadastro
     }
 
     class UserRole {
@@ -105,6 +105,14 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 <img width="229" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/e750ac61-adf7-40cc-91a7-ae1626bbde2c">
 
 <img width="261" alt="image" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0e062bc2-1dc8-4bfa-ae27-51f217e1811c">
+
+<img width="594" alt="ImagemNot" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/55a0edeb-d072-41b3-bc64-debcd80df3d1">
+
+<img width="582" alt="ImagemNot2" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/22f23c23-2546-4f1f-b991-49b7a543479e">
+
+<img width="592" alt="ImagemNot3" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0a76f9ca-fa6c-4e11-92d0-f3cb6da838a2">
+
+
 
 ## Pessoas contribuidoras
 
