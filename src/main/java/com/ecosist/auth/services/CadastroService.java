@@ -25,8 +25,7 @@ public class CadastroService {
 	public void inicializarCadastro() {
 		Cadastro cadastro = new Cadastro();
 		cadastroRepository.save(cadastro);
-        
-	    
+            
 		
 	}
 
@@ -60,7 +59,7 @@ public class CadastroService {
     public void deleteCadastro(Long id) {
     	cadastroRepository.deleteById(id);
     }
-
+	
 
 	//lógica para atualizar o cadastro por campo específico
 	public Cadastro updateCampoCadastro(Long id, String campo, String novoValor) {

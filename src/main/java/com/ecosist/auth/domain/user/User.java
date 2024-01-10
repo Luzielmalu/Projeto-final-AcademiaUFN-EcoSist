@@ -25,14 +25,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
     @JsonIgnore
-	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Agendamento> agendamentos;
     
-    //@JsonIgnore
-	//@OneToMany(mappedBy = "user", fetch= FetchType.EAGER) 
-	//private List<Cadastro> cadastro = new ArrayList<>();= new ArrayList<>();
-
+    
     
 
     public User() {
@@ -120,6 +116,9 @@ public class User implements UserDetails {
 	
 	public List<Agendamento> getAgendamentos() {
 		return agendamentos;
+	}
+	public void setAgendamentos(List<Agendamento> agendamentos) {
+		this.agendamentos = agendamentos;
 	}
 	
 	

@@ -1,6 +1,8 @@
 package com.ecosist.auth.controllers;
 
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.ecosist.auth.domain.coleta.Agendamento;
-import com.ecosist.auth.domain.coleta.Cadastro;
-import com.ecosist.auth.domain.user.User;
-import com.ecosist.auth.repositories.AgendamentoRepository;
 import com.ecosist.auth.services.AgendamentoService;
 import com.ecosist.auth.services.CadastroService;
 
@@ -30,13 +29,11 @@ public class AgendamentoController {
 	@Autowired
 	private final AgendamentoService agendamentoService;
 	
-	private final AgendamentoRepository agendamentoRepository;
 	
 	
 	
-	public AgendamentoController(AgendamentoService agendamentoService, CadastroService cadastroService, AgendamentoRepository agendamentoRepository ) {
+	public AgendamentoController(AgendamentoService agendamentoService, CadastroService cadastroService ) {
 		this.agendamentoService = agendamentoService;
-		this.agendamentoRepository = agendamentoRepository;
 		
 	}
 	
@@ -47,9 +44,11 @@ public class AgendamentoController {
 	}
 	
 	@GetMapping
-	public List<Agendamento> getAllAgendamentos() {
-	    return agendamentoRepository.findAllWithJoinFetch();
-	}
+    public ResponseEntity<List<Map<String, Object>>> getAllAgendamentos() {
+        List<Map<String, Object>> agendamentos = agendamentoService.getAllAgendamentos();
+        return new ResponseEntity<>(agendamentos, HttpStatus.OK);
+    }
+
 	//@GetMapping
 	//public List<Agendamento> getAllAgendamentos(){
 		//return agendamentoService.getAllAgendamentos();
@@ -93,32 +92,6 @@ public class AgendamentoController {
         }
         
     }
-
-	
-	
-	
-	/*@PostMappingthrows Exception
-	public ResponseEntity<Agendamento> createAgendamento(@RequestBody Agendamento novoAgendamento) {
-	    try {
-	        User user = novoAgendamento.getUser();
-	        Cadastro cadastro = novoAgendamento.getCadastro();
-
-	        if (user != null) {
-	            novoAgendamento.setUser(user);
-	        }
-
-	        if (cadastro != null) {
-	            novoAgendamento.setCadastro(cadastro);
-	        }
-
-	        agendamentoService.createAgendamento(novoAgendamento);
-
-	        return new ResponseEntity<>(novoAgendamento, HttpStatus.CREATED);
-	    } catch (Exception e) {
-	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
-	}*/
-	
 	
 	@PutMapping("/{id}")
 	public Agendamento updateAgendamento(@PathVariable Long id, @RequestBody Agendamento agendamento) throws Exception {

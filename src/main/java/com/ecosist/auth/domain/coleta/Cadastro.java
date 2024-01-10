@@ -41,11 +41,9 @@ public class Cadastro{
 	private String pontoReferencia;
 	private String observacao;
 	@JsonIgnore
-	//@OneToMany(mappedBy = "cadastro",  fetch= FetchType.EAGER)
-	@OneToMany(mappedBy = "cadastro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "cadastro", fetch = FetchType.EAGER)
 	private List<Agendamento> agendamentos;
 	
-
 	
 	
 	public List<Agendamento> getAgendamentos() {
