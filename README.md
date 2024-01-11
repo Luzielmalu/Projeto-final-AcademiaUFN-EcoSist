@@ -1,6 +1,6 @@
 # Projeto EcoSist
 
-![Eco (3)](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/fa2f46b8-3459-4059-84c8-ac6b919fcdc3)
+![Imagem1](https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0746cfe0-0881-4be2-887f-4eb251ba4230)
 
 A EcoSist, é uma aplicação web desenvolvida com o objetivo de sanar um problema de uma empresa prestadora de serviços de coleta de óleo e gordura vegetal usados. A empresa faz a reciclagem desse óleo, e destina para algumas indústrias de ração animal e fabricação de sabão.
 
