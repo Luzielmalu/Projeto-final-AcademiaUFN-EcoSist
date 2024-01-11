@@ -112,6 +112,7 @@ https://www.figma.com/file/0eOyVimV1vR32E5KDu69Dc/Projeto?type=design&node-id=20
 
 <img width="592" alt="ImagemNot3" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0a76f9ca-fa6c-4e11-92d0-f3cb6da838a2">
 
+<img width="538" alt="ImagemPágina" src="https://github.com/Luzielmalu/Projeto-final-AcademiaUFN-EcoSist/assets/129329993/0c1b0c35-2872-4620-b4e3-1aba4487d43a">
 
 
 ## Pessoas contribuidoras
