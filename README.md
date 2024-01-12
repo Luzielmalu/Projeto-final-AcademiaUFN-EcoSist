@@ -30,7 +30,7 @@ E também, a empresa não ter o controle desses cadastros, agendamentos e coleta
 * Lombok
 * Swagger
 * Tomcat
-* Banco de dados MySql
+* Banco de dados MySQL
   
 ![Front-End Badge](https://img.shields.io/badge/Front--End-orange?style=flat&logo=html5&logoColor=white&labelColor=black)
 * IDE: VsCode
