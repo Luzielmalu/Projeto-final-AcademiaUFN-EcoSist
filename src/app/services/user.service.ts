@@ -7,7 +7,10 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class UserService {
-  getUserRoles: any;
+  roles: any;
+  getUserRoles(): any{
+    return this.roles || [];
+  }
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
