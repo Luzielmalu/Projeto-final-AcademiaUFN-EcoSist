@@ -109,13 +109,7 @@
             ],
             "scripts": []
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "baseHref":"/Projeto-final-AcademiaUFN-EcoSist/"
         }
-      }
       }
     }
   },
