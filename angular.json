@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/browser",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -113,10 +113,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref":"/Projeto-final-AcademiaUFN-EcoSist/",
-            "gitExecutable": "C:\\Program Files\\Git\\bin\\git.exe"
-          }
+            "baseHref":"/Projeto-final-AcademiaUFN-EcoSist/"
         }
+      }
       }
     }
   },
