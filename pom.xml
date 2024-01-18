@@ -93,7 +93,7 @@
     <artifactId>webjars-locator-core</artifactId>
     <version>0.55</version>
 </dependency>
-	</dependencies>
+</dependencies>
 	<build>
 		<plugins>
 			<plugin>

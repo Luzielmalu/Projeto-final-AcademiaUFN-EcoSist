@@ -117,7 +117,7 @@ public class AgendamentoService {
 	            .orElseThrow(() -> new AgendamentoNotFoundException(id));
 
 	    switch (campo) {
-	        case "dia":
+	        case "data":
 	            agendamento.setData(novoValor);
 	            break;
 	        case "horario":
